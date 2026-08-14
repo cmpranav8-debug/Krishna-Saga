@@ -162,7 +162,7 @@ function initGitaExplorer() {
 
   // State Management
   let chaptersData = [];
-  let chapter1Data = null;
+  const chaptersVersesCache = {};
   let currentChapter = 1;
   let currentVerseIndex = 0;
   let isTranslitVisible = true;
@@ -196,6 +196,33 @@ function initGitaExplorer() {
     }
   }
 
+  function updateOverviewBanner(chapterNum) {
+    const chMeta = chaptersData.find(c => c.chapter_number === chapterNum);
+    if (!chMeta) return;
+
+    const pillLabel = document.getElementById('reader-chapter-pill-label');
+    if (pillLabel) pillLabel.textContent = `Chapter ${chMeta.chapter_number} • ${chMeta.verses_count} Verses`;
+
+    const artImg = document.getElementById('overview-art-img');
+    if (artImg) {
+      artImg.src = chMeta.image_url;
+      artImg.alt = `${chMeta.name_transliteration} Artwork`;
+    }
+
+    const themeBadge = document.getElementById('overview-theme-badge');
+    if (themeBadge) themeBadge.innerHTML = `<span>✦ ${chMeta.theme} ✦</span>`;
+
+    const sanskritNum = chapterNum === 1 ? '१' : chapterNum === 2 ? '२' : chapterNum.toString();
+    const sanskritTitle = document.getElementById('overview-sanskrit-title');
+    if (sanskritTitle) sanskritTitle.textContent = `अध्याय ${sanskritNum} • ${chMeta.name_sanskrit}`;
+
+    const engTitle = document.getElementById('overview-eng-title');
+    if (engTitle) engTitle.textContent = `${chMeta.name_transliteration} — ${chMeta.name_translation}`;
+
+    const summaryText = document.getElementById('overview-summary-text');
+    if (summaryText) summaryText.textContent = chMeta.summary;
+  }
+
   function showVerseReaderView(chapterNum = 1, verseNum = 1) {
     activeView = 'reader';
     currentChapter = chapterNum;
@@ -207,12 +234,14 @@ function initGitaExplorer() {
     if (readerView) readerView.style.display = 'block';
     if (completionView) completionView.style.display = 'none';
 
+    updateOverviewBanner(chapterNum);
     history.pushState(null, '', `#gita/chapter-${chapterNum}/verse-${verseNum}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    if (!chapter1Data) {
+    if (!chaptersVersesCache[chapterNum]) {
       loadChapterVerses(chapterNum);
     } else {
+      renderVerseTabs();
       renderCurrentVerse();
     }
   }
@@ -227,6 +256,41 @@ function initGitaExplorer() {
     if (readerView) readerView.style.display = 'none';
     if (completionView) completionView.style.display = 'block';
 
+    const compImg = document.getElementById('completion-art-img');
+    const compBadge = document.getElementById('completion-badge-tag');
+    const compColophon = document.getElementById('completion-sanskrit-colophon');
+    const compDesc = document.getElementById('completion-translation-desc');
+    const compNextLabel = document.getElementById('completion-next-ch-label');
+
+    if (chapterNum === 2) {
+      if (compImg) {
+        compImg.src = 'assets/images/adhyaya-2-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 2 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय २ समाप्तम् • CHAPTER 2 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसम्वादे साङ्ख्ययोगो नाम द्वितीयोऽध्यायः ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the second chapter named <strong>Sāṅkhya Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: कर्मयोग (Chapter 3)';
+    } else {
+      // Default Chapter 1
+      if (compImg) {
+        compImg.src = 'assets/images/slideshow-2.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 1 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १ समाप्तम् • CHAPTER 1 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसम्वादे अर्जुनविषादयोगो नाम प्रथमोऽध्यायः ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the first chapter named <strong>Arjuna Viṣāda Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: साङ्ख्ययोग (Chapter 2)';
+    }
+
     history.pushState(null, '', `#gita/chapter-${chapterNum}/completed`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -238,6 +302,7 @@ function initGitaExplorer() {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       chaptersData = await response.json();
       renderChaptersGrid(chaptersData);
+      updateOverviewBanner(currentChapter);
     } catch (err) {
       console.error('Failed to load Gita chapters:', err);
       if (chaptersGrid) {
@@ -255,7 +320,8 @@ function initGitaExplorer() {
     try {
       const response = await fetch(`data/verses/chapter-${chapterNum}.json`);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      chapter1Data = await response.json();
+      const data = await response.json();
+      chaptersVersesCache[chapterNum] = data;
       renderVerseTabs();
       renderCurrentVerse();
     } catch (err) {
@@ -318,13 +384,14 @@ function initGitaExplorer() {
     });
   }
 
-  // --- Rendering Verse Tabs & Quick Dropdown (1 to 47) ---
+  // --- Rendering Verse Tabs & Quick Dropdown ---
   function renderVerseTabs() {
-    if (!chapter1Data || !chapter1Data.verses) return;
+    const activeData = chaptersVersesCache[currentChapter];
+    if (!activeData || !activeData.verses) return;
 
     if (verseNumberTabs) {
       verseNumberTabs.innerHTML = '';
-      chapter1Data.verses.forEach((v, index) => {
+      activeData.verses.forEach((v, index) => {
         const tab = document.createElement('button');
         tab.type = 'button';
         tab.className = `verse-tab-btn ${index === currentVerseIndex ? 'active' : ''}`;
@@ -344,7 +411,7 @@ function initGitaExplorer() {
 
     if (verseQuickSelect) {
       verseQuickSelect.innerHTML = '';
-      chapter1Data.verses.forEach((v, index) => {
+      activeData.verses.forEach((v, index) => {
         const opt = document.createElement('option');
         opt.value = index;
         opt.textContent = `Verse ${v.verse_number}`;
@@ -355,14 +422,17 @@ function initGitaExplorer() {
 
   // --- Rendering Current Verse ---
   function renderCurrentVerse() {
-    if (!chapter1Data || !chapter1Data.verses || !chapter1Data.verses[currentVerseIndex]) return;
+    const activeData = chaptersVersesCache[currentChapter];
+    if (!activeData || !activeData.verses || !activeData.verses[currentVerseIndex]) return;
 
-    const verse = chapter1Data.verses[currentVerseIndex];
-    const totalVerses = chapter1Data.verses.length;
+    const verse = activeData.verses[currentVerseIndex];
+    const totalVerses = activeData.verses.length;
 
     // Update Header Meta
-    if (verseIdBadge) verseIdBadge.textContent = `BG 1.${verse.verse_number}`;
-    if (verseNumberLabel) verseNumberLabel.textContent = `श्लोक ${verse.verse_number} • Verse ${verse.verse_number} of ${chapter1Data.verses_count}`;
+    if (verseIdBadge) verseIdBadge.textContent = `BG ${currentChapter}.${verse.verse_number}`;
+    if (verseNumberLabel) {
+      verseNumberLabel.textContent = `श्लोक ${verse.verse_number} • Verse ${verse.verse_number} of ${activeData.verses.length} (Adhyaya Total: ${activeData.verses_count})`;
+    }
 
     // Format Sanskrit and Transliteration newlines
     if (verseSanskritText) {
@@ -383,10 +453,9 @@ function initGitaExplorer() {
 
     if (nextVerseBtn) {
       if (currentVerseIndex === totalVerses - 1) {
-        // Last verse (Verse 47) leads to completion screen
         nextVerseBtn.disabled = false;
         nextVerseBtn.innerHTML = '<span class="btn-text">Complete Chapter</span> <span>✦</span>';
-        nextVerseBtn.title = 'Complete Chapter 1 and View Dedication (॥ श्रीकृष्णार्पणमस्तु ॥)';
+        nextVerseBtn.title = `Complete Chapter ${currentChapter} and View Dedication (॥ श्रीकृष्णार्पणमस्तु ॥)`;
       } else {
         nextVerseBtn.disabled = false;
         nextVerseBtn.innerHTML = '<span class="btn-text">Next</span> <span>→</span>';
@@ -450,7 +519,11 @@ function initGitaExplorer() {
   // Completion View Action Buttons
   if (completionNextBtn) {
     completionNextBtn.addEventListener('click', () => {
-      alert('Chapter 2 (साङ्ख्ययोग - Sāṅkhya Yoga) will be available in the upcoming release!');
+      if (currentChapter === 1) {
+        showVerseReaderView(2, 1);
+      } else {
+        alert('Chapter 3 (कर्मयोग - Karma Yoga) will be available in the upcoming release!');
+      }
     });
   }
   if (completionAllChBtn) completionAllChBtn.addEventListener('click', showGitaChaptersView);
@@ -476,8 +549,9 @@ function initGitaExplorer() {
 
   if (nextVerseBtn) {
     nextVerseBtn.addEventListener('click', () => {
-      if (chapter1Data) {
-        if (currentVerseIndex < chapter1Data.verses.length - 1) {
+      const activeData = chaptersVersesCache[currentChapter];
+      if (activeData) {
+        if (currentVerseIndex < activeData.verses.length - 1) {
           currentVerseIndex++;
           renderCurrentVerse();
         } else {
@@ -502,9 +576,10 @@ function initGitaExplorer() {
   // Copy Shloka Button
   if (copyVerseBtn) {
     copyVerseBtn.addEventListener('click', () => {
-      if (!chapter1Data || !chapter1Data.verses[currentVerseIndex]) return;
-      const v = chapter1Data.verses[currentVerseIndex];
-      const copyText = `श्रीमद्भगवद्गीता • Bhagavad Gita 1.${v.verse_number}\n\n${v.text_sanskrit}\n\n${v.transliteration}\n\nTranslation:\n"${v.translation}"\n\nMeaning:\n${v.meaning}\n\n— Via Krishna Saga`;
+      const activeData = chaptersVersesCache[currentChapter];
+      if (!activeData || !activeData.verses[currentVerseIndex]) return;
+      const v = activeData.verses[currentVerseIndex];
+      const copyText = `श्रीमद्भगवद्गीता • Bhagavad Gita ${currentChapter}.${v.verse_number}\n\n${v.text_sanskrit}\n\n${v.transliteration}\n\nTranslation:\n"${v.translation}"\n\nMeaning:\n${v.meaning}\n\n— Via Krishna Saga`;
 
       navigator.clipboard.writeText(copyText).then(() => {
         const originalText = copyVerseBtn.innerHTML;
@@ -523,19 +598,20 @@ function initGitaExplorer() {
     if (activeView !== 'reader') return;
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
 
+    const activeData = chaptersVersesCache[currentChapter];
+    if (!activeData) return;
+
     if (e.key === 'ArrowLeft') {
       if (currentVerseIndex > 0) {
         currentVerseIndex--;
         renderCurrentVerse();
       }
     } else if (e.key === 'ArrowRight') {
-      if (chapter1Data) {
-        if (currentVerseIndex < chapter1Data.verses.length - 1) {
-          currentVerseIndex++;
-          renderCurrentVerse();
-        } else {
-          showCompletionView(currentChapter);
-        }
+      if (currentVerseIndex < activeData.verses.length - 1) {
+        currentVerseIndex++;
+        renderCurrentVerse();
+      } else {
+        showCompletionView(currentChapter);
       }
     }
   });
@@ -564,7 +640,9 @@ function initGitaExplorer() {
   }
 
   window.addEventListener('popstate', handleHashNavigation);
-  handleHashNavigation();
+  loadChaptersData().then(() => {
+    handleHashNavigation();
+  });
 }
 
 /* ==========================================================================

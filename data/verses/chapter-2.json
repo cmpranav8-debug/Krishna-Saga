@@ -1,0 +1,514 @@
+{
+  "chapter_number": 2,
+  "name_sanskrit": "साङ्ख्ययोग",
+  "name_transliteration": "Sāṅkhya Yoga",
+  "name_translation": "The Yoga of Analytical Knowledge",
+  "verses_count": 72,
+  "theme": "Immortal Soul, Duty, and Equanimity (Karma Yoga)",
+  "verses": [
+    {
+      "verse_number": 1,
+      "text_sanskrit": "सञ्जय उवाच |\nतं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम् |\nविषीदन्तमिदं वाक्यमुवाच मधुसूदनः || १ ||",
+      "transliteration": "sañjaya uvāca |\ntaṃ tathā kṛpayāviṣṭamaśrupūrṇākulekṣaṇam |\nviṣīdantamidaṃ vākyamuvāca madhusūdanaḥ || 1 ||",
+      "translation": "Sanjaya said: Seeing Arjuna thus overcome with deep compassion, his eyes overflowing with tears and filled with grief, Sri Krishna (Madhusudana) spoke these words.",
+      "meaning": "Chapter 2 marks the spiritual turning point of the Mahabharata. Sanjaya describes Arjuna's sorrowful condition: overwhelmed by sentimental grief ('kripa') and blinded by tears. Sri Krishna is addressed as 'Madhusudana' (the slayer of the demon Madhu), foreshadowing that the Lord will destroy the demonic delusions clouding Arjuna's consciousness."
+    },
+    {
+      "verse_number": 2,
+      "text_sanskrit": "श्रीभगवानुवाच |\nकुतस्त्वा कश्मलमिदं विषमे समुपस्थितम् |\nअनार्यजुष्टमस्वर्ग्यमकीर्तिकरमर्जुन || २ ||",
+      "transliteration": "śrībhagavānuvāca |\nkutastvā kaśmalamidaṃ viṣame samupasthitam |\nanāryajuṣṭamasvargyamakīrtikaramarjuna || 2 ||",
+      "translation": "The Supreme Lord said: Whence has this dejection come upon you at this perilous juncture, O Arjuna? It is unbecoming of a noble soul, dishonorable, and obstructive to the attainment of higher spiritual realms.",
+      "meaning": "Sri Krishna begins His discourse not with sweet coddling, but with a roaring spiritual wake-up call. The Lord characterizes Arjuna's retreat as 'kashmalam' (impurity/delusion) and 'anarya-jushtam' (unfit for an enlightened, noble soul), pointing out that abandoning duty out of attachment is not true virtue, but spiritual weakness."
+    },
+    {
+      "verse_number": 3,
+      "text_sanskrit": "क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते |\nक्षुद्रं हृदयदौर्बल्यं त्यक्त्वोत्तिष्ठ परन्तप || ३ ||",
+      "transliteration": "klaibyaṃ mā sma gamaḥ pārtha naitattvayyupapadyate |\nkṣudraṃ hṛdayadaurbalyaṃ tyaktvottiṣṭha parantapa || 3 ||",
+      "translation": "Yield not to unmanliness, O Partha (son of Pritha)! It is unworthy of you. Shake off this petty faint-heartedness and arise, O scorcher of foes (Parantapa)!",
+      "meaning": "One of the most galvanizing verses of the entire Gita (often cited by Swami Vivekananda). Krishna calls Arjuna 'Parantapa'—one who strikes terror into the hearts of enemies—and urges him to cast away 'hridaya-daurbalyam' (petty weakness of heart). True spiritual strength demands facing life's righteous duties without cowardly evasion."
+    },
+    {
+      "verse_number": 4,
+      "text_sanskrit": "अर्जुन उवाच |\nकथं भीष्ममहं सङ्ख्ये द्रोणं च मधुसूदन |\nइषुभिः प्रतियोत्स्यामि पूजार्हावरिसूदन || ४ ||",
+      "transliteration": "arjuna uvāca |\nkathaṃ bhīṣmamahaṃ saṅkhye droṇaṃ ca madhusūdana |\niṣubhiḥ pratiyotsyāmi pūjārhāvarisūdana || 4 ||",
+      "translation": "Arjuna said: How, O Madhusudana, can I attack with arrows in battle venerable Grandfather Bhishma and preceptor Drona, who are worthy of the highest worship, O slayer of enemies?",
+      "meaning": "Arjuna responds with agonizing moral conflict. Bhishma is the patriarch who raised him upon his lap; Drona is the sacred guru who imparted the divine science of archery. In Vedic culture, elders and gurus are offered fragrant flowers and veneration ('pujarhāv'), making the prospect of shooting deadly arrows at them feel like an unpardonable sin."
+    },
+    {
+      "verse_number": 5,
+      "text_sanskrit": "गुरूनहत्वा हि महानुभावान्\nश्रेयो भोक्तुं भैक्ष्यमपीह लोके |\nहत्वार्थकामांस्तु गुरून्निहैव\nभुञ्जीय भोगान् रुधिरप्रदिग्धान् || ५ ||",
+      "transliteration": "gurūnahatvā hi mahānubhāvān\nśreyo bhoktuṃ bhaikṣyamapīha loke |\nhatvārthakāmāṃstu gurūnnihaiva\nbhuñjīya bhogān rudhirapradigdhān || 5 ||",
+      "translation": "It is indeed far better in this world to live on alms than to slay these noble teachers. Even if they are motivated by wealth and worldly ties, slaying them would mean enjoying earthly pleasures tainted with their blood!",
+      "meaning": "Arjuna prefers a life of mendicancy (begging for alms like a renunciant sannyasi) over sovereignty won through the bloodshed of his preceptors. He recoils at the thought of kingdom pleasures 'rudhira-pradigdhan'—stained with the sacred blood of his mentors."
+    },
+    {
+      "verse_number": 6,
+      "text_sanskrit": "न चैतद्विद्मः कतरन्नो गरीयो\nयद्वा जयेम यदि वा नो जयेयुः |\nयानेव हत्वा न जिजीविषाम-\nस्तेऽवस्थिताः प्रमुखे धार्तराष्ट्राः || ६ ||",
+      "transliteration": "na caitadvidmaḥ kataranno garīyo\nyadvā jayema yadi vā no jayeyuḥ |\nyāneva hatvā na jijīviṣāmas-\nte'vasthitāḥ pramukhe dhārtarāṣṭrāḥ || 6 ||",
+      "translation": "Nor do we know which is better for us—whether we should conquer them or whether they should conquer us. The very sons of Dhritarashtra, after slaying whom we would not care to live, are standing arrayed before us.",
+      "meaning": "Arjuna experiences total intellectual paralysis. In the haze of grief, both victory and defeat appear equally desolate, revealing how deeply emotional delusion incapacitates human judgment."
+    },
+    {
+      "verse_number": 7,
+      "text_sanskrit": "कार्पण्यदोषोपहतस्वभावः\nपृच्छामि त्वां धर्मसंमूढचेताः |\nयच्छ्रेयः स्यान्निश्चितं ब्रूहि तन्मे\nशिष्यस्तेऽहं शाधि मां त्वां प्रपन्नम् || ७ ||",
+      "transliteration": "kārpaṇyadoṣopahatasvabhāvaḥ\npṛcchāmi tvāṃ dharmasaṃmūḍhacetāḥ |\nyacchreyaḥ syānniścitaṃ brūhi tanme\nśiṣyaste'haṃ śādhi māṃ tvāṃ prapannam || 7 ||",
+      "translation": "My natural disposition is overpowered by the taint of helplessness, and my mind is confused regarding my sacred duty. I ask You: tell me decisively what is best for me (Shreyas). I am Your disciple; please instruct me, who have surrendered unto You.",
+      "meaning": "The watershed moment of the Gita. Arjuna transitions from being Krishna's casual friend and relative to being a humble disciple seeking eternal spiritual wisdom ('Shreyas'). He surrenders unconditionally with the sacred words 'Shishyas te 'ham shadhi mam tvam prapannam'."
+    },
+    {
+      "verse_number": 8,
+      "text_sanskrit": "न हि प्रपश्यामि ममापनुद्या-\nद्यच्छोकमुच्छोषणमिन्द्रियाणाम् |\nअवाप्य भूमावसपत्नमृद्धं\nराज्यं सुराणामपि चाधिपत्यम् || ८ ||",
+      "transliteration": "na hi prapaśyāmi mamāpanudyā-\ndyacchokamucchoṣaṇamindriyāṇām |\navāpya bhūmāvasapatnamṛddhaṃ\nrājyaṃ surāṇāmapi cādhipatyam || 8 ||",
+      "translation": "I see nothing that can remove this grief that parches my senses, even if I should obtain unrivaled, prosperous sovereignty over the whole earth or dominion over the celestial gods.",
+      "meaning": "Arjuna realizes that material wealth and cosmic power cannot cure existential suffering or spiritual emptiness. Only transcendental knowledge can heal the restless human soul."
+    },
+    {
+      "verse_number": 9,
+      "text_sanskrit": "सञ्जय उवाच |\nएवमुक्त्वा हृषीकेशं गुडाकेशः परन्तपः |\nन योत्स्य इति गोविन्दमुक्त्वा तूष्णीं बभूव ह || ९ ||",
+      "transliteration": "sañjaya uvāca |\nevamuktvā hṛṣīkeśaṃ guḍākeśaḥ parantapaḥ |\nna yotsya iti govindamuktvā tūṣṇīṃ babhūva ha || 9 ||",
+      "translation": "Sanjaya said: Having spoken thus to Sri Krishna (Hrishikesha), Gudakesha (Arjuna), the scorcher of foes, said to Govinda: 'I will not fight!' and became silent.",
+      "meaning": "Arjuna declares his final human refusal: 'Na yotsye' (I will not fight), and falls into heavy silence. He has laid bare his soul and now waits in receptive stillness for the Lord's divine instruction."
+    },
+    {
+      "verse_number": 10,
+      "text_sanskrit": "तमुवाच हृषीकेशः प्रहसन्निव भारत |\nसेनयोरुभयोर्मध्ये विषीदन्तमिदं वचः || १० ||",
+      "transliteration": "tamuvāca hṛṣīkeśaḥ prahasanniva bhārata |\nsenayorubhayormadhye viṣīdantamidaṃ vacaḥ || 10 ||",
+      "translation": "To him who was thus sorrowing between the two armies, O Bharata (Dhritarashtra), Sri Krishna (Hrishikesha), with a compassionate, gentle smile, spoke these words.",
+      "meaning": "Krishna smiles ('prahasanniva') with divine poise. Amidst raging armies and mortal weeping, the Lord smiles because He knows the immortal truth of the Soul and sees the cosmic play (Lila) behind mortal drama."
+    },
+    {
+      "verse_number": 11,
+      "text_sanskrit": "श्रीभगवानुवाच |\nअशोच्यानन्वशोचस्त्वं प्रज्ञावादांश्च भाषसे |\nगतासूनगतासूंश्च नानुशोचन्ति पण्डिताः || ११ ||",
+      "transliteration": "śrībhagavānuvāca |\naśocyānanvaśocastvaṃ prajñāvādāṃśca bhāṣase |\ngatāsūnagatāsūṃśca nānuśocanti paṇḍitāḥ || 11 ||",
+      "translation": "The Supreme Lord said: You grieve for those who are not worthy of grief, yet you speak words of wisdom! The truly wise lament neither for the dead nor for the living.",
+      "meaning": "The first teaching of the Gita. Sri Krishna exposes the contradiction in Arjuna's intellect: speaking high philosophical words while crying over impermanent bodies. A truly enlightened sage ('Pandita') sees the eternal Reality beyond bodily birth and death."
+    },
+    {
+      "verse_number": 12,
+      "text_sanskrit": "न त्वेवाहं जातु नासं न त्वं नेमे जनाधिपाः |\nन चैव न भविष्यामः सर्वे वयमतः परम् || १२ ||",
+      "transliteration": "na tvevāhaṃ jātu nāsaṃ na tvaṃ neme janādhipāḥ |\nna caiva na bhaviṣyāmaḥ sarve vayamataḥ param || 12 ||",
+      "translation": "Never was there a time when I did not exist, nor you, nor all these kings; nor in the future shall any of us ever cease to be.",
+      "meaning": "Krishna establishes the eternal, beginningless, and endless nature of consciousness. Souls do not begin with bodily birth, nor are they extinguished with bodily death."
+    },
+    {
+      "verse_number": 13,
+      "text_sanskrit": "देहिनोऽस्मिन्यथा देहे कौमारं यौवनं जरा |\nतथा देहान्तरप्राप्तिर्धीरस्तत्र न मुह्यति || १३ ||",
+      "transliteration": "dehino'sminyathā dehe kaumāraṃ yauvanaṃ jarā |\ntathā dehāntaraprāptirdhīrastatra na muhyati || 13 ||",
+      "translation": "Just as the embodied soul continuously passes in this body through childhood, youth, and old age, even so does it pass into another body. The serene and wise are not bewildered by this.",
+      "meaning": "Reincarnation is explained as naturally as human aging. Just as we do not grieve when childhood gives way to youth, a wise person ('Dhira') does not grieve when the soul transitions into a new body."
+    },
+    {
+      "verse_number": 14,
+      "text_sanskrit": "मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदुःखदाः |\nआगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत || १४ ||",
+      "transliteration": "mātrāsparśāstu kaunteya śītoṣṇasukhaduḥkhadāḥ |\nāgamāpāyino'nityāstāṃstitikṣasva bhārata || 14 ||",
+      "translation": "The contact of the senses with sense-objects, O son of Kunti, gives rise to cold and heat, pleasure and pain. They have a beginning and an end, and are fleeting; endure them patiently, O Bharata!",
+      "meaning": "Sensory experiences are dualistic and transient ('anitya'). Krishna introduces the core yogic discipline of 'Titiksha'—patient, non-reactive forbearance of worldly pairs of opposites."
+    },
+    {
+      "verse_number": 15,
+      "text_sanskrit": "यं हि न व्यथयन्त्येते पुरुषं पुरुषर्षभ |\nसमदुःखसुखं धीरं सोऽमृतत्वाय कल्पते || १५ ||",
+      "transliteration": "yaṃ hi na vyathayantyete puruṣaṃ puruṣarṣabha |\nsamaduḥkhasukhaṃ dhīraṃ so'mṛtatvāya kalpate || 15 ||",
+      "translation": "That wise person whom these sensory contacts do not agitate, O foremost of men, and who remains equal in sorrow and joy, is verily fit for immortality (Amritatva).",
+      "meaning": "Equanimity in pleasure and pain is the gateway to liberation. The mind that transcends dualities realizes its immortal nature as the deathless Witness."
+    },
+    {
+      "verse_number": 16,
+      "text_sanskrit": "नासतो विद्यते भावो नाभावो विद्यते सतः |\nउभयोरपि दृष्टोऽन्तस्त्वनयोस्तत्त्वदर्शिभिः || १६ ||",
+      "transliteration": "nāsato vidyate bhāvo nābhāvo vidyate sataḥ |\nubhayorapi dṛṣṭo'ntastvanayostattvadarśibhiḥ || 16 ||",
+      "translation": "The unreal (Asat) has no true existence; the Real (Sat) never ceases to be. The ultimate truth of both has been perceived by the seers of Truth (Tattva-darshis).",
+      "meaning": "The cornerstone of Vedanta philosophy: Matter and changing forms are fleeting appearances (Asat), while pure divine Consciousness (Sat) is eternal and indestructible."
+    },
+    {
+      "verse_number": 17,
+      "text_sanskrit": "अविनाशि तु तद्विद्धि येन सर्वमिदं ततम् |\nविनाशमव्ययस्यास्य न कश्चित्कर्तुमर्हति || १७ ||",
+      "transliteration": "avināśi tu tadviddhi yena sarvamidaṃ tatam |\nvināśamavyayasyāsya na kaścitkartumarhati || 17 ||",
+      "translation": "Know that Reality, by which all this cosmic universe is pervaded, to be imperishable. None has the power to bring about the destruction of this indestructible Spirit.",
+      "meaning": "Consciousness is the all-pervading substratum of existence. Being immutable and non-physical, it can never be damaged or destroyed by any material force."
+    },
+    {
+      "verse_number": 18,
+      "text_sanskrit": "अन्तवन्त इमे देहा नित्यस्योक्ताः शरीरिणः |\nअनाशिनोऽप्रमेयस्य तस्माद्युध्यस्व भारत || १८ ||",
+      "transliteration": "antavanta ime dehā nityasyoktāḥ śarīriṇaḥ |\nanāśino'prameyasya tasmādyudhyasva bhārata || 18 ||",
+      "translation": "These physical bodies of the eternal, imperishable, and immeasurable embodied Soul are said to have an end. Therefore, fight, O Bharata!",
+      "meaning": "The physical body is naturally finite, but the indwelling soul ('Sharirin') is boundless and immortal. Krishna commands Arjuna to fulfill his righteous duty without fear of death."
+    },
+    {
+      "verse_number": 19,
+      "text_sanskrit": "य एनं वेत्ति हन्तारं यश्चैनं मन्यते हतम् |\nउभौ तौ न विजानीतो नायं हन्ति न हन्यते || १९ ||",
+      "transliteration": "ya enaṃ vetti hantāraṃ yaścainaṃ manyate hatam |\nubhau tau na vijānīto nāyaṃ hanti na hanyate || 19 ||",
+      "translation": "He who thinks that the Soul is a slayer, and he who thinks that the Soul is slain—both of them lack true knowledge. The Soul neither slays nor is it slain.",
+      "meaning": "The pure Self is the unattached witness, beyond action and destruction. Actions belong to the physical body and nature's modes, while the Spirit remains untouched."
+    },
+    {
+      "verse_number": 20,
+      "text_sanskrit": "न जायते म्रियते वा कदाचि-\nन्नायं भूत्वा भविता वा न भूयः |\nअजो नित्यः शाश्वतोऽयं पुराणो\nन हन्यते हन्यमाने शरीरे || २० ||",
+      "transliteration": "na jāyate mriyate vā kadāci-\nnnāyaṃ bhūtvā bhavitā vā na bhūyaḥ |\najo nityaḥ śāśvato'yaṃ purāṇo\nna hanyate hanyamāne śarīre || 20 ||",
+      "translation": "The Soul is neither born, nor does it ever die; nor having once existed, does it ever cease to be. Unborn, eternal, ever-existing, and primeval, it is not slain when the body is slain.",
+      "meaning": "One of the most famous verses from the Upanishads (Katha Upanishad 1.2.18). The Soul transcends the six modifications of material life: birth, existence, growth, alteration, decay, and death."
+    },
+    {
+      "verse_number": 21,
+      "text_sanskrit": "वेदाविनाशिनं नित्यं य एनमजमव्ययम् |\nकथं स पुरुषः पार्थ कं घातयति हन्ति कम् || २१ ||",
+      "transliteration": "vedāvināśinaṃ nityaṃ ya enamajamavyayam |\nkathaṃ sa puruṣaḥ pārtha kaṃ ghātayati hanti kam || 21 ||",
+      "translation": "He who knows this Soul to be indestructible, eternal, unborn, and unchanging—how can such a person, O Partha, slay anyone or cause anyone to be slain?",
+      "meaning": "A person endowed with Self-realization sees that the essence of all beings is deathless, freeing their actions from egoistic hatred or karmic entanglement."
+    },
+    {
+      "verse_number": 22,
+      "text_sanskrit": "वासांसि जीर्णानि यथा विहाय\nनवानि गृह्णाति नरोऽपराणि |\nतथा शरीराणि विहाय जीर्णा-\nन्यन्यानि संयाति नवानि देही || २२ ||",
+      "transliteration": "vāsāṃsi jīrṇāni yathā vihāya\nnavāni gṛhṇāti naro'parāṇi |\ntathā śarīrāṇi vihāya jīrṇā-\nnyanyāni saṃyāti navāni dehī || 22 ||",
+      "translation": "Just as a person casts off worn-out garments and puts on new ones, so the embodied Soul casts off worn-out bodies and enters into new ones.",
+      "meaning": "The iconic metaphor of physical transition: the body is merely clothing for the immortal soul. When the garment wears out, the soul moves on into a new birth determined by its spiritual evolution."
+    },
+    {
+      "verse_number": 23,
+      "text_sanskrit": "नैनं छिन्दन्ति शस्त्राणि नैनं दहति पावकः |\nन चैनं क्लेदयन्त्यापो न शोषयति मारुतः || २३ ||",
+      "transliteration": "nainaṃ chindanti śastrāṇi nainaṃ dahati pāvakaḥ |\nna cainaṃ kledayantyāpo na śoṣayati mārutaḥ || 23 ||",
+      "translation": "Weapons cannot cut this Soul, fire cannot burn it, water cannot wet it, and the wind cannot dry it!",
+      "meaning": "The soul is transcendental and incorporeal, completely invulnerable to the four gross elements: earth (weapons), fire, water, and air."
+    },
+    {
+      "verse_number": 24,
+      "text_sanskrit": "अच्छेद्योऽयमदाह्योऽयमक्लेद्योऽशोष्य एव च |\nनित्यः सर्वगतः स्थाणुरचलोऽयं सनातनः || २४ ||",
+      "transliteration": "acchedyo'yamadāhyo'yamakledyo'śoṣya eva ca |\nnityaḥ sarvagataḥ sthāṇuracalo'yaṃ sanātanaḥ || 24 ||",
+      "translation": "For this Soul cannot be cleaved, cannot be burned, cannot be wetted, nor dried. It is eternal, all-pervading, unchangeable, immovable, and primeval.",
+      "meaning": "The absolute attributes of the Atman: omnipresent, unshakeable, and eternally existing beyond time and space."
+    },
+    {
+      "verse_number": 25,
+      "text_sanskrit": "अव्यक्तोऽयमचिन्त्योऽयमविकार्योऽयमुच्यते |\nतस्मादेवं विदित्वैनं नानुशोचितुमर्हसि || २५ ||",
+      "transliteration": "avyakto'yamacintyo'yamavikāryo'yamucyate |\ntasmādevaṃ viditvainaṃ nānuśocitumarhasi || 25 ||",
+      "translation": "This Soul is unmanifest, unthinkable, and immutable. Therefore, knowing it thus, you should not grieve.",
+      "meaning": "The soul cannot be perceived by the senses ('Avyakta') nor grasped by the finite mind ('Acintya'). Knowing its transcendent nature dissolves all cause for grief."
+    },
+    {
+      "verse_number": 26,
+      "text_sanskrit": "अथ चैनं नित्यजातं नित्यं वा मन्यसे मृतम् |\nतथापि त्वं महाबाहो नैवं शोचितुमर्हसि || २६ ||",
+      "transliteration": "atha cainaṃ nityajātaṃ nityaṃ vā manyase mṛtam |\ntathāpi tvaṃ mahābāho naivaṃ śocitumarhasi || 26 ||",
+      "translation": "Even if you think that the Soul is constantly born and constantly dies, even then, O mighty-armed Arjuna, you have no reason to grieve.",
+      "meaning": "Krishna presents the argument from the materialist perspective: even if life were merely biological cycles of birth and death, grief over natural inevitability is irrational."
+    },
+    {
+      "verse_number": 27,
+      "text_sanskrit": "जातस्य हि ध्रुवो मृत्युर्ध्रुवं जन्म मृतस्य च |\nतस्मादपरिहार्येऽर्थे न त्वं शोचितुमर्हसि || २७ ||",
+      "transliteration": "jātasya hi dhruvo mṛtyurdhruvaṃ janma mṛtasya ca |\ntasmādaparihārye'rthe na tvaṃ śocitumarhasi || 27 ||",
+      "translation": "For death is certain for the born, and rebirth is certain for the dead. Therefore, over what is inevitable, you should not grieve.",
+      "meaning": "Birth and death are the inescapable law of material nature. Lamenting unavoidable cosmic laws is unbefitting a wise warrior."
+    },
+    {
+      "verse_number": 28,
+      "text_sanskrit": "अव्यक्तादीनि भूतानि व्यक्तमध्यानि भारत |\nअव्यक्तनिधनान्येव तत्र का परिदेवना || २८ ||",
+      "transliteration": "avyaktādīni bhūtāni vyaktamadhyāni bhārata |\navyaktanidhanānyeva tatra kā paridevanā || 28 ||",
+      "translation": "All beings are unmanifest in their beginning, manifest in their interim state, O Bharata, and unmanifest again in their end. What reason is there for lamentation?",
+      "meaning": "Physical life is like a brief wave rising out of the vast ocean of unmanifest energy and dissolving back into it. The underlying ocean remains forever."
+    },
+    {
+      "verse_number": 29,
+      "text_sanskrit": "आश्चर्यवत्पश्यति कश्चिदेन-\nमाश्चर्यवद्वदति तथैव चान्यः |\nआश्चर्यवच्चैनमन्यः शृणोति\nश्रुत्वाप्येनं वेद न चैव कश्चित् || २९ ||",
+      "transliteration": "āścaryavatpaśyati kaścidena-\nmāścaryadvadati tathaiva cānyaḥ |\nāścaryavaccainamanyaḥ śṛṇoti\nśrutvāpyenaṃ veda na caiva kaścit || 29 ||",
+      "translation": "Some behold this Soul as a wonder; some speak of it as a wonder; another hears of it as a wonder; yet even after hearing of it, hardly anyone understands it!",
+      "meaning": "The transcendental Self is the greatest mystery of existence. Mere intellectual learning cannot grasp it; it must be realized through direct spiritual experience."
+    },
+    {
+      "verse_number": 30,
+      "text_sanskrit": "देही नित्यमवध्योऽयं देहे सर्वस्य भारत |\nतस्मात्सर्वाणि भूतानि न त्वं शोचितुमर्हसि || ३० ||",
+      "transliteration": "dehī nityamavadhyo'yaṃ dehe sarvasya bhārata |\ntasmātsarvāṇi bhūtāni na tvaṃ śocitumarhasi || 30 ||",
+      "translation": "The indwelling Soul in the bodies of all beings is eternally immortal and invulnerable, O Bharata! Therefore, you should not grieve for any creature.",
+      "meaning": "Krishna concludes the metaphysical section on Sāṅkhya Yoga: the divine essence of all beings is untouched by physical death."
+    },
+    {
+      "verse_number": 31,
+      "text_sanskrit": "स्वधर्ममपि चावेक्ष्य न विकम्पितुमर्हसि |\nधर्म्याद्धि युद्धाच्छ्रेयोऽन्यत्क्षत्रियस्य न विद्यते || ३१ ||",
+      "transliteration": "svadharmamapi cāvekṣya na vikampitumarhasi |\ndharmyāddhi yuddhācchreyo'nyatkṣatriyasya na vidyate || 31 ||",
+      "translation": "Considering also your own duty (Svadharma) as a warrior, you should not waver; for there is nothing more auspicious for a Kshatriya than a righteous battle for Dharma.",
+      "meaning": "Shifting from metaphysics to ethics, Krishna reminds Arjuna of his duty as a guardian of justice: protecting society against tyranny and wickedness."
+    },
+    {
+      "verse_number": 32,
+      "text_sanskrit": "यदृच्छया चोपपन्नं स्वर्गद्वारमपावृतम् |\nसुखिनः क्षत्रियाः पार्थ लभन्ते युद्धमीदृशम् || ३२ ||",
+      "transliteration": "yadṛcchayā copapannaṃ svargadvāramapāvṛtam |\nsukhinaḥ kṣatriyāḥ pārtha labhante yuddhamīdṛśam || 32 ||",
+      "translation": "Fortunate are the warriors, O Partha, who obtain unsought such an opportunity to fight a righteous battle, which opens wide the doors to heavenly realms!",
+      "meaning": "A righteous war to defend innocent life is not aggression, but a sacred sacrifice and an open portal to celestial glory."
+    },
+    {
+      "verse_number": 33,
+      "text_sanskrit": "अथ चेत्त्वमिमं धर्म्यं संग्रामं न करिष्यसि |\nततः स्वधर्मं कीर्तिं च हित्वा पापमवाप्स्यसि || ३३ ||",
+      "transliteration": "atha cettvamimaṃ dharmyaṃ saṃgrāmaṃ na kariṣyasi |\ntataḥ svadharmaṃ kīrtiṃ ca hitvā pāpamavāpsyasi || 33 ||",
+      "translation": "But if you refuse to engage in this righteous battle, you will incur sin by abandoning your sacred duty and honor.",
+      "meaning": "Refusing to confront evil out of cowardly weakness is not righteousness, but complicity in injustice and a dereliction of sacred duty."
+    },
+    {
+      "verse_number": 34,
+      "text_sanskrit": "अकीर्तिं चापि भूतानि कथयिष्यन्ति तेऽव्ययाम् |\nसम्भावितस्य चाकीर्तिर्मरणादतिरिच्यते || ३४ ||",
+      "transliteration": "akīrtiṃ cāpi bhūtāni kathayiṣyanti te'vyayām |\nsambhāvitasya cākīrtirmaraṇādatiricyate || 34 ||",
+      "translation": "People will speak of your everlasting dishonor; and for a noble person of revered stature, dishonor is worse than death!",
+      "meaning": "For a warrior who lived for honor and righteousness, falling into cowardice destroys spiritual integrity and brings enduring ignominy."
+    },
+    {
+      "verse_number": 35,
+      "text_sanskrit": "भयाद्रणादुपरतं मंस्यन्ते त्वां महारथाः |\nयेषां च त्वं बहुमतो भूत्वा यास्यसि लाघवम् || ३५ ||",
+      "transliteration": "bhayādraṇāduparataṃ maṃsyante tvāṃ mahārathāḥ |\nyeṣāṃ ca tvaṃ bahumato bhūtvā yāsyasi lāghavam || 35 ||",
+      "translation": "The great chariot commanders will think you fled from battle out of fear; and you who were held in high esteem by them will fall into contempt.",
+      "meaning": "The opposing commanders will misinterpret Arjuna's sentimental grief as sheer battlefield cowardice, destroying his reputation for valor."
+    },
+    {
+      "verse_number": 36,
+      "text_sanskrit": "अवाच्यवादांश्च बहून्वदिष्यन्ति तवाहिताः |\nनिन्दन्तस्तव सामर्थ्यं ततो दुःखतरं नु किम् || ३६ ||",
+      "transliteration": "avācyavādāṃśca bahūnvadiṣyanti tavāhitāḥ |\nnindantastava sāmarthyaṃ tato duḥkhataraṃ nu kim || 36 ||",
+      "translation": "Your enemies will utter many unmentionable, insulting words, scorning your prowess. What could be more painful than that?",
+      "meaning": "Arjuna will endure endless slander and insults from unrighteous aggressors, causing far greater torment than the hardships of battle."
+    },
+    {
+      "verse_number": 37,
+      "text_sanskrit": "हतो वा प्राप्स्यसि स्वर्गं जित्वा वा भोक्ष्यसे महीम् |\nतस्मादुत्तिष्ठ कौन्तेय युद्धाय कृतनिश्चयः || ३७ ||",
+      "transliteration": "hato vā prāpsyasi svargaṃ jitvā vā bhokṣyase mahīm |\ntasmāduttiṣṭha kaunteya yuddhāya kṛtaniścayaḥ || 37 ||",
+      "translation": "If slain, you will attain heaven; if victorious, you will enjoy the sovereignty of the earth. Therefore, arise, O son of Kunti, resolved upon battle!",
+      "meaning": "A win-win proposition of duty: fighting for righteousness brings spiritual elevation if one falls, and earthly prosperity if one triumphs."
+    },
+    {
+      "verse_number": 38,
+      "text_sanskrit": "सुखदुःखे समे कृत्वा लाभालाभौ जयाजयौ |\nततो युद्धाय युज्यस्व नैवं पापमवाप्स्यसि || ३८ ||",
+      "transliteration": "sukhaduḥkhe same kṛtvā lābhālābhau jayājayau |\ntato yuddhāya yujyasva naivaṃ pāpamavāpsyasi || 38 ||",
+      "translation": "Treating pleasure and pain, gain and loss, victory and defeat with equal composure, prepare for battle; thus you shall incur no sin.",
+      "meaning": "The bridge from Svadharma to Karma Yoga: when duty is performed free from personal selfish desires and with an equal mind, it produces no karmic bondage."
+    },
+    {
+      "verse_number": 39,
+      "text_sanskrit": "एषा तेऽभिहिता साङ्ख्ये बुद्धिर्योगे त्विमां शृणु |\nबुद्ध्या युक्तो यया पार्थ कर्मबन्धं प्रहास्यसि || ३९ ||",
+      "transliteration": "eṣā te'bhihitā sāṅkhye buddhiryoge tvimāṃ śṛṇu |\nbuddhyā yukto yayā pārtha karmabandhaṃ prahāsyasi || 39 ||",
+      "translation": "Thus far I have declared to you the wisdom of analytical knowledge (Sāṅkhya). Now hear the wisdom of Yoga (Karma Yoga), equipped with which you shall cast off all bondage of action.",
+      "meaning": "Krishna transitions from theoretical metaphysical wisdom (Sāṅkhya) to its practical application in dynamic daily life (Karma Yoga / Buddhi Yoga)."
+    },
+    {
+      "verse_number": 40,
+      "text_sanskrit": "नेहाभिक्रमनाशोऽस्ति प्रत्यवायो न विद्यते |\nस्वल्पमप्यस्य धर्मस्य त्रायते महतो भयात् || ४० ||",
+      "transliteration": "nehābhikramanāśo'sti pratyavāyo na vidyate |\nsvalpamapyasya dharmasya trāyate mahato bhayāt || 40 ||",
+      "translation": "In this path of selfless action, no effort is ever lost, nor is there any contrary adverse result. Even a little practice of this Dharma protects one from the great fear of samsara.",
+      "meaning": "Every spiritual effort in Karma Yoga is permanently banked in the soul's spiritual journey, gradually liberating the seeker from existential fear."
+    },
+    {
+      "verse_number": 41,
+      "text_sanskrit": "व्यवसायात्मिका बुद्धिरेकेह कुरुनन्दन |\nबहुशाखा ह्यनन्ताश्च बुद्धयोऽव्यवसायिनाम् || ४१ ||",
+      "transliteration": "vyavasāyātmikā buddhirekeha kurunandana |\nbahuśākhā hyanantāśca buddhayo'vyavasāyinām || 41 ||",
+      "translation": "The resolute intellect, O descendant of Kuru, is single-pointed and focused on one goal; but the intellects of the irresolute are endless and many-branched.",
+      "meaning": "A spiritual seeker possesses a unified, resolute intellect dedicated to Self-realization, whereas worldly minds scatter their energies into countless desires."
+    },
+    {
+      "verse_number": 42,
+      "text_sanskrit": "यामिमां पुष्पितां वाचं प्रवदन्त्यविपश्चितः |\nवेदवादरताः पार्थ नान्यदस्तीति वादिनः || ४२ ||",
+      "transliteration": "yāmimāṃ puṣpitāṃ vācaṃ pravadantyavipaścitaḥ |\nvedavādaratāḥ pārtha nānyadastīti vādinaḥ || 42 ||",
+      "translation": "The undiscerning, delighting in the letter of the Vedas and claiming there is nothing beyond ritualistic rewards, utter flowery and enticing words,",
+      "meaning": "Krishna cautions against superficial ritualism that seeks worldly wealth and heavenly pleasures rather than ultimate spiritual liberation."
+    },
+    {
+      "verse_number": 43,
+      "text_sanskrit": "कामात्मानः स्वर्गपरा जन्मकर्मफलप्रदाम् |\nक्रियाविशेषबहुलां भोगैश्वर्यगतिं प्रति || ४३ ||",
+      "transliteration": "kāmātmānaḥ svargaparā janmakarmaphalapradām |\nkriyāviśeṣabahulāṃ bhogaiśvaryagatiṃ prati || 43 ||",
+      "translation": "Being full of desires and having heaven as their highest goal, they recommend elaborate rituals that yield rebirth as the fruit of actions, leading merely to sensory enjoyment and power.",
+      "meaning": "Action motivated solely by desire for heavenly rewards traps the soul in the continuous cycle of karmic rebirth."
+    },
+    {
+      "verse_number": 44,
+      "text_sanskrit": "भोगैश्वर्यप्रसक्तानां तयापहृतचेतसाम् |\nव्यवसायात्मिका बुद्धिः समाधौ न विधीयते || ४४ ||",
+      "transliteration": "bhogaiśvaryaprasaktānāṃ tayāpahṛtacetasām |\nvyavasāyātmikā buddhiḥ samādhau na vidhīyate || 44 ||",
+      "translation": "In those whose minds are captivated by worldly pleasures and power, and whose discrimination is swept away by such flowery words, the resolute intellect directed in meditation (Samadhi) is not attained.",
+      "meaning": "Obsession with material indulgence and sensory power prevents the intellect from attaining deep meditative absorption and spiritual tranquility."
+    },
+    {
+      "verse_number": 45,
+      "text_sanskrit": "त्रैगुण्यविषया वेदा निस्त्रैगुण्यो भवार्जुन |\nनिर्द्वन्द्वो नित्यसत्त्वस्थो निर्योगक्षेम आत्मवान् || ४५ ||",
+      "transliteration": "traiguṇyaviṣayā vedā nistraiguṇyo bhavārjuna |\nnirdvandvo nityasattvastho niryogakṣema ātmavān || 45 ||",
+      "translation": "The Vedas deal with the three modes of material nature (Gunas). Rise above these three modes, O Arjuna! Be free from dualities, ever-rooted in pure truth (Sattva), free from anxieties of acquisition and preservation, and centered in the Self.",
+      "meaning": "Krishna calls Arjuna to transcend the three gunas (Sattva, Rajas, Tamas) and become 'Atmavan'—firmly established in pure spiritual consciousness."
+    },
+    {
+      "verse_number": 46,
+      "text_sanskrit": "यावानर्थ उदपाने सर्वतः सम्प्लुतोदके |\nतावान्सर्वेषु वेदेषु ब्राह्मणस्य विजानतः || ४६ ||",
+      "transliteration": "yāvānartha udapāne sarvataḥ samplutodake |\ntāvānsarveṣu vedeṣu brāhmaṇasya vijānataḥ || 46 ||",
+      "translation": "To an enlightened knower of the Supreme, all the ritualistic scriptures are of as much use as a small well of water when there is a vast, all-pervading flood!",
+      "meaning": "When one realizes the infinite ocean of divine Brahman, preliminary ritualistic texts are naturally fulfilled and superseded by direct spiritual illumination."
+    },
+    {
+      "verse_number": 47,
+      "text_sanskrit": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन |\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि || ४७ ||",
+      "transliteration": "karmaṇyevādhikāraste mā phaleṣu kadācana |\nmā karmaphalaheturbhūrmā te saṅgo'stvakarmaṇi || 47 ||",
+      "translation": "You have a right only to perform your prescribed duty, but never to the fruits of action. Never let the fruits of action be your motive, nor let your attachment be to inaction.",
+      "meaning": "The single most famous shloka of the Bhagavad Gita. The four golden rules of Karma Yoga: 1) Act with full dedication, 2) Renounce attachment to outcomes, 3) Do not consider yourself the sole egoic cause of success, 4) Never resort to lazy inaction."
+    },
+    {
+      "verse_number": 48,
+      "text_sanskrit": "योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय |\nसिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते || ४८ ||",
+      "transliteration": "yogasthaḥ kuru karmāṇi saṅgaṃ tyaktvā dhanañjaya |\nsiddhyasiddhyoḥ samo bhūtvā samatvaṃ yoga ucyate || 48 ||",
+      "translation": "Perform your duties established in Yoga, abandoning attachment, O Dhananjaya, and remaining equanimous in both success and failure. Equanimity of mind is called Yoga.",
+      "meaning": "The definition of Yoga as 'Samatvam'—unwavering mental poise in triumph and defeat, praise and blame, gain and loss."
+    },
+    {
+      "verse_number": 49,
+      "text_sanskrit": "दूरेण ह्यवरं कर्म बुद्धियोगाद्धनञ्जय |\nबुद्धौ शरणमन्विच्छ कृपणाः फलहेतवः || ४९ ||",
+      "transliteration": "dūreṇa hyavaraṃ karma buddhiyogāddhanañjaya |\nbuddhau śaraṇamanviccha kṛpaṇāḥ phalahetavaḥ || 49 ||",
+      "translation": "Selfish, desire-driven action is far inferior to the yoga of wisdom, O Dhananjaya! Seek refuge in pure intellect (Buddhi); wretched are those who act only for personal gain.",
+      "meaning": "Actions driven by selfish craving produce mental agitation and bondage. The wise surrender their intellect to higher divine purpose."
+    },
+    {
+      "verse_number": 50,
+      "text_sanskrit": "बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते |\nतस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम् || ५० ||",
+      "transliteration": "buddhiyukto jahātīha ubhe sukṛtaduṣkṛte |\ntasmādyogāya yujyasva yogaḥ karmasu kauśalam || 50 ||",
+      "translation": "Endowed with equanimity of intellect, one casts away in this very life both good and evil deeds. Therefore, dedicate yourself to Yoga; Yoga is skill and excellence in action!",
+      "meaning": "The famous definition 'Yogah karmasu kaushalam': true skill in action is performing duty with complete absorption, love, and detachment from ego."
+    },
+    {
+      "verse_number": 51,
+      "text_sanskrit": "कर्मजं बुद्धियुक्ता हि फलं त्यक्त्वा मनीषिणः |\nजन्मबन्धविनिर्मुक्ताः पदं गच्छन्त्यनामयम् || ५१ ||",
+      "transliteration": "karmajaṃ buddhiyuktā hi phalaṃ tyaktvā manīṣiṇaḥ |\njanmabandhavinirmuktāḥ padaṃ gacchantyanāmayam || 51 ||",
+      "translation": "The wise, possessing equanimity of mind, renouncing the fruits born of action and liberated from the bondage of birth, attain that supreme abode beyond all sorrow and affliction.",
+      "meaning": "By practicing Karma Yoga, the mind is purified of selfish desires, liberating the soul into the bliss of Brahman ('Padam Anamayam')."
+    },
+    {
+      "verse_number": 52,
+      "text_sanskrit": "यदा ते मोहकलिलं बुद्धिर्व्यतितरिष्यति |\nतदा गन्तासि निर्वेदं श्रोतव्यस्य श्रुतस्य च || ५२ ||",
+      "transliteration": "yadā te mohakalilaṃ buddhirvyatitariṣyati |\ntadā gantāsi nirvedaṃ śrotavyasya śrutasya ca || 52 ||",
+      "translation": "When your intellect crosses beyond the dense mire of delusion, then you will attain indifference toward what is to be heard and what has been heard regarding worldly and ritualistic rewards.",
+      "meaning": "When spiritual wisdom dawns, the mind outgrows fascination with worldly opinions and promises of celestial enjoyment."
+    },
+    {
+      "verse_number": 53,
+      "text_sanskrit": "श्रुतिविप्रतिपन्ना ते यदा स्थास्यति निश्चला |\nसमाधावचला बुद्धिस्तदा योगमवाप्स्यसि || ५३ ||",
+      "transliteration": "śrutivipratipannā te yadā sthāsyati niścalā |\nsamādhāvacalā buddhistadā yogamavāpsyasi || 53 ||",
+      "translation": "When your intellect, currently bewildered by conflicting scriptural interpretations, stands immovable and steady in Self-realization (Samadhi), then you will attain the supreme state of Yoga.",
+      "meaning": "True spiritual realization is attained when the mind rests unshakeably in divine Self-awareness, untouched by external doctrinal disputes."
+    },
+    {
+      "verse_number": 54,
+      "text_sanskrit": "अर्जुन उवाच |\nस्थितप्रज्ञस्य का भाषा समाधिस्थस्य केशव |\nस्थितधीः किं प्रभाषेत किमासीत व्रजेत किम् || ५४ ||",
+      "transliteration": "arjuna uvāca |\nsthitaprajñasya kā bhāṣā samādhisthasya keśava |\nsthitadhīḥ kiṃ prabhāṣeta kimāsīta vrajeta kim || 54 ||",
+      "translation": "Arjuna said: What is the description of a person of steady wisdom (Sthitaprajna), absorbed in Samadhi, O Keshava? How does one of steady intellect speak? How does he sit? How does he walk?",
+      "meaning": "Arjuna asks for practical, behavioral hallmarks of an enlightened sage: how does such a master react to life, communicate with others, and move through the world?"
+    },
+    {
+      "verse_number": 55,
+      "text_sanskrit": "श्रीभगवानुवाच |\nप्रजहाति यदा कामान्सर्वान्पार्थ मनोगतान् |\nआत्मन्येवात्मना तुष्टः स्थितप्रज्ञस्तदोच्यते || ५५ ||",
+      "transliteration": "śrībhagavānuvāca |\nprajahāti yadā kāmānsarvānpārtha manogatān |\nātmanyevātmanā tuṣṭaḥ sthitaprajñastadocyate || 55 ||",
+      "translation": "The Supreme Lord said: When a person completely casts away all selfish desires born of the mind, O Partha, and finds supreme contentment in the Self alone by the Self, then he is said to be a person of steady wisdom (Sthitaprajna).",
+      "meaning": "The fundamental definition of a Sthitaprajna: someone whose joy is self-contained in the divine Spirit, needing no external worldly objects to feel fulfilled."
+    },
+    {
+      "verse_number": 56,
+      "text_sanskrit": "दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः |\nवीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते || ५६ ||",
+      "transliteration": "duḥkheṣvanudvignamanāḥ sukheṣu vigataspṛhaḥ |\nvītarāgabhayakrodhaḥ sthitadhīrmunirucyate || 56 ||",
+      "translation": "He whose mind is not agitated in the midst of sorrows, who has no craving amidst pleasures, and who is free from attachment, fear, and anger, is called a sage of steady intellect (Sthitadhi Muni).",
+      "meaning": "The three psychological poisons—attachment (Raga), fear (Bhaya), and anger (Krodha)—have dissolved in the sage, leaving an ocean of unshakeable inner peace."
+    },
+    {
+      "verse_number": 57,
+      "text_sanskrit": "यः सर्वत्रानभिस्नेहस्तत्तत्प्राप्य शुभाशुभम् |\nनाभिनन्दति न द्वेष्टि तस्य प्रज्ञा प्रतिष्ठिता || ५७ ||",
+      "transliteration": "yaḥ sarvatrānabhisnehastattatprāpya śubhāśubham |\nnābhinandati na dveṣṭi tasya prajñā pratiṣṭhitā || 57 ||",
+      "translation": "He who is without selfish attachment in all circumstances, and neither rejoices upon receiving the pleasant nor grieves upon encountering the unpleasant—his wisdom is firmly established.",
+      "meaning": "An enlightened person accepts whatever life brings with peaceful surrender, neither clinging to pleasant fortunes nor hating unpleasant hardships."
+    },
+    {
+      "verse_number": 58,
+      "text_sanskrit": "यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः |\nइन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता || ५८ ||",
+      "transliteration": "yadā saṃharate cāyaṃ kūrmo'ṅgānīva sarvaśaḥ |\nindriyāṇīndriyārthebhyastasya prajñā pratiṣṭhitā || 58 ||",
+      "translation": "When a person can withdraw his senses from sense-objects on all sides, just as a tortoise withdraws its limbs into its shell, his wisdom is firmly established.",
+      "meaning": "The famous tortoise metaphor: mastery over the senses means having the power to withdraw the mind inward at will during meditation."
+    },
+    {
+      "verse_number": 59,
+      "text_sanskrit": "विषया विनिवर्तन्ते निराहारस्य देहिनः |\nरसवर्जं रसोऽप्यस्य परं दृष्ट्वा निवर्तते || ५९ ||",
+      "transliteration": "viṣayā vinivartante nirāhārasya dehinaḥ |\nrasavarjaṃ raso'pyasya paraṃ dṛṣṭvā nivartate || 59 ||",
+      "translation": "The sense-objects turn away from the embodied soul who abstains from them, yet the subtle taste (craving) for them remains. But even this craving falls away when one beholds the Supreme!",
+      "meaning": "External sensory fasting suppresses desires, but does not uproot them. Only direct experience of higher divine bliss ('Param Drishtva') permanently dissolves all lower cravings."
+    },
+    {
+      "verse_number": 60,
+      "text_sanskrit": "यततो ह्यपि कौन्तेय पुरुषस्य विपश्चितः |\nइन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मनः || ६० ||",
+      "transliteration": "yatato hyapi kaunteya puruṣasya vipaścitaḥ |\nindriyāṇi pramāthīni haranti prasabhaṃ manaḥ || 60 ||",
+      "translation": "For the turbulent senses, O son of Kunti, forcibly carry away the mind even of a wise striving seeker!",
+      "meaning": "A warning about vigilance: even sincere spiritual seekers can be swept away if their sensory discipline is relaxed."
+    },
+    {
+      "verse_number": 61,
+      "text_sanskrit": "तानि सर्वाणि संयम्य युक्त आसीत मत्परः |\nवशे हि यस्येन्द्रियाणि तस्य प्रज्ञा प्रतिष्ठिता || ६१ ||",
+      "transliteration": "tāni sarvāṇi saṃyamya yukta āsīta matparaḥ |\nvaśe hi yasyendriyāṇi tasya prajñā pratiṣṭhitā || 61 ||",
+      "translation": "Having controlled all the senses, one should sit in meditation, focused on Me as the Supreme Goal (Mat-para). He whose senses are thus mastered has his wisdom firmly established.",
+      "meaning": "Devotion to God ('Mat-para') is the supreme anchor of sense control. Meditating on the Lord provides the higher taste that purifies the senses."
+    },
+    {
+      "verse_number": 62,
+      "text_sanskrit": "ध्यायतो विषयान्पुंसः सङ्गस्तेषूपजायते |\nसङ्गात्सञ्जायते कामः कामात्क्रोधोऽभिजायते || ६२ ||",
+      "transliteration": "dhyāyato viṣayānpuṃsaḥ saṅgasteṣūpajāyate |\nsaṅgātsañjāyate kāmaḥ kāmātkrodho'bhijāyate || 62 ||",
+      "translation": "While contemplating on sense-objects, a person develops attachment to them; from attachment springs craving (Kama); and from thwarted craving arises anger (Krodha).",
+      "meaning": "The psychological ladder of downfall (Part 1): tracing how mere casual thoughts about worldly objects evolve step-by-step into blinding passions."
+    },
+    {
+      "verse_number": 63,
+      "text_sanskrit": "क्रोधाद्भवति संमोहः संमोहात्स्मृतिविभ्रमः |\nस्मृतिभ्रंशाद् बुद्धिनाशो बुद्धिनाशात्प्रणश्यति || ६३ ||",
+      "transliteration": "krodhādbhavati saṃmohaḥ saṃmohātsmṛtivibhramaḥ |\nsmṛtibhraṃśād buddhināśo buddhināśātpraṇaśyati || 63 ||",
+      "translation": "From anger arises delusion (Sammoha); from delusion comes loss of spiritual memory; from loss of memory comes the destruction of intellect (Buddhi-nasha); and from the ruin of intellect, a person is utterly ruined.",
+      "meaning": "The psychological ladder of downfall (Part 2): Anger $\\rightarrow$ Delusion $\\rightarrow$ Forgetfulness of values $\\rightarrow$ Destruction of discriminative intellect $\\rightarrow$ Spiritual ruin."
+    },
+    {
+      "verse_number": 64,
+      "text_sanskrit": "रागद्वेषवियुक्तैस्तु विषयानिन्द्रियैश्चरन् |\nआत्मवश्यैर्विधेयात्मा प्रसादमधिगच्छति || ६४ ||",
+      "transliteration": "rāgadveṣaviyuktaistu viṣayānindriyaiścaran |\nātmavaśyairvidheyātmā prasādamadhigacchati || 64 ||",
+      "translation": "But a self-controlled person, moving among sensory objects with senses free from both attraction and repulsion, and governed by the Self, attains supreme inner tranquility (Prasada).",
+      "meaning": "Enlightenment is not physical isolation from the world, but living gracefully in the world with senses mastered and free from greed or aversion."
+    },
+    {
+      "verse_number": 65,
+      "text_sanskrit": "प्रसादे सर्वदुःखानां हानिरस्योपजायते |\nप्रसन्नचेतसो ह्याशु बुद्धिः पर्यवतिष्ठते || ६५ ||",
+      "transliteration": "prasāde sarvaduḥkhānāṃ hānirasyopajāyate |\nprasannacetaso hyāśu buddhiḥ paryavatiṣṭhate || 65 ||",
+      "translation": "In that serene tranquility of mind, all sorrows come to an end; for the intellect of one whose heart is serene soon becomes firmly established in divine peace.",
+      "meaning": "Inner purity and serenity ('Prasada') extinguish all mental anguish, establishing the intellect in blissful spiritual stability."
+    },
+    {
+      "verse_number": 66,
+      "text_sanskrit": "नास्ति बुद्धिरयुक्तस्य न चायुक्तस्य भावना |\nन चाभावयतः शान्तिरशान्तस्य कुतः सुखम् || ६६ ||",
+      "transliteration": "nāsti buddhirayuktasya na cāyuktasya bhāvanā |\nna cābhāvayataḥ śāntiraśāntasya kutaḥ sukham || 66 ||",
+      "translation": "For the undisciplined, there is no steady wisdom, nor is there capacity for deep meditation. Without meditation, there is no peace; and for the unpeaceful, where can there be happiness?",
+      "meaning": "True happiness cannot exist without peace of mind; peace of mind cannot exist without meditation; and meditation cannot exist without self-discipline."
+    },
+    {
+      "verse_number": 67,
+      "text_sanskrit": "इन्द्रियाणां हि चरतां यन्मनोऽनुविधीयते |\nतदस्य हरति प्रज्ञां वायुर्नावमिवाम्भसि || ६७ ||",
+      "transliteration": "indriyāṇāṃ hi caratāṃ yanmano'nuvidhīyate |\ntadasya harati prajñāṃ vāyurnāvamivāmbhasi || 67 ||",
+      "translation": "For whichever of the roaming senses the mind yields to, that single sense sweeps away one's discrimination, just as a fierce gale sweeps away a boat upon the waters!",
+      "meaning": "Even a single uncontrolled sense indulged by the mind can derail a person's discriminative wisdom and capsize their spiritual journey."
+    },
+    {
+      "verse_number": 68,
+      "text_sanskrit": "तस्माद्यस्य महाबाहो निगृहीतानि सर्वशः |\nइन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता || ६८ ||",
+      "transliteration": "tasmādyasya mahābāho nigṛhītāni sarvaśaḥ |\nindriyāṇīndriyārthebhyastasya prajñā pratiṣṭhitā || 68 ||",
+      "translation": "Therefore, O mighty-armed Arjuna, he whose senses are completely restrained from their objects—his wisdom is firmly established.",
+      "meaning": "Reiterating the essential foundation of wisdom: complete and effortless mastery over sensory impulses."
+    },
+    {
+      "verse_number": 69,
+      "text_sanskrit": "या निशा सर्वभूतानां तस्यां जागर्ति संयमी |\nयस्यां जाग्रति भूतानि सा निशा पश्यतो मुनेः || ६९ ||",
+      "transliteration": "yā niśā sarvabhūtānāṃ tasyāṃ jāgarti saṃyamī |\nyasyāṃ jāgrati bhūtāni sā niśā paśyato muneḥ || 69 ||",
+      "translation": "That which is night for all beings is the time of awakening for the disciplined sage; and that in which all beings are awake is night for the introspective sage.",
+      "meaning": "A profound spiritual paradox: while worldly people are absorbed in sensory pursuits (spiritual darkness), the sage is awake to divine Consciousness. What worldly people consider important is immaterial to the sage."
+    },
+    {
+      "verse_number": 70,
+      "text_sanskrit": "आपूर्यमाणमचलप्रतिष्ठं\nसमुद्रमापः प्रविशन्ति यद्वत् |\nतद्वत्कामा यं प्रविशन्ति सर्वे\nस शान्तिमाप्नोति न कामकामी || ७० ||",
+      "transliteration": "āpūryamāṇamacalapratiṣṭhaṃ\nsamudramāpaḥ praviśanti yadvat |\ntadvatkāmā yaṃ praviśanti sarve\nsa śāntimāpnoti na kāmakāmī || 70 ||",
+      "translation": "As the countless rivers enter the ocean, which is filled on all sides yet remains ever still and unoverflowing, even so do all desires enter the enlightened sage without causing agitation. He alone attains peace, not he who strives to satisfy his cravings.",
+      "meaning": "The magnificent ocean metaphor: an enlightened soul is as vast and imperturbable as the ocean. Worldly experiences enter him without disturbing his deep inner tranquility."
+    },
+    {
+      "verse_number": 71,
+      "text_sanskrit": "विहाय कामान्यः सर्वान्पुमांश्चरति निःस्पृहः |\nनिर्ममो निरहङ्कारः स शान्तिमधिगच्छति || ७१ ||",
+      "transliteration": "vihāya kāmānyaḥ sarvān pumāṃścarati niḥspṛhaḥ |\nnirmamo nirahaṅkāraḥ sa śāntimadhigacchati || 71 ||",
+      "translation": "That person who abandons all selfish desires and moves through the world free from craving, free from the sense of 'mine' (Nirmama), and free from egoism (Nir-ahankara)—he attains supreme peace.",
+      "meaning": "The ultimate prescription for enduring peace: shedding ego ('I-ness') and possessiveness ('mine-ness') while walking peacefully in divine freedom."
+    },
+    {
+      "verse_number": 72,
+      "text_sanskrit": "एषा ब्राह्मी स्थितिः पार्थ नैनां प्राप्य विमुह्यति |\nस्थित्वास्यामन्तकालेऽपि ब्रह्मनिर्वाणमृच्छति || ७२ ||",
+      "transliteration": "eṣā brāhmī sthitiḥ pārtha naināṃ prāpya vimuhyati |\nsthitvāsyāmantakāle'pi brahmanirvāṇamṛcchati || 72 ||",
+      "translation": "This is the supreme state of dwelling in Brahman (Brahmi Sthiti), O Partha! Attaining this, one is never again bewildered. Being established in this consciousness even at the hour of death, one attains the supreme bliss of liberation in the Absolute (Brahma-nirvana).",
+      "meaning": "The climactic concluding verse of Chapter 2. 'Brahmi Sthiti' is the pinnacle of spiritual realization—the unbroken awareness of oneness with the Supreme Brahman, leading to eternal freedom from the cycle of birth and death."
+    }
+  ]
+}
