@@ -1,0 +1,200 @@
+[
+  {
+    "chapter_number": 1,
+    "name_sanskrit": "अर्जुनविषादयोग",
+    "name_transliteration": "Arjuna Viṣāda Yoga",
+    "name_translation": "The Yoga of Arjuna's Dejection",
+    "verses_count": 47,
+    "theme": "Moral Dilemma, Compassion, and Surrender",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "As the Pandava and Kaurava armies assemble on the sacred field of Kurukshetra, Arjuna is overwhelmed by grief and moral crisis upon seeing his revered teachers, kinsmen, and friends poised for battle. Casting down his bow Gandiva, he collapses in utter despondency, preparing the stage for Sri Krishna's divine discourse.",
+    "status": "available"
+  },
+  {
+    "chapter_number": 2,
+    "name_sanskrit": "साङ्ख्ययोग",
+    "name_transliteration": "Sāṅkhya Yoga",
+    "name_translation": "The Yoga of Analytical Knowledge",
+    "verses_count": 72,
+    "theme": "Immortality of the Soul and the Path of Selfless Action",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "Sri Krishna rebukes Arjuna's grief, unveiling the eternal, indestructible nature of the Atman (Soul) and the wisdom of Nishkama Karma (selfless action without attachment to results).",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 3,
+    "name_sanskrit": "कर्मयोग",
+    "name_transliteration": "Karma Yoga",
+    "name_translation": "The Yoga of Action",
+    "verses_count": 43,
+    "theme": "Selfless Duty as a Sacred Offering",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "Krishna explains that one cannot attain liberation by renouncing duty; true renunciation is performing one's natural duty with dedication and without selfish desires.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 4,
+    "name_sanskrit": "ज्ञानकर्मसंन्यासयोग",
+    "name_transliteration": "Jñāna Karma Sannyāsa Yoga",
+    "name_translation": "The Yoga of Knowledge and the Renunciation of Action",
+    "verses_count": 42,
+    "theme": "Divine Manifestation and the Fire of Spiritual Wisdom",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The origin of timeless wisdom, the divine nature of Krishna's avatars for cosmic balance, and how the fire of spiritual knowledge burns all karmic reactions to ashes.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 5,
+    "name_sanskrit": "कर्मसंन्यासयोग",
+    "name_transliteration": "Karma Sannyāsa Yoga",
+    "name_translation": "The Yoga of Renunciation",
+    "verses_count": 29,
+    "theme": "Inner Renunciation in the Midst of Worldly Action",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "Krishna harmonizes physical renunciation with Nishkama Karma, illustrating how a pure soul remains untouched by sin just like a lotus leaf remains dry on water.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 6,
+    "name_sanskrit": "आत्मसंयमयोग",
+    "name_transliteration": "Ātma Saṃyama Yoga",
+    "name_translation": "The Yoga of Meditation & Self-Discipline",
+    "verses_count": 47,
+    "theme": "Mastery of Mind, Breath, and Meditation",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The science of Ashtanga Yoga, mastery over the turbulent mind, serene meditation postures, and Sri Krishna's comforting promise that no sincere seeker is ever lost.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 7,
+    "name_sanskrit": "ज्ञानविज्ञानयोग",
+    "name_transliteration": "Jñāna Vijñāna Yoga",
+    "name_translation": "The Yoga of Knowledge and Realization",
+    "verses_count": 30,
+    "theme": "The Supreme Reality Behind Cosmic Manifestation",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "Sri Krishna reveals His higher and lower energies, how all creation is strung on Him like pearls upon a golden thread, and the four kinds of virtuous devotees who seek Him.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 8,
+    "name_sanskrit": "अक्षरब्रह्मयोग",
+    "name_transliteration": "Akṣara Brahma Yoga",
+    "name_translation": "The Yoga of the Imperishable Brahman",
+    "verses_count": 28,
+    "theme": "The Moment of Death and the Attainment of the Supreme",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The power of unwavering remembrance of the Divine at the time of bodily departure, and the illuminated path leading to the imperishable celestial abode.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 9,
+    "name_sanskrit": "राजविद्याराजगुह्ययोग",
+    "name_transliteration": "Rājavidyā Rājaguhya Yoga",
+    "name_translation": "The Yoga of the Sovereign Science and Sovereign Secret",
+    "verses_count": 34,
+    "theme": "Pure Devotion and the Loving Grace of Sri Krishna",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The supreme confidential knowledge: Sri Krishna's promise to carry what His devotees lack and preserve what they possess (Yoga-kṣema), accepting even a leaf, flower, fruit, or water with love.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 10,
+    "name_sanskrit": "विभूतियोग",
+    "name_transliteration": "Vibhūti Yoga",
+    "name_translation": "The Yoga of Divine Glories",
+    "verses_count": 42,
+    "theme": "The Omnipresence of Krishna in All Excellence",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "Krishna describes His infinite divine opulences—among lights He is the radiant Sun, among mountains the mighty Meru, among rivers the sacred Ganges, and among the senses the Mind.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 11,
+    "name_sanskrit": "विश्वरूपदर्शनयोग",
+    "name_transliteration": "Viśvarūpa Darśana Yoga",
+    "name_translation": "The Yoga of the Cosmic Vision",
+    "verses_count": 55,
+    "theme": "The Awe-Inspiring Universal Form of the Divine",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "Krishna grants Arjuna celestial divine eyes to behold His dazzling, terrifying, and transcendent Universal Form encompassing all universes, gods, time, and cosmic destruction.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 12,
+    "name_sanskrit": "भक्तियोग",
+    "name_transliteration": "Bhakti Yoga",
+    "name_translation": "The Yoga of Pure Devotion",
+    "verses_count": 20,
+    "theme": "The Qualities of the Dear Devotee",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The superiority and sweetness of personal devotion, coupled with the sublime virtues of an enlightened bhakta: free from malice, compassionate, patient, equal in joy and sorrow.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 13,
+    "name_sanskrit": "क्षेत्रक्षेत्रज्ञविभागयोग",
+    "name_transliteration": "Kṣetra Kṣetrajña Vibhāga Yoga",
+    "name_translation": "The Yoga of the Field and the Knower of the Field",
+    "verses_count": 35,
+    "theme": "Distinction Between Matter, Consciousness, and Spirit",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The metaphysical discrimination between the body/mind/universe (the Field) and the indwelling pure Consciousness (the Knower of the Field).",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 14,
+    "name_sanskrit": "गुणत्रयविभागयोग",
+    "name_transliteration": "Guṇatraya Vibhāga Yoga",
+    "name_translation": "The Yoga of the Three Modes of Material Nature",
+    "verses_count": 27,
+    "theme": "Transcending Sattva, Rajas, and Tamas",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "How the three gunas (goodness, passion, and ignorance) bind the soul, how they operate in human consciousness, and how to transcend them (Guṇātīta).",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 15,
+    "name_sanskrit": "पुरुषोत्तमयोग",
+    "name_transliteration": "Puruṣottama Yoga",
+    "name_translation": "The Yoga of the Supreme Person",
+    "verses_count": 20,
+    "theme": "The Cosmic Tree of Existence and the Supreme Being",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The metaphor of the inverted Ashvattha tree of samsara, the nature of the Supreme Purusha who sustains the cosmos, and the essence of Vedic revelation.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 16,
+    "name_sanskrit": "दैवासुरसम्पद्विभागयोग",
+    "name_transliteration": "Daivāsura Sampad Vibhāga Yoga",
+    "name_translation": "The Yoga of the Divine and Demonic Natures",
+    "verses_count": 24,
+    "theme": "Cultivating Virtues and Overcoming Destructive Tendencies",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The 26 divine qualities leading to spiritual liberation contrasted with the egoic, arrogant, and greedy qualities that lead to bondage and self-destruction.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 17,
+    "name_sanskrit": "श्रद्धात्रयविभागयोग",
+    "name_transliteration": "Śraddhātraya Vibhāga Yoga",
+    "name_translation": "The Yoga of the Threefold Faith",
+    "verses_count": 28,
+    "theme": "Faith, Food, Austerity, Charity, and the Sacred Syllable OM TAT SAT",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "How human faith, dietary choices, austerities, and charities reflect the three gunas, and the purifying power of the sacred invocation OM TAT SAT.",
+    "status": "upcoming"
+  },
+  {
+    "chapter_number": 18,
+    "name_sanskrit": "मोक्षसंन्यासयोग",
+    "name_transliteration": "Mokṣa Sannyāsa Yoga",
+    "name_translation": "The Yoga of Liberation through Renunciation",
+    "verses_count": 78,
+    "theme": "The Culmination of the Gita: Supreme Surrender and Victory",
+    "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "summary": "The ultimate synthesis of duty, wisdom, and devotion, culminating in Krishna's crowning promise: 'Surrendering all duties, take refuge in Me alone; I will deliver you from all sin, fear not.' (18.66)",
+    "status": "upcoming"
+  }
+]

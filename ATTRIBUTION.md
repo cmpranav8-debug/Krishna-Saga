@@ -32,14 +32,24 @@ All visual and audio assets in this project are authentic, documented, and legal
 - **Source URL**: [Wikimedia Commons — File:UDUPI SRI KRISHNA.jpg](https://commons.wikimedia.org/wiki/File:UDUPI_SRI_KRISHNA.jpg)
 - **License**: **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
 
-#### 2. Bhagavad Gita Portal Artwork: Krishna & Arjuna Chariot
-- **Local File Path**: `assets/images/gita-chariot-opt.jpg`
-- **Original Title**: *Krishna and Arjun on the chariot, Mahabharata, 18th-19th century, India*
-- **Source URL**: [Wikimedia Commons — File:Krishna and Arjun on the chariot, Mahabharata, 18th-19th century, India.jpg](https://commons.wikimedia.org/wiki/File:Krishna_and_Arjun_on_the_chariot,_Mahabharata,_18th-19th_century,_India.jpg)
-- **License**: **Public Domain** (historical 18th-19th century painting; copyright expired worldwide).
+#### 2. Bhagavad Gita Homepage Portal Cover Image
+- **Local File Path**: `assets/images/geeta-cover-image.jpg`
+- **Subject**: Srimad Bhagavad Gita Scripture & Devotional Heritage
+- **Usage**: Homepage Portal Card for Bhagavad Gita Explorer.
 
-#### 3. Udupi Portal Image: Udupi Sri Krishna Matha Temple Architecture
+#### 3. Chapter 1 & Gita Chapters Artwork: Sri Krishna and Arjuna
+- **Local File Path**: `assets/images/krishna-and-arjuna.jpg` (also preserved as `assets/images/Krishna ans Arjun.jpg` and `assets/images/gita/krishna-and-arjuna.jpg`)
+- **Subject**: Classical depiction of Sri Krishna as the divine charioteer (Partha Sarathi) delivering the sacred Gita discourse to Arjuna at Kurukshetra.
+- **Usage**: Chapter 1 Card and Dedicated Verse Reader Overview Banner.
+
+#### 4. Udupi Portal Image: Udupi Sri Krishna Matha Temple Architecture
 - **Local File Path**: `assets/images/udupi-temple-opt.jpg`
 - **Original Title**: *Udupi Sri Krishna Matha Temple*
 - **Source URL**: [Wikimedia Commons — File:Udupi Sri Krishna Matha Temple.jpg](https://commons.wikimedia.org/wiki/File:Udupi_Sri_Krishna_Matha_Temple.jpg)
 - **License**: **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
+
+#### 5. Adhyaya Completion Screen Artwork: Divine Sri Krishna Dedication
+- **Local File Path**: `assets/images/slideshow-2.jpg`
+- **Dimensions**: 736 × 1308 pixels (201 KB)
+- **Subject**: Devotional depiction of Bhagavan Sri Krishna for the Adhyaya Completion View (`॥ श्रीकृष्णार्पणमस्तु ॥`).
+- **Usage**: Adhyaya Completion View (`#gita-completion-view`) framed sacred portrait.
