@@ -1,0 +1,1081 @@
+/* ==========================================================================
+   KRISHNA SAGA - MILESTONE 1 DESIGN SYSTEM & STYLES
+   Aesthetic: Devotional Spiritual Modernism (Deep Midnight, Saffron, Gold)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties / Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette */
+  --bg-primary: #050a16;
+  --bg-secondary: #0a1224;
+  --bg-surface: rgba(14, 25, 48, 0.7);
+  --bg-surface-hover: rgba(22, 38, 70, 0.85);
+  --bg-glass-border: rgba(245, 166, 35, 0.22);
+  --bg-glass-border-hover: rgba(255, 214, 102, 0.6);
+
+  /* Gold & Saffron Accents */
+  --gold-primary: #f5a623;
+  --gold-light: #ffe082;
+  --gold-bright: #ffd54f;
+  --gold-dark: #b87a0e;
+  --saffron: #ff7043;
+  --saffron-deep: #e65100;
+  --krishna-blue: #1e3a8a;
+  --krishna-cyan: #38bdf8;
+
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-gold: #f7ce68;
+  --text-sanskrit: #fed7aa;
+
+  /* Fonts */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-reading: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Shadows & Glows */
+  --glow-gold: 0 0 25px rgba(245, 166, 35, 0.35);
+  --glow-gold-lg: 0 0 50px rgba(245, 166, 35, 0.25), 0 0 100px rgba(255, 112, 67, 0.15);
+  --glow-divine: 0 0 30px rgba(56, 189, 248, 0.25), 0 0 60px rgba(245, 166, 35, 0.2);
+  --card-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--bg-glass-border);
+  --card-shadow-hover: 0 25px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 166, 35, 0.3);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Dimensions */
+  --container-max: 1200px;
+  --nav-height: 76px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Global Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.35) 0%, transparent 60%),
+    radial-gradient(circle at 10% 40%, rgba(245, 166, 35, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(255, 112, 67, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #050a16 0%, #0a1224 50%, #050a16 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cosmic Canvas Background */
+#cosmic-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.75;
+}
+
+.site-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sanskrit-text {
+  font-family: var(--font-reading);
+  font-style: italic;
+  color: var(--text-sanskrit);
+  letter-spacing: 0.04em;
+}
+
+/* Gold Gradient Text */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #fff9c4 0%, #ffd54f 35%, #f5a623 70%, #ff8f00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --------------------------------------------------------------------------
+   3. Header & Navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  height: var(--nav-height);
+  background: rgba(5, 10, 22, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(245, 166, 35, 0.15);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.site-header.scrolled {
+  background: rgba(5, 10, 22, 0.95);
+  border-bottom-color: rgba(245, 166, 35, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.brand-emblem {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.25) 0%, rgba(5, 10, 22, 0.9) 80%);
+  border: 1.5px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-gold);
+  padding: 6px;
+  transition: transform var(--transition-smooth);
+}
+
+.brand-logo:hover .brand-emblem {
+  transform: rotate(15deg) scale(1.08);
+}
+
+.brand-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+}
+
+.brand-tagline {
+  font-size: 0.7rem;
+  color: var(--gold-light);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Header Right Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-badge-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  background: rgba(30, 58, 138, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #7dd3fc;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+  50% { opacity: 0.6; transform: scale(0.85); box-shadow: 0 0 0 5px rgba(56, 189, 248, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   4. Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 4.5rem 0 3.5rem;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.hero-pill {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1.1rem;
+  background: rgba(245, 166, 35, 0.12);
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  border-radius: 999px;
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+}
+
+.hero-pill .om-icon {
+  font-size: 1.1rem;
+  color: var(--gold-bright);
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+.hero-title .title-accent {
+  display: block;
+  font-family: var(--font-reading);
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+  margin-top: 0.3rem;
+}
+
+.hero-subtitle {
+  font-size: 1.18rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 580px;
+  font-weight: 400;
+}
+
+.hero-shloka-banner {
+  background: rgba(14, 25, 48, 0.6);
+  border-left: 3px solid var(--gold-primary);
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.3rem;
+  position: relative;
+}
+
+.hero-shloka-sanskrit {
+  font-family: var(--font-reading);
+  font-size: 1.15rem;
+  color: var(--gold-bright);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.hero-shloka-trans {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #f5a623 0%, #ff8f00 100%);
+  color: #080d1a;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--glow-gold), 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-gold-lg), 0 8px 25px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, #ffd54f 0%, #ffa000 100%);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background: rgba(245, 166, 35, 0.12);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* Hero Visual Art Presentation */
+.hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-sacred-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 24px;
+  padding: 10px;
+  background: linear-gradient(145deg, rgba(255, 214, 102, 0.4) 0%, rgba(245, 166, 35, 0.1) 40%, rgba(30, 58, 138, 0.3) 100%);
+  box-shadow: var(--glow-divine), 0 20px 50px rgba(0, 0, 0, 0.7);
+  animation: float-gentle 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-gentle {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+.hero-art-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #0b1428;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-art-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--transition-slow);
+}
+
+.hero-art-container:hover .hero-art-img {
+  transform: scale(1.04);
+}
+
+/* Overlay gradient for atmospheric blending */
+.hero-art-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 10, 22, 0) 0%,
+    rgba(5, 10, 22, 0.04) 65%,
+    rgba(5, 10, 22, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-art-caption {
+  position: absolute;
+  bottom: 1.1rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.caption-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.caption-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.caption-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.attribution-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all var(--transition-fast);
+}
+
+.attribution-btn:hover {
+  background: rgba(245, 166, 35, 0.25);
+  color: #ffffff;
+}
+
+/* Decorative corner accents */
+.corner-accent {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+.corner-tl { top: -4px; left: -4px; border-top: 2px solid var(--gold-primary); border-left: 2px solid var(--gold-primary); border-top-left-radius: 12px; }
+.corner-tr { top: -4px; right: -4px; border-top: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary); border-top-right-radius: 12px; }
+.corner-bl { bottom: -4px; left: -4px; border-bottom: 2px solid var(--gold-primary); border-left: 2px solid var(--gold-primary); border-bottom-left-radius: 12px; }
+.corner-br { bottom: -4px; right: -4px; border-bottom: 2px solid var(--gold-primary); border-right: 2px solid var(--gold-primary); border-bottom-right-radius: 12px; }
+
+/* --------------------------------------------------------------------------
+   5. Portals & Navigation Cards Section
+   -------------------------------------------------------------------------- */
+.portals-section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gold-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 0.9rem;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Cards Grid */
+.portals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Individual Portal Card */
+.portal-card {
+  position: relative;
+  background: var(--bg-surface);
+  border-radius: 20px;
+  border: 1px solid var(--bg-glass-border);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.portal-card:hover, .portal-card:focus-visible {
+  transform: translateY(-8px);
+  border-color: var(--bg-glass-border-hover);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Visual Image Header on Card */
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #0b1428;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.portal-card:hover .card-img {
+  transform: scale(1.08);
+}
+
+.card-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 25, 48, 0.1) 0%,
+    rgba(14, 25, 48, 0.6) 60%,
+    rgba(14, 25, 48, 0.95) 100%
+  );
+}
+
+/* Card Icon Badge */
+.card-icon-badge {
+  position: absolute;
+  bottom: -18px;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #132242 0%, #081022 100%);
+  border: 1.5px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-gold);
+  z-index: 3;
+  padding: 10px;
+  transition: transform var(--transition-smooth);
+}
+
+.portal-card:hover .card-icon-badge {
+  transform: scale(1.12) rotate(10deg);
+}
+
+.card-icon-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Card Content Area */
+.card-body {
+  padding: 2rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-header-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.card-milestone-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  background: rgba(245, 166, 35, 0.15);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.card-title {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.portal-card:hover .card-title {
+  color: var(--gold-bright);
+}
+
+.card-sanskrit {
+  font-size: 0.95rem;
+  color: var(--text-sanskrit);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.card-desc {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Card Action / Footer */
+.card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-cta-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.portal-card:hover .card-cta-label {
+  color: #ffffff;
+  gap: 0.7rem;
+}
+
+.card-cta-arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.portal-card:hover .card-cta-arrow {
+  transform: translateX(4px);
+}
+
+.card-status-indicator {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   6. Devotional Quote & Core Highlights Banner
+   -------------------------------------------------------------------------- */
+.devotional-quote-section {
+  padding: 3.5rem 0;
+  position: relative;
+}
+
+.quote-card {
+  background: radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.35) 0%, rgba(14, 25, 48, 0.8) 100%);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--glow-gold);
+}
+
+.quote-card::before {
+  content: '“';
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  font-family: var(--font-serif);
+  font-size: 8rem;
+  color: rgba(245, 166, 35, 0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quote-shloka {
+  font-family: var(--font-reading);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-style: italic;
+  color: var(--gold-bright);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.quote-meaning {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 720px;
+  margin: 0 auto 1.2rem;
+  line-height: 1.6;
+}
+
+.quote-source {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(245, 166, 35, 0.25);
+  padding-top: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Interactive Preview Modal
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 6, 15, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+  padding: 1.5rem;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  background: #0d172e;
+  border: 1.5px solid var(--gold-primary);
+  border-radius: 20px;
+  max-width: 540px;
+  width: 100%;
+  padding: 2.2rem;
+  position: relative;
+  box-shadow: var(--glow-gold-lg), 0 25px 50px rgba(0, 0, 0, 0.8);
+  transform: scale(0.92) translateY(20px);
+  transition: transform var(--transition-smooth);
+}
+
+.modal-backdrop.active .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: rgba(245, 166, 35, 0.2);
+  color: var(--gold-light);
+  border-color: var(--gold-primary);
+}
+
+.modal-icon-header {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(245, 166, 35, 0.15);
+  border: 1.5px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--glow-gold);
+  padding: 12px;
+}
+
+.modal-icon-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--gold-light);
+}
+
+.modal-sanskrit {
+  font-family: var(--font-reading);
+  font-size: 1.05rem;
+  color: var(--text-sanskrit);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.modal-body-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.modal-milestone-box {
+  background: rgba(30, 58, 138, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.modal-milestone-box .box-icon {
+  font-size: 1.4rem;
+}
+
+.modal-milestone-box .box-text {
+  font-size: 0.85rem;
+  color: #e0f2fe;
+}
+
+.modal-action-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #f5a623 0%, #ff8f00 100%);
+  color: #080d1a;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-action-btn:hover {
+  background: linear-gradient(135deg, #ffd54f 0%, #ffa000 100%);
+  box-shadow: var(--glow-gold);
+}
+
+/* --------------------------------------------------------------------------
+   8. Simple Devotional Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  margin-top: auto;
+  background: #030712;
+  border-top: 1px solid rgba(245, 166, 35, 0.18);
+  padding: 3.5rem 0 2rem;
+  position: relative;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.footer-mantra {
+  font-family: var(--font-reading);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--gold-bright);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+}
+
+.footer-mantra-trans {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.footer-divider {
+  width: 120px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  margin: 1.8rem auto;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.footer-links a, .footer-links button {
+  color: var(--text-muted);
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover, .footer-links button:hover {
+  color: var(--gold-light);
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive Design (Mobile & Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto;
+  }
+
+  .hero-pill {
+    align-self: center;
+  }
+
+  .hero-shloka-banner {
+    border-left: none;
+    border-top: 2px solid var(--gold-primary);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .portals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 68px;
+  }
+
+  .hero-section {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .portals-section {
+    padding: 3.5rem 0;
+  }
+
+  .portals-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .hero-sacred-frame {
+    max-width: 320px;
+  }
+
+  .card-media {
+    height: 180px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}

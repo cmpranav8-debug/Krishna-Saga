@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna Saga — The Wisdom, Stories & Devotion of Sri Krishna</title>
+  <meta name="description" content="Explore the eternal wisdom of the Bhagavad Gita, the sacred history of Udupi Sri Krishna and Madhvacharya, and an immersive virtual puja sanctuary.">
+  
+  <!-- Google Fonts: Cinzel (Sacred Serif), Cormorant Garamond (Devotional Reading), Plus Jakarta Sans (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/flute-peacock.svg">
+</head>
+<body>
+
+  <!-- Floating Cosmic Gold Dust & Celestial Particle Canvas -->
+  <canvas id="cosmic-canvas" aria-hidden="true"></canvas>
+
+  <div class="site-wrapper">
+    
+    <!-- ==========================================
+         Header & Navigation
+         ========================================== -->
+    <header class="site-header" id="site-header">
+      <div class="container header-container">
+        
+        <!-- Brand / Logo -->
+        <a href="index.html" class="brand-logo" id="brand-logo-link" aria-label="Krishna Saga Home">
+          <div class="brand-emblem">
+            <img src="assets/icons/flute-peacock.svg" alt="Krishna Flute & Peacock Feather Emblem">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title gold-text-gradient">Krishna Saga</span>
+            <span class="brand-tagline">Wisdom • Devotion • Heritage</span>
+          </div>
+        </a>
+
+        <!-- Right Header Actions -->
+        <div class="header-actions">
+          <div class="status-badge-nav" id="milestone-badge">
+            <span class="status-dot"></span>
+            <span>Milestone 1 : Portal</span>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ==========================================
+         Hero Section
+         ========================================== -->
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="container">
+          <div class="hero-grid">
+            
+            <!-- Left Hero Content -->
+            <div class="hero-content">
+              <div class="hero-pill">
+                <span class="om-icon">ॐ</span>
+                <span>श्री कृष्ण शरणं मम • Sacred Knowledge & Devotion</span>
+              </div>
+
+              <h1 class="hero-title">
+                <span class="gold-text-gradient">Krishna Saga</span>
+                <span class="title-accent">The Divine Tapestry of Wisdom & Grace</span>
+              </h1>
+
+              <p class="hero-subtitle">
+                Explore the wisdom, stories, and devotion surrounding Sri Krishna. Journey through timeless philosophy, coastal temple legends, and sacred ritual offerings.
+              </p>
+
+              <!-- Sacred Shloka Quote Banner -->
+              <div class="hero-shloka-banner">
+                <p class="hero-shloka-sanskrit">"यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥"</p>
+                <p class="hero-shloka-trans">Whenever righteousness wanes and unrighteousness prevails, I manifest Myself. — Bhagavad Gita 4.7</p>
+              </div>
+
+              <!-- CTA Group -->
+              <div class="hero-cta-group">
+                <a href="#portals" class="btn-primary" id="explore-portals-btn">
+                  <span>Explore Sanctuaries</span>
+                  <span>↓</span>
+                </a>
+                <button class="btn-secondary" id="open-about-btn">
+                  <span>About This Journey</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Hero Visual Art Container -->
+            <div class="hero-visual-wrapper">
+              <div class="hero-sacred-frame">
+                
+                <!-- Decorative Gold Corners -->
+                <div class="corner-accent corner-tl"></div>
+                <div class="corner-accent corner-tr"></div>
+                <div class="corner-accent corner-bl"></div>
+                <div class="corner-accent corner-br"></div>
+
+                <div class="hero-art-container">
+                  <img 
+                    src="assets/images/udupi-krishna-hero.jpg?v=3" 
+                    alt="Sri Krishna — Authentic Darshana of the sacred idol at Udupi Sri Krishna Matha" 
+                    class="hero-art-img"
+                    id="hero-krishna-image"
+                  >
+                  <div class="hero-art-overlay"></div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           Three Navigation Cards (Portals)
+           ========================================== -->
+      <section class="portals-section" id="portals">
+        <div class="container">
+          
+          <!-- Section Header -->
+          <div class="section-header">
+            <span class="section-tag">✦ Sanctuaries of Exploration ✦</span>
+            <h2 class="section-title gold-text-gradient">Three Sacred Pathways</h2>
+            <p class="section-desc">
+              Each portal opens a doorway into the divine dialogue, sacred coastal heritage, and personal ritual devotion of Sri Krishna.
+            </p>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="portals-grid">
+            
+            <!-- Card 1: Bhagavad Gita -->
+            <article class="portal-card" id="card-gita" data-portal="gita" tabindex="0" role="button" aria-label="Bhagavad Gita Explorer (Upcoming in Milestone 2)">
+              <div class="card-media">
+                <img 
+                  src="assets/images/gita-chariot-opt.jpg" 
+                  alt="Krishna and Arjuna on the chariot at Kurukshetra (Public Domain 18th-19th Century Painting)" 
+                  class="card-img"
+                >
+                <div class="card-media-overlay"></div>
+                <div class="card-icon-badge" title="Shankha (Sacred Conch)">
+                  <img src="assets/icons/shankha.svg" alt="Shankha Icon">
+                </div>
+              </div>
+
+              <div class="card-body">
+                <div class="card-header-meta">
+                  <span class="card-milestone-pill">Milestone 2</span>
+                  <span class="card-status-indicator">18 Chapters • 700 Verses</span>
+                </div>
+
+                <h3 class="card-title">Bhagavad Gita</h3>
+                <span class="card-sanskrit">योगः कर्मसु कौशलम् • Yoga is skill in action</span>
+                
+                <p class="card-desc">
+                  Immerse in the timeless battlefield dialogue between Sri Krishna and Arjuna. Read verses in original Sanskrit, transliterations, word meanings, and profound commentaries.
+                </p>
+
+                <div class="card-footer">
+                  <span class="card-cta-label">
+                    <span>Enter Scripture</span>
+                    <span class="card-cta-arrow">→</span>
+                  </span>
+                  <span class="card-status-indicator">Click to Preview</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Udupi Krishna & Madhvacharya -->
+            <article class="portal-card" id="card-udupi" data-portal="udupi" tabindex="0" role="button" aria-label="Udupi Krishna and Madhvacharya (Upcoming in Milestone 3)">
+              <div class="card-media">
+                <img 
+                  src="assets/images/udupi-temple-opt.jpg" 
+                  alt="Udupi Sri Krishna Matha Temple Architecture (CC BY-SA 4.0)" 
+                  class="card-img"
+                >
+                <div class="card-media-overlay"></div>
+                <div class="card-icon-badge" title="Sacred Lotus">
+                  <img src="assets/icons/lotus.svg" alt="Lotus Icon">
+                </div>
+              </div>
+
+              <div class="card-body">
+                <div class="card-header-meta">
+                  <span class="card-milestone-pill">Milestone 3</span>
+                  <span class="card-status-indicator">800-Year Heritage</span>
+                </div>
+
+                <h3 class="card-title">Udupi Krishna & Madhvacharya</h3>
+                <span class="card-sanskrit">भक्तिरेव गरीयसी • Devotion Supreme</span>
+                
+                <p class="card-desc">
+                  Discover the sacred coastal sanctuary established by Sri Madhvacharya. Explore the legend of Kanakana Kindi, the Ashta Mathas, and the profound philosophy of Dvaita Vedanta.
+                </p>
+
+                <div class="card-footer">
+                  <span class="card-cta-label">
+                    <span>Explore Legacy</span>
+                    <span class="card-cta-arrow">→</span>
+                  </span>
+                  <span class="card-status-indicator">Click to Preview</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Virtual Puja -->
+            <article class="portal-card" id="card-puja" data-portal="puja" tabindex="0" role="button" aria-label="Interactive Virtual Puja Sanctuary (Upcoming in Milestone 4)">
+              <div class="card-media" style="background: radial-gradient(circle at 50% 60%, rgba(255, 145, 0, 0.3) 0%, rgba(14, 25, 48, 0.95) 75%); display: flex; align-items: center; justify-content: center;">
+                <div style="width: 110px; height: 110px; filter: drop-shadow(0 0 25px rgba(255, 183, 77, 0.7));">
+                  <img src="assets/icons/diya.svg" alt="Glowing Diya Icon" class="card-img" style="object-fit: contain;">
+                </div>
+                <div class="card-media-overlay"></div>
+                <div class="card-icon-badge" title="Brass Temple Bell">
+                  <img src="assets/icons/bell.svg" alt="Puja Bell Icon">
+                </div>
+              </div>
+
+              <div class="card-body">
+                <div class="card-header-meta">
+                  <span class="card-milestone-pill">Milestone 4</span>
+                  <span class="card-status-indicator">Interactive Rituals</span>
+                </div>
+
+                <h3 class="card-title">Virtual Puja</h3>
+                <span class="card-sanskrit">पत्रं पुष्पं फलं तोयम् • Sacred Offerings</span>
+                
+                <p class="card-desc">
+                  Step into a tranquil meditative sanctuary. Light the sacred brass diya, offer fragrant fresh lotuses, ring the resonant temple bell, and perform gentle aarti with devotion.
+                </p>
+
+                <div class="card-footer">
+                  <span class="card-cta-label">
+                    <span>Begin Ritual</span>
+                    <span class="card-cta-arrow">→</span>
+                  </span>
+                  <span class="card-status-indicator">Click to Preview</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           Devotional Shloka Banner
+           ========================================== -->
+      <section class="devotional-quote-section">
+        <div class="container">
+          <div class="quote-card">
+            <p class="quote-shloka">
+              "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु ।<br>
+              मामेवैष्यसि युक्त्वैवमात्मानं मत्परायणः ॥"
+            </p>
+            <p class="quote-meaning">
+              "Engage your mind always in thinking of Me, become My devotee, offer worship to Me and bow down to Me. Being completely absorbed in Me, surely you will come to Me."
+            </p>
+            <span class="quote-source">Bhagavad Gita • Chapter 9, Verse 34</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+         Interactive Preview & Info Modal
+         ========================================== -->
+    <div class="modal-backdrop" id="portal-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+        
+        <div class="modal-icon-header" id="modal-icon-container">
+          <img src="assets/icons/flute-peacock.svg" alt="Modal Icon" id="modal-icon-img">
+        </div>
+
+        <h3 class="modal-title font-serif" id="modal-title">Sanctuary Portal</h3>
+        <p class="modal-sanskrit" id="modal-sanskrit">श्री कृष्णाय नमः</p>
+        
+        <p class="modal-body-text" id="modal-desc">
+          Details about this upcoming section.
+        </p>
+
+        <div class="modal-milestone-box">
+          <span class="box-icon" id="modal-box-icon">🕊️</span>
+          <span class="box-text" id="modal-box-text">
+            This module is planned for the next development milestone.
+          </span>
+        </div>
+
+        <button class="modal-action-btn" id="modal-primary-action">
+          Understood • Continue Exploring
+        </button>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         Attribution & Image Source Modal
+         ========================================== -->
+    <div class="modal-backdrop" id="attribution-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" id="attr-close-btn" aria-label="Close dialog">&times;</button>
+        
+        <div class="modal-icon-header">
+          <img src="assets/icons/om.svg" alt="Om Icon">
+        </div>
+
+        <h3 class="modal-title font-serif">Image & Heritage Attribution</h3>
+        <p class="modal-sanskrit">सत्यमेव जयते • Authentic Sourced Artworks</p>
+        
+        <div class="modal-body-text" style="font-size: 0.88rem; line-height: 1.6; max-height: 260px; overflow-y: auto; padding-right: 0.5rem;">
+          <p style="margin-bottom: 0.8rem;">
+            <strong>1. Sri Krishna Hero Photograph:</strong><br>
+            <em>UDUPI SRI KRISHNA</em> (Udupi Sri Krishna Matha, Karnataka). Photograph by Harshith Aarshi via Wiki Loves Monuments India & Wikimedia Commons (CC BY-SA 4.0).
+          </p>
+          <p style="margin-bottom: 0.8rem;">
+            <strong>2. Bhagavad Gita Chariot Art:</strong><br>
+            <em>Krishna and Arjun on the Chariot</em> (Mahabharata, 18th-19th Century, India). Courtesy of Wikimedia Commons (Public Domain).
+          </p>
+          <p style="margin-bottom: 0.8rem;">
+            <strong>3. Udupi Sri Krishna Matha Architecture:</strong><br>
+            Photograph of Udupi Sri Krishna Matha Temple. Courtesy of Wikimedia Commons (CC BY-SA 4.0).
+          </p>
+          <p>
+            <em>Note:</em> All imagery and media in this project are authentic, documented, and verified.
+          </p>
+        </div>
+
+        <button class="modal-action-btn" id="attr-primary-action" style="margin-top: 1.2rem;">
+          Close Attribution
+        </button>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         Footer
+         ========================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        
+        <div class="footer-top">
+          <div style="width: 32px; height: 32px; margin-bottom: 0.8rem; opacity: 0.85;">
+            <img src="assets/icons/om.svg" alt="Om" style="width: 100%; height: 100%;">
+          </div>
+          <p class="footer-mantra">
+            हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे । हरे राम हरे राम राम राम हरे हरे ॥
+          </p>
+          <p class="footer-mantra-trans">
+            Hare Krishna Mahamantra — A universal prayer for peace, wisdom, and divine love.
+          </p>
+          <div class="footer-divider"></div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© Krishna Saga — A Devotional & Educational Web Experience. Milestone 1.</p>
+          <ul class="footer-links">
+            <li><button type="button" id="footer-attr-link">Art Attributions</button></li>
+            <li><button type="button" id="footer-gita-link">Gita Preview</button></li>
+            <li><button type="button" id="footer-udupi-link">Udupi Preview</button></li>
+            <li><button type="button" id="footer-puja-link">Puja Preview</button></li>
+          </ul>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+</html>

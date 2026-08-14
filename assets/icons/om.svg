@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="goldOm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF59D"/>
+      <stop offset="40%" stop-color="#FFCA28"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+  </defs>
+  <!-- Sacred Om Symbol -->
+  <path d="M 36 28 C 30 28 24 33 24 40 C 24 48 32 53 38 56 C 32 60 22 66 22 76 C 22 86 32 92 42 92 C 54 92 64 84 65 72 L 57 71 C 56 79 49 84 41 84 C 34 84 29 80 29 74 C 29 67 36 63 45 63 L 49 63 C 51 63 53 61 53 59 C 53 57 51 55 49 55 L 43 55 C 34 53 30 48 30 41 C 30 36 34 33 38 33 C 44 33 48 38 48 44 L 55 44 C 55 34 47 28 36 28 Z" fill="url(#goldOm)"/>
+  <!-- Right arch / tail -->
+  <path d="M 49 56 C 58 56 70 64 72 80 L 79 78 C 77 58 62 48 50 48 Z" fill="url(#goldOm)"/>
+  <!-- Chandrabindu (crescent and dot) -->
+  <path d="M 52 26 C 58 32 68 32 74 26 C 70 30 62 30 58 26 Z" fill="url(#goldOm)"/>
+  <circle cx="63" cy="18" r="4.5" fill="url(#goldOm)"/>
+</svg>

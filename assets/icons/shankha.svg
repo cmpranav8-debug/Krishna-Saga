@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="shankhaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#FFF9C4"/>
+      <stop offset="100%" stop-color="#FFE082"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+  </defs>
+  <!-- Shankha (Conch) spiral body -->
+  <path d="M 30 75 C 20 60, 20 35, 38 22 C 55 12, 75 22, 78 40 C 80 58, 65 78, 48 84 C 38 88, 32 82, 30 75 Z" fill="url(#shankhaGrad)" stroke="#FFE082" stroke-width="1.2"/>
+  <!-- Inner spiral lines -->
+  <path d="M 40 25 C 55 22, 68 30, 68 44 C 68 58, 55 70, 42 74" stroke="url(#goldTrim)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M 46 33 C 55 32, 60 38, 60 48 C 60 56, 52 64, 44 66" stroke="url(#goldTrim)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  <!-- Blow aperture / tip -->
+  <path d="M 30 75 L 20 86 Q 24 90 32 84 L 38 78 Z" fill="url(#goldTrim)"/>
+</svg>

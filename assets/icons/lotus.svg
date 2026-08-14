@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="lotusGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#E91E63"/>
+      <stop offset="60%" stop-color="#F48FB1"/>
+      <stop offset="100%" stop-color="#FFF0F5"/>
+    </linearGradient>
+    <linearGradient id="goldLotus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer left petals -->
+  <path d="M50 75 C 25 70, 10 50, 15 35 C 28 45, 42 62, 50 75 Z" fill="url(#lotusGrad)" opacity="0.8" stroke="#FFE082" stroke-width="0.8"/>
+  <!-- Outer right petals -->
+  <path d="M50 75 C 75 70, 90 50, 85 35 C 72 45, 58 62, 50 75 Z" fill="url(#lotusGrad)" opacity="0.8" stroke="#FFE082" stroke-width="0.8"/>
+  
+  <!-- Mid left petal -->
+  <path d="M50 75 C 30 65, 22 45, 30 25 C 38 42, 46 62, 50 75 Z" fill="url(#lotusGrad)" opacity="0.9" stroke="#FFE082" stroke-width="0.8"/>
+  <!-- Mid right petal -->
+  <path d="M50 75 C 70 65, 78 45, 70 25 C 62 42, 54 62, 50 75 Z" fill="url(#lotusGrad)" opacity="0.9" stroke="#FFE082" stroke-width="0.8"/>
+  
+  <!-- Center main petal -->
+  <path d="M50 75 C 38 52, 38 30, 50 12 C 62 30, 62 52, 50 75 Z" fill="url(#lotusGrad)" stroke="#FFE082" stroke-width="1"/>
+  
+  <!-- Lotus base pedestal -->
+  <path d="M35 76 Q 50 84 65 76 Q 50 80 35 76 Z" fill="url(#goldLotus)"/>
+  <ellipse cx="50" cy="74" rx="14" ry="3" fill="#FFE082"/>
+</svg>
