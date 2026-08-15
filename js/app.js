@@ -368,7 +368,7 @@ function initGitaExplorer() {
     const themeBadge = document.getElementById('overview-theme-badge');
     if (themeBadge) themeBadge.innerHTML = `<span>✦ ${chMeta.theme} ✦</span>`;
 
-    const sanskritNum = chapterNum === 1 ? '१' : chapterNum === 2 ? '२' : chapterNum === 3 ? '३' : chapterNum.toString();
+    const sanskritNum = chapterNum === 1 ? '१' : chapterNum === 2 ? '२' : chapterNum === 3 ? '३' : chapterNum === 4 ? '४' : chapterNum.toString();
     const sanskritTitle = document.getElementById('overview-sanskrit-title');
     if (sanskritTitle) sanskritTitle.textContent = `अध्याय ${sanskritNum} • ${chMeta.name_sanskrit}`;
 
@@ -418,7 +418,20 @@ function initGitaExplorer() {
     const compDesc = document.getElementById('completion-translation-desc');
     const compNextLabel = document.getElementById('completion-next-ch-label');
 
-    if (chapterNum === 3) {
+    if (chapterNum === 4) {
+      if (compImg) {
+        compImg.src = 'assets/images/4th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 4 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय ४ समाप्तम् • CHAPTER 4 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसम्वादे ज्ञानकर्मसंन्यासयोगो नाम चतुर्थोऽध्यायः ॥<br><br>॥ श्रीकृष्णार्पणमस्तु ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the fourth chapter named <strong>Jñāna Karma Sannyāsa Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna.<br><br>Dedicated unto Lord Sri Krishna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: कर्मसंन्यासयोग (Chapter 5)';
+    } else if (chapterNum === 3) {
       if (compImg) {
         compImg.src = 'assets/images/3rd-adhyaya-end.jpg';
         compImg.alt = 'Bhagavan Sri Krishna - Chapter 3 Concluded';
@@ -692,8 +705,10 @@ function initGitaExplorer() {
         showVerseReaderView(2, 1);
       } else if (currentChapter === 2) {
         showVerseReaderView(3, 1);
+      } else if (currentChapter === 3) {
+        showVerseReaderView(4, 1);
       } else {
-        alert('Chapter 4 (ज्ञानकर्मसंन्यासयोग - Jñāna Karma Sannyāsa Yoga) will be available in the upcoming release!');
+        alert('Chapter 5 (कर्मसंन्यासयोग - Karma Sannyāsa Yoga) will be available in the upcoming release!');
       }
     });
   }
