@@ -89,10 +89,10 @@
 
                 <!-- CTA Group -->
                 <div class="hero-cta-group">
-                  <a href="#portals" class="btn-primary" id="explore-portals-btn">
+                  <button type="button" class="btn-primary" id="explore-portals-btn">
                     <span>Explore Sanctuaries</span>
                     <span>↓</span>
-                  </a>
+                  </button>
                   <button class="btn-secondary" id="open-about-btn">
                     <span>About This Journey</span>
                   </button>
@@ -231,12 +231,14 @@
                 </div>
               </article>
 
-              <!-- Card 3: Virtual Puja -->
-              <article class="portal-card" id="card-puja" data-portal="puja" tabindex="0" role="button" aria-label="Interactive Virtual Puja Sanctuary (Upcoming in Milestone 4)">
-                <div class="card-media" style="background: radial-gradient(circle at 50% 60%, rgba(255, 145, 0, 0.3) 0%, rgba(14, 25, 48, 0.95) 75%); display: flex; align-items: center; justify-content: center;">
-                  <div style="width: 110px; height: 110px; filter: drop-shadow(0 0 25px rgba(255, 183, 77, 0.7));">
-                    <img src="assets/icons/diya.svg" alt="Glowing Diya Icon" class="card-img" style="object-fit: contain;">
-                  </div>
+              <!-- Card 3: Virtual Pooja -->
+              <article class="portal-card" id="card-puja" data-portal="pooja" tabindex="0" role="button" aria-label="Virtual Pooja Sanctuary (Milestone 4 • Active)">
+                <div class="card-media">
+                  <img 
+                    src="assets/images/pooja.jpg" 
+                    alt="Virtual Pooja Sanctuary — Sacred Altar of Sri Krishna" 
+                    class="card-img"
+                  >
                   <div class="card-media-overlay"></div>
                   <div class="card-icon-badge" title="Brass Temple Bell">
                     <img src="assets/icons/bell.svg" alt="Puja Bell Icon">
@@ -245,23 +247,23 @@
 
                 <div class="card-body">
                   <div class="card-header-meta">
-                    <span class="card-milestone-pill">Milestone 4</span>
-                    <span class="card-status-indicator">Interactive Rituals</span>
+                    <span class="card-milestone-pill" style="background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.5); color: #fbbf24;">Milestone 4 • Active</span>
+                    <span class="card-status-indicator">Interactive Sanctum</span>
                   </div>
 
-                  <h3 class="card-title">Virtual Puja</h3>
+                  <h3 class="card-title">Virtual Pooja</h3>
                   <span class="card-sanskrit">पत्रं पुष्पं फलं तोयम् • Sacred Offerings</span>
                   
                   <p class="card-desc">
-                    Step into a tranquil meditative sanctuary. Light the sacred brass diya, offer fragrant fresh lotuses, ring the resonant temple bell, and perform gentle aarti with devotion.
+                    Enter the sacred sanctum of Lord Sri Krishna. Perform sacred Abhisheka with milk and honey, offer fragrant Chandan Gandha, holy Tulsi, ringing bells, and wave the radiant Maha Aarti.
                   </p>
 
                   <div class="card-footer">
                     <span class="card-cta-label">
-                      <span>Begin Ritual</span>
+                      <span>Enter Sanctum</span>
                       <span class="card-cta-arrow">→</span>
                     </span>
-                    <span class="card-status-indicator">Click to Preview</span>
+                    <span class="card-status-indicator">Abhisheka & Mahapooja</span>
                   </div>
                 </div>
               </article>
@@ -527,7 +529,434 @@
         </div>
 
       </div>
+
+      <!-- ==========================================
+           3. VIRTUAL POOJA SANCTUM VIEW (Milestone 4)
+           ========================================== -->
+      <div id="pooja-view" class="pooja-view" style="display: none;">
+        
+        <!-- Top Compact Control Bar (Clean English) -->
+        <header class="pooja-top-nav">
+          <div class="container pooja-nav-container">
+            <button type="button" class="pooja-nav-back-btn" id="pooja-back-to-home-btn" title="Return to Sanctum">
+              <span>←</span>
+              <span>Back to Sanctum</span>
+            </button>
+
+            <!-- Seva Switcher Tabs -->
+            <div class="pooja-seva-switcher" role="tablist">
+              <button type="button" class="pooja-tab-btn active" id="pooja-tab-abhisheka" data-phase="abhisheka" role="tab" aria-selected="true">
+                <span class="tab-om">✦</span>
+                <span>Abhisheka</span>
+              </button>
+              <button type="button" class="pooja-tab-btn" id="pooja-tab-mahapooja" data-phase="mahapooja" role="tab" aria-selected="false">
+                <span class="tab-om">✦</span>
+                <span>Mahapooja</span>
+              </button>
+            </div>
+
+            <!-- Audio & Menu Controls -->
+            <div class="pooja-controls-group">
+              <button type="button" class="pooja-ctrl-btn active" id="pooja-tanpura-toggle" title="Toggle Ambient Tanpura Drone">
+                <span class="ctrl-icon" id="tanpura-icon">🎵</span>
+                <span id="tanpura-label">Tanpura: On</span>
+              </button>
+              <button type="button" class="pooja-ctrl-btn active" id="pooja-sfx-toggle" title="Toggle Pooja Sound Effects">
+                <span class="ctrl-icon" id="sfx-icon">🔊</span>
+                <span id="sfx-label">Sound: On</span>
+              </button>
+              <button type="button" class="pooja-ctrl-btn pooja-menu-btn" id="pooja-change-seva-btn" title="Open Seva Selection Dialog">
+                <span>🏛️ Menu</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Two-Column Sanctum Viewport -->
+        <div class="pooja-viewport-main">
+          <div class="container pooja-two-column-layout">
+            
+            <!-- Column 1: Central Deity Altar Stage (Full Height) -->
+            <section class="pooja-altar-column" aria-label="Sacred Altar Garbhagriha">
+              
+              <!-- Temple Arch Shrine Frame -->
+              <div class="pooja-shrine-frame" id="pooja-shrine-frame">
+                
+                <!-- Temple Arch Top Kalasha & Om -->
+                <div class="temple-arch-top">
+                  <div class="arch-kalasha">
+                    <span class="arch-om">ॐ</span>
+                  </div>
+                </div>
+
+                <!-- Glowing Deity Visual Container (Full Height Unobstructed) -->
+                <div class="pooja-deity-container" id="pooja-deity-container">
+                  <img 
+                    src="assets/images/vp_a.jpeg" 
+                    alt="Bhagavan Sri Krishna - Sacred Vigraha" 
+                    class="pooja-deity-img" 
+                    id="pooja-deity-img"
+                  >
+                  <div class="pooja-ambient-glow" id="pooja-ambient-glow"></div>
+                  
+                  <!-- Particle, Fluids & Accumulated Flowers Canvas (Click to Scatter) -->
+                  <canvas id="pooja-effects-canvas" class="pooja-effects-canvas" title="Tap accumulated flowers to scatter"></canvas>
+
+                  <!-- Animated Aarti Flame Overlay Element -->
+                  <div class="pooja-aarti-overlay" id="pooja-aarti-overlay" style="display: none;">
+                    <div class="aarti-lamp-flame">
+                      <div class="lamp-body">🪔</div>
+                      <div class="lamp-halo"></div>
+                    </div>
+                  </div>
+
+                  <!-- Dhoop Fragrant Incense Smoke Overlay -->
+                  <div class="pooja-dhoop-overlay" id="pooja-dhoop-overlay" style="display: none;">
+                    <div class="dhoop-stick left-stick">
+                      <div class="dhoop-ember"></div>
+                      <div class="dhoop-smoke smoke-1"></div>
+                      <div class="dhoop-smoke smoke-2"></div>
+                    </div>
+                    <div class="dhoop-stick right-stick">
+                      <div class="dhoop-ember"></div>
+                      <div class="dhoop-smoke smoke-1"></div>
+                      <div class="dhoop-smoke smoke-2"></div>
+                    </div>
+                  </div>
+
+                  <!-- Sandalwood Gandha Tilak Overlay -->
+                  <div class="pooja-tilak-overlay" id="pooja-tilak-overlay" style="display: none;">
+                    <div class="chandan-tilak"></div>
+                  </div>
+
+                  <!-- Sacred Tulsi Sprig Overlay -->
+                  <div class="pooja-tulsi-overlay" id="pooja-tulsi-overlay" style="display: none;">
+                    <div class="tulsi-sprig">🌿</div>
+                  </div>
+
+                  <!-- Naivedya Traditional Sacred Golden Thal at Lotus Feet Base -->
+                  <div class="pooja-naivedya-overlay" id="pooja-naivedya-overlay" style="display: none;">
+                    <div class="sacred-golden-thal-container" title="Sacred Naivedya: Makhan, Fresh Fruits & Tulsi">
+                      <svg class="golden-naivedya-thal-svg" viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <radialGradient id="thalGoldGrad" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fffbeb"/>
+                            <stop offset="25%" stop-color="#fef08a"/>
+                            <stop offset="60%" stop-color="#f59e0b"/>
+                            <stop offset="90%" stop-color="#b45309"/>
+                            <stop offset="100%" stop-color="#78350f"/>
+                          </radialGradient>
+                          <linearGradient id="rimGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fef08a"/>
+                            <stop offset="50%" stop-color="#d97706"/>
+                            <stop offset="100%" stop-color="#78350f"/>
+                          </linearGradient>
+                          <radialGradient id="makhanGrad" cx="40%" cy="40%" r="60%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="70%" stop-color="#fef3c7"/>
+                            <stop offset="100%" stop-color="#fde68a"/>
+                          </radialGradient>
+                          <radialGradient id="potClayGrad" cx="35%" cy="35%" r="65%">
+                            <stop offset="0%" stop-color="#fb923c"/>
+                            <stop offset="70%" stop-color="#c2410c"/>
+                            <stop offset="100%" stop-color="#7c2d12"/>
+                          </radialGradient>
+                          <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="5" result="blur"/>
+                            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                          </filter>
+                        </defs>
+
+                        <!-- Shadow beneath golden thal -->
+                        <ellipse cx="120" cy="112" rx="96" ry="16" fill="rgba(0,0,0,0.55)" filter="blur(3px)"/>
+                        
+                        <!-- Ornate Golden Brass Thal Base & Rims -->
+                        <ellipse cx="120" cy="106" rx="96" ry="20" fill="url(#thalGoldGrad)" stroke="#fde047" stroke-width="1.2"/>
+                        <ellipse cx="120" cy="104" rx="86" ry="16" fill="url(#thalGoldGrad)" stroke="#d97706" stroke-width="0.8"/>
+                        <ellipse cx="120" cy="102" rx="78" ry="13" fill="#92400e"/>
+                        <ellipse cx="120" cy="101" rx="76" ry="12" fill="url(#rimGoldGrad)"/>
+
+                        <!-- Golden Bananas Bunch (Left) -->
+                        <path d="M 62 94 Q 78 72 102 82 Q 78 88 62 94 Z" fill="#eab308" stroke="#ca8a04" stroke-width="0.8"/>
+                        <path d="M 54 98 Q 72 75 96 86 Q 72 92 54 98 Z" fill="#facc15" stroke="#a16207" stroke-width="0.8"/>
+                        <path d="M 46 102 Q 66 79 91 90 Q 66 98 46 102 Z" fill="#fef08a" stroke="#ca8a04" stroke-width="0.8"/>
+                        <path d="M 46 102 Q 41 104 39 101" stroke="#4d7c0f" stroke-width="2.5" stroke-linecap="round"/>
+
+                        <!-- Ripe Crimson Fruit / Apple -->
+                        <circle cx="92" cy="88" r="13" fill="#dc2626" stroke="#991b1b" stroke-width="0.6"/>
+                        <path d="M 92 76 Q 94 71 92 68" stroke="#78350f" stroke-width="1.8"/>
+                        <ellipse cx="89" cy="84" rx="3.5" ry="6" fill="#f87171" opacity="0.65"/>
+
+                        <!-- Fresh Half Coconut with Coconut Water -->
+                        <ellipse cx="148" cy="90" rx="15" ry="13" fill="#78350f" stroke="#451a03" stroke-width="0.8"/>
+                        <ellipse cx="148" cy="88" rx="12" ry="10" fill="#fef9c3"/>
+                        <ellipse cx="148" cy="88" rx="8" ry="7" fill="#bae6fd" opacity="0.85"/>
+
+                        <!-- Sacred Churned Butter (Makhan Pot) in Center -->
+                        <ellipse cx="120" cy="94" rx="14" ry="4.5" fill="#451a03"/>
+                        <path d="M 106 82 Q 103 92 120 94 Q 137 92 134 82 Q 137 70 120 70 Q 103 70 106 82 Z" fill="url(#potClayGrad)" stroke="#fde047" stroke-width="0.7"/>
+                        <!-- Butter Dollop -->
+                        <path d="M 111 72 Q 116 60 120 60 Q 124 60 129 72 Q 120 74 111 72 Z" fill="url(#makhanGrad)"/>
+                        
+                        <!-- Sacred Tulsi Sprig on Makhan -->
+                        <path d="M 120 62 Q 127 52 125 46 Q 118 52 120 62 Z" fill="#15803d" stroke="#16a34a" stroke-width="0.5"/>
+                        <path d="M 120 62 Q 113 54 115 48 Q 122 54 120 62 Z" fill="#22c55e" stroke="#15803d" stroke-width="0.5"/>
+                        <line x1="120" y1="62" x2="123" y2="46" stroke="#fde047" stroke-width="0.6"/>
+
+                        <!-- Sweet Laddu / Modak (Right) -->
+                        <circle cx="172" cy="92" r="9.5" fill="#f59e0b" stroke="#d97706" stroke-width="0.7"/>
+                        <circle cx="183" cy="96" r="7.5" fill="#fbbf24" stroke="#d97706" stroke-width="0.7"/>
+                        <circle cx="166" cy="97" r="6.5" fill="#fef08a" stroke="#d97706" stroke-width="0.7"/>
+
+                        <!-- Soft Divine Acceptance Aura Glow -->
+                        <ellipse cx="120" cy="92" rx="80" ry="26" fill="none" stroke="#fef08a" stroke-width="1.2" opacity="0.5" filter="url(#goldGlow)"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Beneath Altar: Devotional Chant Toast -->
+                <div class="pooja-status-toast" id="pooja-status-toast">
+                  <div class="toast-shlok" id="pooja-toast-shloka">॥ श्रीकृष्ण शरणं मम ॥</div>
+                  <div class="toast-desc" id="pooja-toast-desc">Select an offering from the seva dock to perform your worship.</div>
+                </div>
+
+                <!-- Continuous Rolling Mantra Ticker -->
+                <div class="pooja-mantra-ticker-container">
+                  <div class="ticker-label">
+                    <span class="ticker-om">ॐ</span>
+                    <span>महामन्त्र • CHANT:</span>
+                  </div>
+                  <div class="ticker-content" id="pooja-ticker-content">
+                    <span class="ticker-text" id="pooja-ticker-text">
+                      हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे । हरे राम हरे राम राम राम हरे हरे ॥
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </section>
+
+            <!-- Column 2: Side Seva Offerings Dock Panel -->
+            <aside class="pooja-sidebar-dock" aria-label="Seva Offerings Dock">
+              
+              <!-- 1. Abhisheka Offerings Tray (Phase 1) -->
+              <div class="pooja-offerings-tray" id="pooja-abhisheka-tray">
+                <div class="tray-header">
+                  <div class="tray-title-group">
+                    <span class="tray-badge">Phase 1 • प्रथम चरण</span>
+                    <h2 class="tray-title gold-text-gradient">Abhisheka Seva • क्षीराभिषेक</h2>
+                  </div>
+                </div>
+                
+                <div class="offerings-dock-grid">
+                  <button type="button" class="offering-dock-card" id="btn-offer-milk" data-offering="milk">
+                    <div class="offering-icon-circle milk-circle">🥛</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Milk Abhisheka</span>
+                      <span class="offering-name-sanskrit">क्षीराभिषेक</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-water" data-offering="water">
+                    <div class="offering-icon-circle water-circle">🌊</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Holy Water Abhisheka</span>
+                      <span class="offering-name-sanskrit">जलाभिषेक</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-honey" data-offering="honey">
+                    <div class="offering-icon-circle honey-circle">🍯</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Honey Abhisheka</span>
+                      <span class="offering-name-sanskrit">मध्वभिषेक</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-flowers-abh" data-offering="flowers-abh">
+                    <div class="offering-icon-circle flower-circle">🌸</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Flowers & Tulsi</span>
+                      <span class="offering-name-sanskrit">पुष्प-तुलसी समर्पण</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-dhoop-abh" data-offering="dhoop-abh">
+                    <div class="offering-icon-circle dhoop-circle">💨</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Dhoop Incense</span>
+                      <span class="offering-name-sanskrit">धूप समर्पण</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card aarti-dock-card" id="btn-offer-aarti-abh" data-offering="aarti-abh">
+                    <div class="offering-icon-circle aarti-circle" id="aarti-icon-abh">🪔</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng" id="aarti-label-eng-abh">Camphor Aarti</span>
+                      <span class="offering-name-sanskrit" id="aarti-label-sanskrit-abh">कर्पूर आरती</span>
+                    </div>
+                  </button>
+                </div>
+
+                <div class="phase-action-bar">
+                  <button type="button" class="btn-proceed-phase" id="pooja-to-mahapooja-btn">
+                    <span>Proceed to Mahapooja →</span>
+                    <span style="font-size: 0.76rem; opacity: 0.85; font-family: var(--font-devanagari);">(अलङ्कार दर्शन)</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 2. Mahapooja Offerings Tray (Phase 2) -->
+              <div class="pooja-offerings-tray" id="pooja-mahapooja-tray" style="display: none;">
+                <div class="tray-header">
+                  <div class="tray-title-group">
+                    <span class="tray-badge">Phase 2 • द्वितीय चरण</span>
+                    <h2 class="tray-title gold-text-gradient">Mahapooja & Alankara • महापूजा</h2>
+                  </div>
+                </div>
+
+                <div class="offerings-dock-grid">
+                  <button type="button" class="offering-dock-card" id="btn-offer-gandha" data-offering="gandha">
+                    <div class="offering-icon-circle gandha-circle">🟡</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Sandalwood Gandha</span>
+                      <span class="offering-name-sanskrit">चन्दन लेपन</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-tulsi" data-offering="tulsi">
+                    <div class="offering-icon-circle tulsi-circle">🌿</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Sacred Tulsi</span>
+                      <span class="offering-name-sanskrit">तुलसी मञ्जरी</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-dhoop-maha" data-offering="dhoop-maha">
+                    <div class="offering-icon-circle dhoop-circle">💨</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Dhoop Incense</span>
+                      <span class="offering-name-sanskrit">धूप समर्पण</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-naivedya" data-offering="naivedya">
+                    <div class="offering-icon-circle naivedya-circle">🥣</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Sweet Butter & Fruits</span>
+                      <span class="offering-name-sanskrit">नैवेद्य समर्पण</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-flowers-maha" data-offering="flowers-maha">
+                    <div class="offering-icon-circle flower-circle">🌺</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Flower Shower Archana</span>
+                      <span class="offering-name-sanskrit">पुष्पार्चन</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card" id="btn-offer-bell" data-offering="bell">
+                    <div class="offering-icon-circle bell-circle">🔔</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng">Temple Bell</span>
+                      <span class="offering-name-sanskrit">घण्टा नाद</span>
+                    </div>
+                  </button>
+
+                  <button type="button" class="offering-dock-card aarti-dock-card" id="btn-offer-maha-aarti" data-offering="maha-aarti">
+                    <div class="offering-icon-circle aarti-circle" id="aarti-icon-maha">🪔</div>
+                    <div class="offering-dock-text">
+                      <span class="offering-name-eng" id="aarti-label-eng-maha">Deepa Maha Aarti</span>
+                      <span class="offering-name-sanskrit" id="aarti-label-sanskrit-maha">महा आरती</span>
+                    </div>
+                  </button>
+                </div>
+
+                <div class="phase-action-bar dual-action-bar">
+                  <button type="button" class="btn-secondary-phase" id="pooja-to-abhisheka-btn">
+                    <span>← Switch to Abhisheka</span>
+                    <span style="font-size: 0.72rem; opacity: 0.85; font-family: var(--font-devanagari);">(अभिषेक पूजा)</span>
+                  </button>
+                  <button type="button" class="btn-primary-phase" id="pooja-complete-btn">
+                    <span>Complete Pooja →</span>
+                    <span style="font-size: 0.72rem; opacity: 0.85; font-family: var(--font-devanagari);">(पूजा समाप्ति)</span>
+                  </button>
+                </div>
+              </div>
+
+            </aside>
+
+          </div>
+        </div>
+
+      </div>
     </main>
+
+    <!-- ==========================================
+         Sacred Sanctum Welcoming Modal (Milestone 4)
+         ========================================== -->
+    <div class="modal-backdrop" id="pooja-welcome-modal" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog pooja-dialog">
+        <button class="modal-close-btn" id="pooja-modal-close-btn" aria-label="Close dialog">&times;</button>
+        
+        <div class="modal-icon-header">
+          <img src="assets/icons/flute-peacock.svg" alt="Flute & Peacock Emblem">
+        </div>
+
+        <div class="pooja-modal-badge">
+          <span>TEMPLE SANCTUM • मन्दिर प्रवेश</span>
+        </div>
+
+        <h2 class="pooja-modal-title gold-text-gradient font-serif">
+          ॥ श्रीकृष्ण शरणं मम ॥
+        </h2>
+        
+        <p class="pooja-modal-welcome">
+          Welcome to the Sacred Sanctum of Lord Sri Krishna. Enter with reverence and devotion to perform your offerings. Choose your seva to begin:
+        </p>
+
+        <!-- Dual Seva Selection Grid -->
+        <div class="pooja-seva-cards-grid">
+          
+          <!-- Card 1: Abhisheka Pooja -->
+          <div class="seva-selection-card" id="seva-card-abhisheka" tabindex="0" role="button">
+            <div class="seva-card-top">
+              <span class="seva-icon">🥛</span>
+              <span class="seva-pill">Phase 1 • प्रथम चरण</span>
+            </div>
+            <h3 class="seva-name-eng">Abhisheka Seva</h3>
+            <h4 class="seva-name-sanskrit">क्षीराभिषेक सेवा</h4>
+            <p class="seva-desc">
+              Pour sacred milk, holy water, and sweet honey over the auspicious Vigraha, followed by fresh blossoms, Tulsi, and Camphor Aarti.
+            </p>
+            <button type="button" class="btn-enter-seva" id="btn-enter-abhisheka">
+              <span>Enter Abhisheka Seva ✦</span>
+            </button>
+          </div>
+
+          <!-- Card 2: Mahapooja / Alankara -->
+          <div class="seva-selection-card" id="seva-card-mahapooja" tabindex="0" role="button">
+            <div class="seva-card-top">
+              <span class="seva-icon">🪔</span>
+              <span class="seva-pill">Phase 2 • द्वितीय चरण</span>
+            </div>
+            <h3 class="seva-name-eng">Mahapooja & Alankara Seva</h3>
+            <h4 class="seva-name-sanskrit">महापूजा अलङ्कार सेवा</h4>
+            <p class="seva-desc">
+              Darshana of the fully adorned deity. Offer fragrant Sandalwood Gandha, sacred Tulsi, butter Naivedya, flower archana, temple bell, and Deepa Maha Aarti.
+            </p>
+            <button type="button" class="btn-enter-seva" id="btn-enter-mahapooja">
+              <span>Enter Mahapooja Seva ✦</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
 
     <!-- ==========================================
          Interactive Preview & Info Modal
