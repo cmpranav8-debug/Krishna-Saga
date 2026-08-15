@@ -9,6 +9,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initCosmicParticles();
+  initHeroSlideshow();
   initGitaExplorer();
   initPortalModals();
   initAttributionModal();
@@ -114,6 +115,161 @@ function initCosmicParticles() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
   });
+}
+
+/* ==========================================================================
+   2.1. Hero Automated Sacred Darshana Slideshow
+   Pure hands-off slideshow with smooth crossfade transitions (~1.3s ease-in-out),
+   caching/preloading, smart auto-play pausing on scroll or view switch.
+   ========================================================================== */
+function initHeroSlideshow() {
+  const HERO_SLIDES = [
+    {
+      src: 'assets/images/Slideshow images/udupi-krishna-hero.jpg',
+      alt: 'Sri Krishna — Authentic Darshana of the sacred idol at Udupi Sri Krishna Matha',
+      title: 'Sri Krishna Darshana',
+      subtitle: 'Udupi Sri Krishna Matha'
+    },
+    {
+      src: 'assets/images/Slideshow images/WhatsApp Image 2026-08-15 at 11.33.34.jpeg',
+      alt: 'Sri Krishna — Divine Golden Alankara and Temple Splendor',
+      title: 'Divya Alankara',
+      subtitle: 'Golden Temple Splendor'
+    },
+    {
+      src: 'assets/images/Slideshow images/WhatsApp Image 2026-08-15 at 11.33.35.jpeg',
+      alt: 'Sri Krishna — Bala Krishna Adornment and Auspicious Grace',
+      title: 'Bala Krishna',
+      subtitle: 'Sacred Coastal Heritage'
+    },
+    {
+      src: 'assets/images/Slideshow images/WhatsApp Image 2026-08-15 at 11.33.35 (1).jpeg',
+      alt: 'Sri Krishna — Sacred Devotional Form and Blessing',
+      title: 'Ananda Krishna',
+      subtitle: 'Divine Form & Grace'
+    },
+    {
+      src: 'assets/images/Slideshow images/WhatsApp Image 2026-08-15 at 11.33.35 (2).jpeg',
+      alt: 'Sri Krishna — Celestial Sanctuary Darshana',
+      title: 'Maha Alankara',
+      subtitle: 'Sanctuary of Peace'
+    },
+    {
+      src: 'assets/images/Slideshow images/WhatsApp Image 2026-08-15 at 11.33.36.jpeg',
+      alt: 'Sri Krishna — Kadagolu Navaneetha Krishna with Churning Rod',
+      title: 'Navaneetha Chora',
+      subtitle: 'Eternal Devotion'
+    },
+    {
+      src: 'assets/images/Slideshow images/WhatsApp Image 2026-08-15 at 11.34.17.jpeg',
+      alt: 'Sri Krishna — Divine Glow and Auspicious Presence',
+      title: 'Bhagavan Sri Krishna',
+      subtitle: 'The Supreme Compassion'
+    }
+  ];
+
+  const heroContainer = document.getElementById('hero-image') || document.querySelector('.hero-art-container');
+  const slidesTrack = document.getElementById('hero-slides-track');
+  const captionMeta = document.getElementById('hero-caption-meta');
+  const slideTitle = document.getElementById('hero-slide-title');
+  const slideSubtitle = document.getElementById('hero-slide-subtitle');
+
+  if (!heroContainer || HERO_SLIDES.length === 0) return;
+
+  let currentIndex = 0;
+  const SLIDE_INTERVAL = 5500; // 5.5 seconds rotation
+  let autoPlayTimer = null;
+  let isHeroInView = true;
+
+  // Preload and build DOM slide elements for instant zero-lag crossfade
+  const slideElements = [];
+  if (slidesTrack) {
+    slidesTrack.innerHTML = '';
+    HERO_SLIDES.forEach((slide, idx) => {
+      const img = document.createElement('img');
+      img.src = slide.src;
+      img.alt = slide.alt;
+      img.className = `hero-art-img hero-slide-img ${idx === 0 ? 'active' : ''}`;
+      if (idx === 0) img.id = 'hero-krishna-image';
+      slidesTrack.appendChild(img);
+      slideElements.push(img);
+    });
+  }
+
+  // Preload in browser memory
+  HERO_SLIDES.forEach(slide => {
+    const preloader = new Image();
+    preloader.src = slide.src;
+  });
+
+  // Automated Smooth Crossfade Progression
+  function nextSlide() {
+    if (slideElements.length < 2) return;
+
+    const prevIndex = currentIndex;
+    currentIndex = (currentIndex + 1) % HERO_SLIDES.length;
+    const nextSlideData = HERO_SLIDES[currentIndex];
+
+    // Smoothly transition slide image layers
+    slideElements[prevIndex].classList.remove('active');
+    slideElements[currentIndex].classList.add('active');
+
+    // Smoothly crossfade caption text
+    if (captionMeta) {
+      captionMeta.classList.add('fading');
+      setTimeout(() => {
+        if (slideTitle) slideTitle.textContent = nextSlideData.title;
+        if (slideSubtitle) slideSubtitle.textContent = nextSlideData.subtitle;
+        captionMeta.classList.remove('fading');
+      }, 400);
+    }
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(() => {
+      const landingView = document.getElementById('landing-view');
+      const isLandingVisible = !landingView || landingView.style.display !== 'none';
+      if (!document.hidden && isLandingVisible && isHeroInView) {
+        nextSlide();
+      }
+    }, SLIDE_INTERVAL);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  // Pause automatically when user scrolls away from hero container
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isHeroInView = entry.isIntersecting;
+        if (isHeroInView) {
+          startAutoPlay();
+        } else {
+          stopAutoPlay();
+        }
+      });
+    }, { threshold: 0.15 });
+    observer.observe(heroContainer);
+  } else {
+    startAutoPlay();
+  }
+
+  // Pause when browser tab is inactive
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  });
+
+  startAutoPlay();
 }
 
 /* ==========================================================================

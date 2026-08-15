@@ -100,7 +100,7 @@
               </div>
 
               <!-- Right Hero Visual Art Container -->
-              <div class="hero-visual-wrapper">
+              <div class="hero-visual-wrapper hero-image-wrapper">
                 <div class="hero-sacred-frame">
                   
                   <!-- Decorative Gold Corners -->
@@ -109,14 +109,29 @@
                   <div class="corner-accent corner-bl"></div>
                   <div class="corner-accent corner-br"></div>
 
-                  <div class="hero-art-container">
-                    <img 
-                      src="assets/images/udupi-krishna-hero.jpg?v=3" 
-                      alt="Sri Krishna — Authentic Darshana of the sacred idol at Udupi Sri Krishna Matha" 
-                      class="hero-art-img"
-                      id="hero-krishna-image"
-                    >
+                  <div 
+                    class="hero-art-container hero-slideshow-container" 
+                    id="hero-image" 
+                    aria-label="Sri Krishna Darshana Sacred Presentation"
+                  >
+                    <!-- Slides Container (Stacked for smooth crossfade) -->
+                    <div class="hero-slides-track" id="hero-slides-track">
+                      <img 
+                        src="assets/images/Slideshow images/udupi-krishna-hero.jpg" 
+                        alt="Sri Krishna — Authentic Darshana of the sacred idol at Udupi Sri Krishna Matha" 
+                        class="hero-art-img hero-slide-img active"
+                        id="hero-krishna-image"
+                      >
+                    </div>
                     <div class="hero-art-overlay"></div>
+
+                    <!-- Clean Minimal Caption Banner -->
+                    <div class="hero-art-caption">
+                      <div class="caption-meta" id="hero-caption-meta">
+                        <span class="caption-title" id="hero-slide-title">Sri Krishna Darshana</span>
+                        <span class="caption-subtitle" id="hero-slide-subtitle">Udupi Sri Krishna Matha</span>
+                      </div>
+                    </div>
                   </div>
 
                 </div>
