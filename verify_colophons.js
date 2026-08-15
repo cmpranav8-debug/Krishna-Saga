@@ -51,13 +51,14 @@ compColophonMatches.forEach((match, idx) => {
   }
 });
 
-// Check that all 5 chapters have proper colophons
+// Check that all 6 chapters have proper colophons
 const expectedColophons = [
   'अर्जुनविषादयोगो नाम प्रथमोऽध्यायः',
   'साङ्ख्ययोगो नाम द्वितीयोऽध्यायः',
   'कर्मयोगो नाम तृतीयोऽध्यायः',
   'ज्ञानकर्मसंन्यासयोगो नाम चतुर्थोऽध्यायः',
-  'कर्मसंन्यासयोगो नाम पञ्चमोऽध्यायः'
+  'कर्मसंन्यासयोगो नाम पञ्चमोऽध्यायः',
+  'आत्मसंयमयोगो नाम षष्ठोऽध्यायः'
 ];
 
 expectedColophons.forEach((name, i) => {

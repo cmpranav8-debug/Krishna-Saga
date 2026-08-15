@@ -368,7 +368,7 @@ function initGitaExplorer() {
     const themeBadge = document.getElementById('overview-theme-badge');
     if (themeBadge) themeBadge.innerHTML = `<span>✦ ${chMeta.theme} ✦</span>`;
 
-    const sanskritNum = chapterNum === 1 ? '१' : chapterNum === 2 ? '२' : chapterNum === 3 ? '३' : chapterNum === 4 ? '४' : chapterNum === 5 ? '५' : chapterNum.toString();
+    const sanskritNum = chapterNum === 1 ? '१' : chapterNum === 2 ? '२' : chapterNum === 3 ? '३' : chapterNum === 4 ? '४' : chapterNum === 5 ? '५' : chapterNum === 6 ? '६' : chapterNum.toString();
     const sanskritTitle = document.getElementById('overview-sanskrit-title');
     if (sanskritTitle) sanskritTitle.textContent = `अध्याय ${sanskritNum} • ${chMeta.name_sanskrit}`;
 
@@ -418,7 +418,20 @@ function initGitaExplorer() {
     const compDesc = document.getElementById('completion-translation-desc');
     const compNextLabel = document.getElementById('completion-next-ch-label');
 
-    if (chapterNum === 5) {
+    if (chapterNum === 6) {
+      if (compImg) {
+        compImg.src = 'assets/images/6th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 6 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय ६ समाप्तम् • CHAPTER 6 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसम्वादे आत्मसंयमयोगो नाम षष्ठोऽध्यायः ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the sixth chapter named <strong>Dhyāna Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: ज्ञानविज्ञानयोग (Chapter 7)';
+    } else if (chapterNum === 5) {
       if (compImg) {
         compImg.src = 'assets/images/5th-adhyaya-end_.jpg';
         compImg.alt = 'Bhagavan Sri Krishna - Chapter 5 Concluded';
@@ -722,8 +735,10 @@ function initGitaExplorer() {
         showVerseReaderView(4, 1);
       } else if (currentChapter === 4) {
         showVerseReaderView(5, 1);
+      } else if (currentChapter === 5) {
+        showVerseReaderView(6, 1);
       } else {
-        alert('Chapter 6 (आत्मसंयमयोग - Ātma Saṃyama Yoga) will be available in the upcoming release!');
+        alert('Chapter 7 (ज्ञानविज्ञानयोग - Jñāna Vijñāna Yoga) will be available in the upcoming release!');
       }
     });
   }
