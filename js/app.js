@@ -330,8 +330,231 @@ function initGitaExplorer() {
   const verseTranslationText = document.getElementById('verse-translation-text');
   const verseMeaningText = document.getElementById('verse-meaning-text');
 
-  // State Management
-  let chaptersData = [];
+  const STATIC_GITA_CHAPTERS = [
+    {
+      "chapter_number": 1,
+      "name_sanskrit": "अर्जुनविषादयोग",
+      "name_transliteration": "Arjuna Viṣāda Yoga",
+      "name_translation": "The Yoga of Arjuna's Dejection",
+      "verses_count": 47,
+      "theme": "Moral Dilemma, Compassion, and Surrender",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "summary": "As the Pandava and Kaurava armies assemble on the sacred field of Kurukshetra, Arjuna is overwhelmed by grief and moral crisis upon seeing his revered teachers, kinsmen, and friends poised for battle. Casting down his bow Gandiva, he collapses in utter despondency, preparing the stage for Sri Krishna's divine discourse.",
+      "status": "available"
+    },
+    {
+      "chapter_number": 2,
+      "name_sanskrit": "साङ्ख्ययोग",
+      "name_transliteration": "Sāṅkhya Yoga",
+      "name_translation": "The Yoga of Analytical Knowledge",
+      "verses_count": 72,
+      "theme": "Immortal Soul, Duty, and Equanimity (Karma Yoga)",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "summary": "Sri Krishna begins His immortal teachings, dispelling Arjuna's grief by unveiling the eternal nature of the soul (Atman), the duty of a warrior (Svadharma), the path of selfless action (Karma Yoga), and the qualities of a person of steady wisdom (Sthitaprajna).",
+      "status": "available"
+    },
+    {
+      "chapter_number": 3,
+      "name_sanskrit": "कर्मयोग",
+      "name_transliteration": "Karma Yoga",
+      "name_translation": "The Yoga of Action",
+      "verses_count": 43,
+      "theme": "Selfless Duty, Sacrifice, and Overcoming Desire",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "summary": "Sri Krishna expounds on the necessity of performing one's natural prescribed duties without attachment to results (Nishkama Karma), following the cosmic cycle of sacrifice (Yajna), leading by personal example (Lokasangraha), and conquering inner desire and anger through Self-knowledge.",
+      "status": "available"
+    },
+    {
+      "chapter_number": 4,
+      "name_sanskrit": "ज्ञानकर्मसंन्यासयोग",
+      "name_transliteration": "Jñāna Karma Sannyāsa Yoga",
+      "name_translation": "The Yoga of Knowledge, Action, and Renunciation",
+      "verses_count": 42,
+      "theme": "Divine Incarnation, Sacred Knowledge, and the Fire of Wisdom",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "summary": "Sri Krishna reveals the eternal lineage of Yoga, His divine descent (Avatarana) to protect dharma across ages, the profound nature of action in inaction, the various dimensions of inner sacrifice (Yajna), and how the blazing fire of spiritual wisdom (Jñanagni) burns all binding karmas to ashes.",
+      "status": "available"
+    },
+    {
+      "chapter_number": 5,
+      "name_sanskrit": "कर्मसंन्यासयोग",
+      "name_transliteration": "Karma Sannyāsa Yoga",
+      "name_translation": "The Yoga of Renunciation of Action",
+      "verses_count": 29,
+      "theme": "Renunciation vs. Selfless Action, Equanimity, and Supreme Peace",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "summary": "Sri Krishna harmonizes the path of renunciation (Sannyasa) with selfless action (Karma Yoga), establishing that selfless dedicated work is superior and easier for purification. The enlightened sage sees the divine in all beings with equal vision, remains untouched by sin like a lotus leaf by water, and attains the supreme peace of Brahman Nirvana.",
+      "status": "available"
+    },
+    {
+      "chapter_number": 6,
+      "name_sanskrit": "आत्मसंयमयोग",
+      "name_transliteration": "Dhyāna Yoga",
+      "name_translation": "The Yoga of Meditation",
+      "verses_count": 47,
+      "theme": "Mind Mastery, The Science of Meditation, and Inner Absorption",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "summary": "Sri Krishna expounds the practical science of meditation (Dhyana Yoga), the art of mastering the mind as one's greatest friend, the ideal posture and discipline for inner stillness, equal vision toward all beings, and reassures Arjuna that no sincere yogic effort is ever lost.",
+      "status": "available"
+    },
+    {
+      "chapter_number": 7,
+      "name_sanskrit": "ज्ञानविज्ञानयोग",
+      "name_transliteration": "Jñāna Vijñāna Yoga",
+      "name_translation": "The Yoga of Knowledge and Realization",
+      "verses_count": 30,
+      "theme": "The Supreme Reality Behind Cosmic Manifestation",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "summary": "Sri Krishna unveils the mysteries of knowledge (Jnana) and experiential realization (Vijnana), His twofold material and spiritual energies (Apara and Para Prakriti), the divine illusion of Maya, the four types of noble devotees, and the rare devotee who realizes that Vasudeva is everything.",
+      "status": "available"
+    },
+    {
+      "chapter_number": 8,
+      "name_sanskrit": "अक्षरब्रह्मयोग",
+      "name_transliteration": "Akṣara Brahma Yoga",
+      "name_translation": "The Yoga of the Imperishable Absolute",
+      "verses_count": 28,
+      "theme": "The Imperishable Brahman, Cosmic Cycles, and Attainment of the Supreme",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/8th-adhyaya-end.jpg",
+      "summary": "Sri Krishna reveals the nature of the Imperishable Brahman, the secret of constant remembrance at the moment of bodily departure, yogic concentration on OM (Pranava), the cosmic cycles of Brahma's day and night, and the luminous Northern (Devayana) and Southern (Pitriyana) paths leading to the Supreme Abode.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे अक्षरब्रह्मयोगो नाम अष्टमोऽध्यायः ॥ ८ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 9,
+      "name_sanskrit": "राजविद्याराजगुह्ययोग",
+      "name_transliteration": "Rājavidyā Rājaguhya Yoga",
+      "name_translation": "The Yoga of the Sovereign Science and Sovereign Secret",
+      "verses_count": 34,
+      "theme": "The Sovereign Science, Sovereign Secret, and Unconditional Devotional Refuge",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/9th-adhyaya-end.jpg",
+      "summary": "Sri Krishna reveals the supreme confidential wisdom (Raja Vidya Raja Guhya), His unmanifest cosmic pervasion, the nature of Prakriti working under His divine supervision, the futility of polytheistic fruitive rites versus the infallible refuge of exclusive devotion (Ananya Bhakti), His promise to personally preserve what His devotees possess (Yoga-kṣema), accepting simple offerings of love with grace (Patram Pushpam Phalam Toyam), and welcoming all souls into supreme liberation.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे राजविद्याराजगुह्ययोगो नाम नवमोऽध्यायः ॥ ९ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 10,
+      "name_sanskrit": "विभूतियोग",
+      "name_transliteration": "Vibhūti Yoga",
+      "name_translation": "The Yoga of Divine Opulence",
+      "verses_count": 42,
+      "theme": "The Omnipresence of Krishna in All Excellence and Divine Opulence",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/10th-adhyaya-end.jpg",
+      "summary": "Sri Krishna reveals His transcendent origin, the sacred Chatushloki Gita (10.8–10.11), and enumerates His infinite cosmic manifestations—the indwelling Self of all creatures, Vishnu among Adityas, the radiant Sun, the holy syllable OM, Japa Yajna, the Himalayas, Lord Rama, the holy Ganges, inexhaustible Time, and supporting the entire universe with a single fraction of His Being.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे विभूतियोगो नाम दशमोऽध्यायः ॥ १० ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 11,
+      "name_sanskrit": "विश्वरूपदर्शनयोग",
+      "name_transliteration": "Viśvarūpa Darśana Yoga",
+      "name_translation": "The Yoga of the Cosmic Vision",
+      "verses_count": 55,
+      "theme": "The Awe-Inspiring Universal Form, Cosmic Time, and the Vision of the Divine",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/11th-adhyaya-end.jpg",
+      "summary": "Sri Krishna bestows divine vision (Divya Chakshu) upon Arjuna to behold the dazzling, terrifying, and transcendent Universal Form (Vishvarupa)—blazing like a thousand suns, displaying all gods, worlds, and time-destroying jaws. Krishna proclaims Himself as Time (Kala), urging Arjuna to be an instrument (Nimitta-matram), before resuming His gentle, loving two-armed form accessible only through unalloyed devotion.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे विश्वरूपदर्शनयोगो नाम एकादशोऽध्यायः ॥ ११ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 12,
+      "name_sanskrit": "भक्तियोग",
+      "name_transliteration": "Bhakti Yoga",
+      "name_translation": "The Yoga of Pure Devotion",
+      "verses_count": 20,
+      "theme": "The Superiority of Love, the Ladder of Practice, and Qualities of the Dear Devotee",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/12th-adhyaya-end.jpg",
+      "summary": "Sri Krishna expounds the glory and direct sweetness of loving devotion (Bhakti Yoga) over the arduous contemplation of the unmanifest Absolute, outlines the practical ladder of spiritual ascent, and reveals the profound virtues of the devotee who is exceedingly dear to Him.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे भक्तियोगो नाम द्वादशोऽध्यायः ॥ १२ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 13,
+      "name_sanskrit": "क्षेत्रक्षेत्रज्ञविभागयोग",
+      "name_transliteration": "Kṣetra Kṣetrajña Vibhāga Yoga",
+      "name_translation": "The Yoga of the Field and the Knower of the Field",
+      "verses_count": 35,
+      "theme": "Distinction Between Matter, Consciousness, and the Supreme Indweller",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/13th-adhyaya-end.jpg",
+      "summary": "Sri Krishna expounds the metaphysical discrimination between the body-mind complex (the Field / Kshetra) and the indwelling pure Consciousness (the Knower / Kshetrajna), delineates the twenty virtues of true wisdom, unveils the supreme nature of Parabrahman (Jneya), and reveals the path of liberation through the eye of wisdom (Jnana Chakshu).",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे क्षेत्रक्षेत्रज्ञविभागयोगो नाम त्रयोदशोऽध्यायः ॥ १३ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 14,
+      "name_sanskrit": "गुणत्रयविभागयोग",
+      "name_transliteration": "Guṇatraya Vibhāga Yoga",
+      "name_translation": "The Yoga of the Three Modes of Material Nature",
+      "verses_count": 27,
+      "theme": "Transcending Sattva, Rajas, and Tamas through Supreme Devotion",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/14th-adhyaya-end.jpg",
+      "summary": "Sri Krishna reveals the mechanics of the three modes of material nature (Sattva, Rajas, Tamas) that bind the soul, describes the characteristics and conduct of the Gunatita (one who has transcended the gunas), and establishes unswerving Bhakti Yoga as the direct path to Brahman realization.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे गुणत्रयविभागयोगो नाम चतुर्दशोऽध्यायः ॥ १४ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 15,
+      "name_sanskrit": "पुरुषोत्तमयोग",
+      "name_transliteration": "Puruṣottama Yoga",
+      "name_translation": "The Yoga of the Supreme Person",
+      "verses_count": 20,
+      "theme": "The Inverted Tree of Samsara and the Majesty of Purushottama",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/15th-adhyaya-end.jpg",
+      "summary": "Sri Krishna expounds the allegory of the inverted Ashvattha tree of material existence, reveals how the soul is an eternal fragment of God (Mamaivamsho), unveils the digestive fire and indwelling witness, and delivers the Tri-shloki Gita establishing His identity as Purushottama—the Supreme Person beyond both matter and individual spirit.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे पुरुषोत्तमयोगो नाम पञ्चदशोऽध्यायः ॥ १५ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 16,
+      "name_sanskrit": "दैवासुरसम्पद्विभागयोग",
+      "name_transliteration": "Daivāsura Sampad Vibhāga Yoga",
+      "name_translation": "The Yoga of the Divine and Demonic Natures",
+      "verses_count": 24,
+      "theme": "The 26 Divine Virtues, Demonic Pitfalls, and the Authority of Scripture",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/16th-adhyaya-end.jpg",
+      "summary": "Sri Krishna contrasts the 26 sublime virtues of the divine nature (Daivi Sampad) leading to liberation against the destructive traits of the demonic temperament (Asuri Sampad) leading to bondage. He unveils the 3 gates to self-ruin—Lust (Kama), Anger (Krodha), and Greed (Lobha)—and establishes scriptural authority (Shastra-Pramana) as the true guide for righteous action.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे दैवासुरसम्पद्विभागयोगो नाम षोडशोऽध्यायः ॥ १६ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 17,
+      "name_sanskrit": "श्रद्धात्रयविभागयोग",
+      "name_transliteration": "Śraddhātraya Vibhāga Yoga",
+      "name_translation": "The Yoga of the Threefold Faith",
+      "verses_count": 28,
+      "theme": "The Threefold Faith, Food, Sacrifice, Austerities, and OM TAT SAT",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/Madhav ✨.jpg",
+      "summary": "Sri Krishna reveals how faith (Shraddha), worship, dietary preferences, sacrifices (Yajna), austerities of body-speech-mind (Tapas), and charities (Dana) are divided across the three gunas. He unveils the supreme purifying power of the threefold designation of Brahman: OM TAT SAT, teaching that works offered without faith are Asat.",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे श्रद्धात्रयविभागयोगो नाम सप्तदशोऽध्यायः ॥ १७ ॥",
+      "status": "available"
+    },
+    {
+      "chapter_number": 18,
+      "name_sanskrit": "मोक्षसंन्यासयोग",
+      "name_transliteration": "Mokṣa Sannyāsa Yoga",
+      "name_translation": "The Yoga of Liberation through Renunciation",
+      "verses_count": 78,
+      "theme": "The Culmination of the Gita: Supreme Surrender and Victory",
+      "image_url": "assets/images/krishna-and-arjuna.jpg",
+      "completion_image": "assets/images/18th-adhyaya-end.jpg",
+      "summary": "The ultimate synthesis of duty, wisdom, and devotion, culminating in Krishna's crowning promise: 'Surrendering all duties, take refuge in Me alone; I will deliver you from all sin, fear not.' (18.66)",
+      "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे मोक्षसंन्यासयोगो नाम अष्टादशोऽध्यायः ॥ १८ ॥",
+      "status": "available"
+    }
+  ];
+
+  // State Management — Initialize immediately with all 18 chapters for instantaneous zero-delay render
+  let chaptersData = [...STATIC_GITA_CHAPTERS];
   const chaptersVersesCache = {};
   let currentChapter = 1;
   let currentVerseIndex = 0;
@@ -709,37 +932,69 @@ function initGitaExplorer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // --- Data Fetching ---
+  // --- Data Fetching with Resilient Fallbacks & Cache Busting ---
   async function loadChaptersData() {
     try {
-      const response = await fetch('data/gita-chapters.json');
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      chaptersData = await response.json();
+      // 1. Primary fetch with cache busting & no-cache header
+      const response = await fetch('data/gita-chapters.json?v=2.0.0', { cache: 'no-cache' });
+      if (response.ok) {
+        chaptersData = await response.json();
+        renderChaptersGrid(chaptersData);
+        updateOverviewBanner(currentChapter);
+        return;
+      }
+    } catch (e1) {
+      console.warn('Primary fetch for gita-chapters.json failed, trying relative path...', e1);
+    }
+
+    try {
+      // 2. Relative path fallback
+      const response2 = await fetch('./data/gita-chapters.json?v=2.0.0');
+      if (response2.ok) {
+        chaptersData = await response2.json();
+        renderChaptersGrid(chaptersData);
+        updateOverviewBanner(currentChapter);
+        return;
+      }
+    } catch (e2) {
+      console.warn('Relative fetch for gita-chapters.json failed, applying static fallback...', e2);
+    }
+
+    // 3. Guaranteed Static Fallback (All 18 chapters)
+    if (STATIC_GITA_CHAPTERS && STATIC_GITA_CHAPTERS.length === 18) {
+      chaptersData = [...STATIC_GITA_CHAPTERS];
       renderChaptersGrid(chaptersData);
       updateOverviewBanner(currentChapter);
-    } catch (err) {
-      console.error('Failed to load Gita chapters:', err);
-      if (chaptersGrid) {
-        chaptersGrid.innerHTML = `
-          <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: #ff8f00;">
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;">✦ Unable to load chapter data ✦</p>
-            <p style="color: var(--text-secondary);">Please ensure data/gita-chapters.json is available.</p>
-          </div>
-        `;
-      }
     }
   }
 
   async function loadChapterVerses(chapterNum) {
     try {
-      const response = await fetch(`data/verses/chapter-${chapterNum}.json`);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const data = await response.json();
-      chaptersVersesCache[chapterNum] = data;
-      renderVerseTabs();
-      renderCurrentVerse();
-    } catch (err) {
-      console.error(`Failed to load Chapter ${chapterNum} verses:`, err);
+      // 1. Primary fetch with cache busting & no-cache
+      const response = await fetch(`data/verses/chapter-${chapterNum}.json?v=2.0.0`, { cache: 'no-cache' });
+      if (response.ok) {
+        const data = await response.json();
+        chaptersVersesCache[chapterNum] = data;
+        renderVerseTabs();
+        renderCurrentVerse();
+        return;
+      }
+    } catch (e1) {
+      console.warn(`Primary fetch for Chapter ${chapterNum} failed, trying relative path...`, e1);
+    }
+
+    try {
+      // 2. Relative path fallback
+      const response2 = await fetch(`./data/verses/chapter-${chapterNum}.json?v=2.0.0`);
+      if (response2.ok) {
+        const data2 = await response2.json();
+        chaptersVersesCache[chapterNum] = data2;
+        renderVerseTabs();
+        renderCurrentVerse();
+        return;
+      }
+    } catch (e2) {
+      console.error(`Failed to load Chapter ${chapterNum} verses via all fallbacks:`, e2);
     }
   }
 
