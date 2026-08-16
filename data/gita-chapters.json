@@ -73,19 +73,21 @@
     "verses_count": 30,
     "theme": "The Supreme Reality Behind Cosmic Manifestation",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "Sri Krishna reveals His higher and lower energies, how all creation is strung on Him like pearls upon a golden thread, and the four kinds of virtuous devotees who seek Him.",
-    "status": "upcoming"
+    "summary": "Sri Krishna unveils the mysteries of knowledge (Jnana) and experiential realization (Vijnana), His twofold material and spiritual energies (Apara and Para Prakriti), the divine illusion of Maya, the four types of noble devotees, and the rare devotee who realizes that Vasudeva is everything.",
+    "status": "available"
   },
   {
     "chapter_number": 8,
     "name_sanskrit": "अक्षरब्रह्मयोग",
     "name_transliteration": "Akṣara Brahma Yoga",
-    "name_translation": "The Yoga of the Imperishable Brahman",
+    "name_translation": "The Yoga of the Imperishable Absolute",
     "verses_count": 28,
-    "theme": "The Moment of Death and the Attainment of the Supreme",
+    "theme": "The Imperishable Brahman, Cosmic Cycles, and Attainment of the Supreme",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "The power of unwavering remembrance of the Divine at the time of bodily departure, and the illuminated path leading to the imperishable celestial abode.",
-    "status": "upcoming"
+    "completion_image": "assets/images/8th-adhyaya-end.jpg",
+    "summary": "Sri Krishna reveals the nature of the Imperishable Brahman, the secret of constant remembrance at the moment of bodily departure, yogic concentration on OM (Pranava), the cosmic cycles of Brahma's day and night, and the luminous Northern (Devayana) and Southern (Pitriyana) paths leading to the Supreme Abode.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे अक्षरब्रह्मयोगो नाम अष्टमोऽध्यायः ॥ ८ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 9,
@@ -93,21 +95,25 @@
     "name_transliteration": "Rājavidyā Rājaguhya Yoga",
     "name_translation": "The Yoga of the Sovereign Science and Sovereign Secret",
     "verses_count": 34,
-    "theme": "Pure Devotion and the Loving Grace of Sri Krishna",
+    "theme": "The Sovereign Science, Sovereign Secret, and Unconditional Devotional Refuge",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "The supreme confidential knowledge: Sri Krishna's promise to carry what His devotees lack and preserve what they possess (Yoga-kṣema), accepting even a leaf, flower, fruit, or water with love.",
-    "status": "upcoming"
+    "completion_image": "assets/images/9th-adhyaya-end.jpg",
+    "summary": "Sri Krishna reveals the supreme confidential wisdom (Raja Vidya Raja Guhya), His unmanifest cosmic pervasion, the nature of Prakriti working under His divine supervision, the futility of polytheistic fruitive rites versus the infallible refuge of exclusive devotion (Ananya Bhakti), His promise to personally preserve what His devotees possess (Yoga-kṣema), accepting simple offerings of love with grace (Patram Pushpam Phalam Toyam), and welcoming all souls into supreme liberation.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे राजविद्याराजगुह्ययोगो नाम नवमोऽध्यायः ॥ ९ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 10,
     "name_sanskrit": "विभूतियोग",
     "name_transliteration": "Vibhūti Yoga",
-    "name_translation": "The Yoga of Divine Glories",
+    "name_translation": "The Yoga of Divine Opulence",
     "verses_count": 42,
-    "theme": "The Omnipresence of Krishna in All Excellence",
+    "theme": "The Omnipresence of Krishna in All Excellence and Divine Opulence",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "Krishna describes His infinite divine opulences—among lights He is the radiant Sun, among mountains the mighty Meru, among rivers the sacred Ganges, and among the senses the Mind.",
-    "status": "upcoming"
+    "completion_image": "assets/images/10th-adhyaya-end.jpg",
+    "summary": "Sri Krishna reveals His transcendent origin, the sacred Chatushloki Gita (10.8–10.11), and enumerates His infinite cosmic manifestations—the indwelling Self of all creatures, Vishnu among Adityas, the radiant Sun, the holy syllable OM, Japa Yajna, the Himalayas, Lord Rama, the holy Ganges, inexhaustible Time, and supporting the entire universe with a single fraction of His Being.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे विभूतियोगो नाम दशमोऽध्यायः ॥ १० ॥",
+    "status": "available"
   },
   {
     "chapter_number": 11,
@@ -115,10 +121,12 @@
     "name_transliteration": "Viśvarūpa Darśana Yoga",
     "name_translation": "The Yoga of the Cosmic Vision",
     "verses_count": 55,
-    "theme": "The Awe-Inspiring Universal Form of the Divine",
+    "theme": "The Awe-Inspiring Universal Form, Cosmic Time, and the Vision of the Divine",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "Krishna grants Arjuna celestial divine eyes to behold His dazzling, terrifying, and transcendent Universal Form encompassing all universes, gods, time, and cosmic destruction.",
-    "status": "upcoming"
+    "completion_image": "assets/images/11th-adhyaya-end.jpg",
+    "summary": "Sri Krishna bestows divine vision (Divya Chakshu) upon Arjuna to behold the dazzling, terrifying, and transcendent Universal Form (Vishvarupa)—blazing like a thousand suns, displaying all gods, worlds, and time-destroying jaws. Krishna proclaims Himself as Time (Kala), urging Arjuna to be an instrument (Nimitta-matram), before resuming His gentle, loving two-armed form accessible only through unalloyed devotion.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे विश्वरूपदर्शनयोगो नाम एकादशोऽध्यायः ॥ ११ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 12,
@@ -126,10 +134,12 @@
     "name_transliteration": "Bhakti Yoga",
     "name_translation": "The Yoga of Pure Devotion",
     "verses_count": 20,
-    "theme": "The Qualities of the Dear Devotee",
+    "theme": "The Superiority of Love, the Ladder of Practice, and Qualities of the Dear Devotee",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "The superiority and sweetness of personal devotion, coupled with the sublime virtues of an enlightened bhakta: free from malice, compassionate, patient, equal in joy and sorrow.",
-    "status": "upcoming"
+    "completion_image": "assets/images/12th-adhyaya-end.jpg",
+    "summary": "Sri Krishna expounds the glory and direct sweetness of loving devotion (Bhakti Yoga) over the arduous contemplation of the unmanifest Absolute, outlines the practical ladder of spiritual ascent, and reveals the profound virtues of the devotee who is exceedingly dear to Him.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे भक्तियोगो नाम द्वादशोऽध्यायः ॥ १२ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 13,
@@ -137,10 +147,12 @@
     "name_transliteration": "Kṣetra Kṣetrajña Vibhāga Yoga",
     "name_translation": "The Yoga of the Field and the Knower of the Field",
     "verses_count": 35,
-    "theme": "Distinction Between Matter, Consciousness, and Spirit",
+    "theme": "Distinction Between Matter, Consciousness, and the Supreme Indweller",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "The metaphysical discrimination between the body/mind/universe (the Field) and the indwelling pure Consciousness (the Knower of the Field).",
-    "status": "upcoming"
+    "completion_image": "assets/images/13th-adhyaya-end.jpg",
+    "summary": "Sri Krishna expounds the metaphysical discrimination between the body-mind complex (the Field / Kshetra) and the indwelling pure Consciousness (the Knower / Kshetrajna), delineates the twenty virtues of true wisdom, unveils the supreme nature of Parabrahman (Jneya), and reveals the path of liberation through the eye of wisdom (Jnana Chakshu).",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे क्षेत्रक्षेत्रज्ञविभागयोगो नाम त्रयोदशोऽध्यायः ॥ १३ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 14,
@@ -148,10 +160,12 @@
     "name_transliteration": "Guṇatraya Vibhāga Yoga",
     "name_translation": "The Yoga of the Three Modes of Material Nature",
     "verses_count": 27,
-    "theme": "Transcending Sattva, Rajas, and Tamas",
+    "theme": "Transcending Sattva, Rajas, and Tamas through Supreme Devotion",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "How the three gunas (goodness, passion, and ignorance) bind the soul, how they operate in human consciousness, and how to transcend them (Guṇātīta).",
-    "status": "upcoming"
+    "completion_image": "assets/images/14th-adhyaya-end.jpg",
+    "summary": "Sri Krishna reveals the mechanics of the three modes of material nature (Sattva, Rajas, Tamas) that bind the soul, describes the characteristics and conduct of the Gunatita (one who has transcended the gunas), and establishes unswerving Bhakti Yoga as the direct path to Brahman realization.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे गुणत्रयविभागयोगो नाम चतुर्दशोऽध्यायः ॥ १४ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 15,
@@ -159,10 +173,12 @@
     "name_transliteration": "Puruṣottama Yoga",
     "name_translation": "The Yoga of the Supreme Person",
     "verses_count": 20,
-    "theme": "The Cosmic Tree of Existence and the Supreme Being",
+    "theme": "The Inverted Tree of Samsara and the Majesty of Purushottama",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "The metaphor of the inverted Ashvattha tree of samsara, the nature of the Supreme Purusha who sustains the cosmos, and the essence of Vedic revelation.",
-    "status": "upcoming"
+    "completion_image": "assets/images/15th-adhyaya-end.jpg",
+    "summary": "Sri Krishna expounds the allegory of the inverted Ashvattha tree of material existence, reveals how the soul is an eternal fragment of God (Mamaivamsho), unveils the digestive fire and indwelling witness, and delivers the Tri-shloki Gita establishing His identity as Purushottama—the Supreme Person beyond both matter and individual spirit.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे पुरुषोत्तमयोगो नाम पञ्चदशोऽध्यायः ॥ १५ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 16,
@@ -170,10 +186,12 @@
     "name_transliteration": "Daivāsura Sampad Vibhāga Yoga",
     "name_translation": "The Yoga of the Divine and Demonic Natures",
     "verses_count": 24,
-    "theme": "Cultivating Virtues and Overcoming Destructive Tendencies",
+    "theme": "The 26 Divine Virtues, Demonic Pitfalls, and the Authority of Scripture",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "The 26 divine qualities leading to spiritual liberation contrasted with the egoic, arrogant, and greedy qualities that lead to bondage and self-destruction.",
-    "status": "upcoming"
+    "completion_image": "assets/images/16th-adhyaya-end.jpg",
+    "summary": "Sri Krishna contrasts the 26 sublime virtues of the divine nature (Daivi Sampad) leading to liberation against the destructive traits of the demonic temperament (Asuri Sampad) leading to bondage. He unveils the 3 gates to self-ruin—Lust (Kama), Anger (Krodha), and Greed (Lobha)—and establishes scriptural authority (Shastra-Pramana) as the true guide for righteous action.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे दैवासुरसम्पद्विभागयोगो नाम षोडशोऽध्यायः ॥ १६ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 17,
@@ -181,10 +199,12 @@
     "name_transliteration": "Śraddhātraya Vibhāga Yoga",
     "name_translation": "The Yoga of the Threefold Faith",
     "verses_count": 28,
-    "theme": "Faith, Food, Austerity, Charity, and the Sacred Syllable OM TAT SAT",
+    "theme": "The Threefold Faith, Food, Sacrifice, Austerities, and OM TAT SAT",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
-    "summary": "How human faith, dietary choices, austerities, and charities reflect the three gunas, and the purifying power of the sacred invocation OM TAT SAT.",
-    "status": "upcoming"
+    "completion_image": "assets/images/Madhav ✨.jpg",
+    "summary": "Sri Krishna reveals how faith (Shraddha), worship, dietary preferences, sacrifices (Yajna), austerities of body-speech-mind (Tapas), and charities (Dana) are divided across the three gunas. He unveils the supreme purifying power of the threefold designation of Brahman: OM TAT SAT, teaching that works offered without faith are Asat.",
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे श्रद्धात्रयविभागयोगो नाम सप्तदशोऽध्यायः ॥ १७ ॥",
+    "status": "available"
   },
   {
     "chapter_number": 18,
@@ -194,7 +214,9 @@
     "verses_count": 78,
     "theme": "The Culmination of the Gita: Supreme Surrender and Victory",
     "image_url": "assets/images/krishna-and-arjuna.jpg",
+    "completion_image": "assets/images/18th-adhyaya-end.jpg",
     "summary": "The ultimate synthesis of duty, wisdom, and devotion, culminating in Krishna's crowning promise: 'Surrendering all duties, take refuge in Me alone; I will deliver you from all sin, fear not.' (18.66)",
-    "status": "upcoming"
+    "colophon": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे मोक्षसंन्यासयोगो नाम अष्टादशोऽध्यायः ॥ १८ ॥",
+    "status": "available"
   }
 ]

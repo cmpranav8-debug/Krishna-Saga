@@ -1673,20 +1673,20 @@ h1, h2, h3, h4, .font-serif {
   line-height: 1.7;
 }
 
-/* Verse Card Footer */
+/* Verse Card Footer (Keyboard Tips) */
 .verse-card-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 1.2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .shortcut-hint {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
+  text-align: center;
 }
 
 .shortcut-hint kbd {
@@ -1698,22 +1698,120 @@ h1, h2, h3, h4, .font-serif {
   color: var(--gold-light);
 }
 
-.verse-action-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(245, 166, 35, 0.3);
-  color: var(--gold-light);
-  font-size: 0.84rem;
-  font-weight: 600;
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all var(--transition-fast);
+/* ==========================================================================
+   Persistent Bottom Verse Navigation Bar (Footer Controls)
+   ========================================================================== */
+.verse-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  position: relative;
 }
 
-.verse-action-btn:hover {
-  background: rgba(245, 166, 35, 0.18);
+.btn-verse-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: linear-gradient(135deg, rgba(14, 25, 48, 0.95) 0%, rgba(8, 15, 32, 0.95) 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  color: var(--gold-light);
+  font-family: 'Cinzel', var(--font-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), 0 0 12px rgba(245, 166, 35, 0.12);
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  min-width: 170px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.btn-verse-nav:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.28) 0%, rgba(255, 112, 67, 0.25) 100%);
   border-color: var(--gold-bright);
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--glow-gold), 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+.btn-verse-nav:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-verse-nav:disabled {
+  opacity: 0.35;
+  filter: grayscale(80%);
+  border-color: rgba(212, 175, 55, 0.15);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-verse-prev {
+  padding-left: 1.4rem;
+  margin-right: auto;
+}
+
+.btn-verse-next {
+  padding-right: 1.4rem;
+  margin-left: auto;
+}
+
+.btn-verse-complete {
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.35) 0%, rgba(255, 112, 67, 0.35) 100%) !important;
+  border-color: var(--gold-bright) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px rgba(245, 166, 35, 0.4), 0 4px 18px rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn-verse-complete:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.5) 0%, rgba(255, 112, 67, 0.5) 100%) !important;
+  box-shadow: 0 0 24px rgba(245, 166, 35, 0.7), 0 8px 24px rgba(0, 0, 0, 0.7) !important;
+}
+
+.btn-verse-nav .btn-nav-icon {
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.btn-verse-prev:hover:not(:disabled) .btn-nav-icon {
+  transform: translateX(-4px);
+}
+
+.btn-verse-next:hover:not(:disabled) .btn-nav-icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .verse-bottom-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+  }
+  .btn-verse-nav {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.2rem;
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* Verse Tabs Scrollable Wrapper */
@@ -1863,6 +1961,96 @@ h1, h2, h3, h4, .font-serif {
   margin-bottom: 1.8rem;
   max-width: 720px;
   text-shadow: 0 0 20px rgba(245, 166, 35, 0.25);
+}
+
+/* ==========================================================================
+   Grand Bhagavad Gita Culmination Mantra (॥ इति श्रीमद्भगवद्गीता समाप्ता ॥)
+   ========================================================================== */
+.gita-grand-conclusion,
+.grand-samapta-banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.95rem 2.4rem;
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.18) 0%, rgba(255, 112, 67, 0.14) 50%, rgba(212, 175, 55, 0.2) 100%);
+  border: 1.5px solid rgba(255, 213, 79, 0.6);
+  border-radius: 999px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.55), 0 0 30px rgba(245, 166, 35, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: grandGlowPulse 3.5s ease-in-out infinite alternate;
+  position: relative;
+  max-width: 95%;
+}
+
+.gita-grand-conclusion .conclusion-mantra,
+.grand-samapta-banner .conclusion-mantra {
+  font-family: 'Cinzel Decorative', 'Yatra One', var(--font-reading), var(--font-serif), serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #ffffff 0%, #ffe082 25%, #ffd54f 50%, #f5a623 75%, #ffe082 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.6)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.85));
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.gita-grand-conclusion .conclusion-flourish,
+.grand-samapta-banner .conclusion-flourish {
+  color: var(--gold-bright);
+  font-size: 1.15rem;
+  text-shadow: 0 0 12px rgba(245, 166, 35, 0.9);
+  animation: grandFlourishShimmer 3s ease-in-out infinite alternate;
+  display: inline-block;
+  user-select: none;
+}
+
+@keyframes grandGlowPulse {
+  0% {
+    border-color: rgba(255, 213, 79, 0.45);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 18px rgba(245, 166, 35, 0.25);
+  }
+  100% {
+    border-color: rgba(255, 215, 0, 0.9);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 0 35px rgba(255, 215, 0, 0.55), 0 0 65px rgba(255, 112, 67, 0.3);
+  }
+}
+
+@keyframes grandFlourishShimmer {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 4px rgba(245, 166, 35, 0.5));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.95));
+  }
+}
+
+@media (max-width: 768px) {
+  .gita-grand-conclusion,
+  .grand-samapta-banner {
+    padding: 0.7rem 1.3rem;
+    gap: 0.55rem;
+    margin-top: 1.1rem;
+  }
+  .gita-grand-conclusion .conclusion-mantra,
+  .grand-samapta-banner .conclusion-mantra {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+  }
+  .gita-grand-conclusion .conclusion-flourish,
+  .grand-samapta-banner .conclusion-flourish {
+    font-size: 0.92rem;
+  }
 }
 
 .completion-dedication-banner {

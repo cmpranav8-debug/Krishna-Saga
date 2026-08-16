@@ -14,9 +14,9 @@ function fail(msg) { console.error(`  ❌ [FAIL] ${msg}`); failed = true; }
 
 // 1. Assets Check
 console.log('1. Image Assets Check:');
-const vpA = path.join(__dirname, 'assets', 'images', 'vp_a.jpeg');
-const vpB = path.join(__dirname, 'assets', 'images', 'vp_b.jpeg');
-const vpCover = path.join(__dirname, 'assets', 'images', 'pooja.jpg');
+const vpA = path.join(__dirname, '..', 'assets', 'images', 'vp_a.jpeg');
+const vpB = path.join(__dirname, '..', 'assets', 'images', 'vp_b.jpeg');
+const vpCover = path.join(__dirname, '..', 'assets', 'images', 'pooja.jpg');
 
 if (fs.existsSync(vpA)) {
   pass(`vp_a.jpeg exists (${(fs.statSync(vpA).size / 1024).toFixed(1)} KB)`);
@@ -38,7 +38,7 @@ if (fs.existsSync(vpCover)) {
 
 // 2. index.html Structure Check
 console.log('\n2. index.html Structure Check:');
-const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
 
 const requiredElements = [
   'id="pooja-view"',
@@ -89,7 +89,7 @@ requiredElements.forEach(el => {
 
 // 3. css/main.css Check
 console.log('\n3. css/main.css Check:');
-const css = fs.readFileSync(path.join(__dirname, 'css', 'main.css'), 'utf8');
+const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'main.css'), 'utf8');
 const requiredCss = [
   '.pooja-view',
   '.pooja-top-nav',
@@ -119,7 +119,7 @@ requiredCss.forEach(c => {
 
 // 4. js/app.js V8 Syntax & Features Check
 console.log('\n4. js/app.js Syntax & Logic Check:');
-const appJs = fs.readFileSync(path.join(__dirname, 'js', 'app.js'), 'utf8');
+const appJs = fs.readFileSync(path.join(__dirname, '..', 'js', 'app.js'), 'utf8');
 try {
   new vm.Script(appJs);
   pass('js/app.js: V8 syntax check passed.');

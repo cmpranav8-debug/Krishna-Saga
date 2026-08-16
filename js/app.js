@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initCosmicParticles();
   initHeroSlideshow();
-  initVirtualPooja();
-  initGitaExplorer();
   initPortalModals();
   initAttributionModal();
+  initVirtualPooja();
+  initGitaExplorer();
 });
 
 /* ==========================================================================
@@ -275,7 +275,7 @@ function initHeroSlideshow() {
   if (exploreBtn) {
     exploreBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetSection = document.getElementById('portals') || document.getElementById('portals-section') || document.querySelector('.portals-section');
+      const targetSection = document.getElementById('portals') || document.querySelector('.portals-section');
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -309,12 +309,13 @@ function initGitaExplorer() {
   // Verse Reader Elements
   const prevVerseBtn = document.getElementById('prev-verse-btn');
   const nextVerseBtn = document.getElementById('next-verse-btn');
+  const bottomPrevVerseBtn = document.getElementById('bottom-prev-verse-btn');
+  const bottomNextVerseBtn = document.getElementById('bottom-next-verse-btn');
   const verseNumberTabs = document.getElementById('verse-number-tabs');
   const verseQuickSelect = document.getElementById('verse-quick-select');
   const translitToggleBtn = document.getElementById('translit-toggle-btn');
   const translitBtnLabel = document.getElementById('translit-btn-label');
   const translitContainer = document.getElementById('verse-translit-container');
-  const copyVerseBtn = document.getElementById('copy-verse-btn');
 
   // Completion View Buttons
   const completionNextBtn = document.getElementById('completion-next-ch-btn');
@@ -337,9 +338,17 @@ function initGitaExplorer() {
   let isTranslitVisible = true;
   let activeView = 'landing'; // 'landing' | 'chapters' | 'reader' | 'completion'
 
+  function stopPoojaAudioIfPlaying() {
+    if (typeof window.stopVirtualPoojaAudio === 'function') {
+      window.stopVirtualPoojaAudio();
+    }
+  }
+
   // --- View Switching ---
   function showLandingView() {
     activeView = 'landing';
+    stopPoojaAudioIfPlaying();
+
     if (landingView) landingView.style.display = 'block';
     if (gitaView) gitaView.style.display = 'none';
     if (completionView) completionView.style.display = 'none';
@@ -363,11 +372,16 @@ function initGitaExplorer() {
 
   function showGitaChaptersView() {
     activeView = 'chapters';
+    stopPoojaAudioIfPlaying();
+
     if (landingView) landingView.style.display = 'none';
     if (gitaView) gitaView.style.display = 'block';
     if (chaptersView) chaptersView.style.display = 'block';
     if (readerView) readerView.style.display = 'none';
     if (completionView) completionView.style.display = 'none';
+
+    const poojaView = document.getElementById('pooja-view');
+    if (poojaView) poojaView.style.display = 'none';
 
     history.pushState(null, '', '#gita');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -393,7 +407,8 @@ function initGitaExplorer() {
     const themeBadge = document.getElementById('overview-theme-badge');
     if (themeBadge) themeBadge.innerHTML = `<span>✦ ${chMeta.theme} ✦</span>`;
 
-    const sanskritNum = chapterNum === 1 ? '१' : chapterNum === 2 ? '२' : chapterNum === 3 ? '३' : chapterNum === 4 ? '४' : chapterNum === 5 ? '५' : chapterNum === 6 ? '६' : chapterNum.toString();
+    const devanagariDigits = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+    const sanskritNum = chapterNum.toString().split('').map(d => devanagariDigits[parseInt(d, 10)] || d).join('');
     const sanskritTitle = document.getElementById('overview-sanskrit-title');
     if (sanskritTitle) sanskritTitle.textContent = `अध्याय ${sanskritNum} • ${chMeta.name_sanskrit}`;
 
@@ -406,7 +421,9 @@ function initGitaExplorer() {
 
   function showVerseReaderView(chapterNum = 1, verseNum = 1) {
     activeView = 'reader';
-    currentChapter = chapterNum;
+    stopPoojaAudioIfPlaying();
+
+    currentChapter = Math.max(1, Math.min(18, chapterNum));
     currentVerseIndex = Math.max(0, verseNum - 1);
 
     if (landingView) landingView.style.display = 'none';
@@ -415,12 +432,15 @@ function initGitaExplorer() {
     if (readerView) readerView.style.display = 'block';
     if (completionView) completionView.style.display = 'none';
 
-    updateOverviewBanner(chapterNum);
-    history.pushState(null, '', `#gita/chapter-${chapterNum}/verse-${verseNum}`);
+    const poojaView = document.getElementById('pooja-view');
+    if (poojaView) poojaView.style.display = 'none';
+
+    updateOverviewBanner(currentChapter);
+    history.pushState(null, '', `#gita/chapter-${currentChapter}/verse-${verseNum}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    if (!chaptersVersesCache[chapterNum]) {
-      loadChapterVerses(chapterNum);
+    if (!chaptersVersesCache[currentChapter]) {
+      loadChapterVerses(currentChapter);
     } else {
       renderVerseTabs();
       renderCurrentVerse();
@@ -429,7 +449,9 @@ function initGitaExplorer() {
 
   function showCompletionView(chapterNum = 1) {
     activeView = 'completion';
-    currentChapter = chapterNum;
+    stopPoojaAudioIfPlaying();
+
+    currentChapter = Math.max(1, Math.min(18, chapterNum));
 
     if (landingView) landingView.style.display = 'none';
     if (gitaView) gitaView.style.display = 'block';
@@ -437,13 +459,172 @@ function initGitaExplorer() {
     if (readerView) readerView.style.display = 'none';
     if (completionView) completionView.style.display = 'block';
 
+    const poojaView = document.getElementById('pooja-view');
+    if (poojaView) poojaView.style.display = 'none';
+
     const compImg = document.getElementById('completion-art-img');
     const compBadge = document.getElementById('completion-badge-tag');
     const compColophon = document.getElementById('completion-sanskrit-colophon');
     const compDesc = document.getElementById('completion-translation-desc');
     const compNextLabel = document.getElementById('completion-next-ch-label');
 
-    if (chapterNum === 6) {
+    if (chapterNum === 18) {
+      if (compImg) {
+        compImg.src = 'assets/images/18th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna and Arjuna on the Chariot - Srimad Bhagavad Gita Completed';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ सम्पूर्ण श्रीमद्भगवद्गीता समाप्तम् • SRIMAD BHAGAVAD GITA COMPLETED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे मोक्षसंन्यासयोगो नाम अष्टादशोऽध्यायः ॥ १८ ॥<br><div class="gita-grand-conclusion"><span class="conclusion-flourish">✦</span><span class="conclusion-mantra">॥ इति श्रीमद्भगवद्गीता समाप्ता ॥</span><span class="conclusion-flourish">✦</span></div>';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the eighteenth chapter named <strong>Mokṣa Sannyāsa Yoga</strong>, concluding the sacred scripture of the Srimad Bhagavad Gita, the immortal dialogue between Bhagavan Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Restart Journey: अर्जुनविषादयोग (Chapter 1)';
+    } else if (chapterNum === 17) {
+      if (compImg) {
+        compImg.src = 'assets/images/Madhav ✨.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 17 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १७ समाप्तम् • CHAPTER 17 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे श्रद्धात्रयविभागयोगो नाम सप्तदशोऽध्यायः ॥ १७ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the seventeenth chapter named <strong>Śraddhātraya Vibhāga Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: मोक्षसंन्यासयोग (Chapter 18)';
+    } else if (chapterNum === 16) {
+      if (compImg) {
+        compImg.src = 'assets/images/16th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 16 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १६ समाप्तम् • CHAPTER 16 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे दैवासुरसम्पद्विभागयोगो नाम षोडशोऽध्यायः ॥ १६ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the sixteenth chapter named <strong>Daivāsura Sampad Vibhāga Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: श्रद्धात्रयविभागयोग (Chapter 17)';
+    } else if (chapterNum === 15) {
+      if (compImg) {
+        compImg.src = 'assets/images/15th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 15 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १५ समाप्तम् • CHAPTER 15 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे पुरुषोत्तमयोगो नाम पञ्चदशोऽध्यायः ॥ १५ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the fifteenth chapter named <strong>Puruṣottama Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: दैवासुरसम्पद्विभागयोग (Chapter 16)';
+    } else if (chapterNum === 14) {
+      if (compImg) {
+        compImg.src = 'assets/images/14th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 14 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १४ समाप्तम् • CHAPTER 14 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे गुणत्रयविभागयोगो नाम चतुर्दशोऽध्यायः ॥ १४ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the fourteenth chapter named <strong>Guṇatraya Vibhāga Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: पुरुषोत्तमयोग (Chapter 15)';
+    } else if (chapterNum === 13) {
+      if (compImg) {
+        compImg.src = 'assets/images/13th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 13 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १३ समाप्तम् • CHAPTER 13 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे क्षेत्रक्षेत्रज्ञविभागयोगो नाम त्रयोदशोऽध्यायः ॥ १३ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the thirteenth chapter named <strong>Kṣetra Kṣetrajña Vibhāga Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: गुणत्रयविभागयोग (Chapter 14)';
+    } else if (chapterNum === 12) {
+      if (compImg) {
+        compImg.src = 'assets/images/12th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 12 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १२ समाप्तम् • CHAPTER 12 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे भक्तियोगो नाम द्वादशोऽध्यायः ॥ १२ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the twelfth chapter named <strong>Bhakti Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: क्षेत्रक्षेत्रज्ञविभागयोग (Chapter 13)';
+    } else if (chapterNum === 11) {
+      if (compImg) {
+        compImg.src = 'assets/images/11th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 11 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय ११ समाप्तम् • CHAPTER 11 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे विश्वरूपदर्शनयोगो नाम एकादशोऽध्यायः ॥ ११ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the eleventh chapter named <strong>Viśvarūpa Darśana Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: भक्तियोग (Chapter 12)';
+    } else if (chapterNum === 10) {
+      if (compImg) {
+        compImg.src = 'assets/images/10th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 10 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय १० समाप्तम् • CHAPTER 10 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे विभूतियोगो नाम दशमोऽध्यायः ॥ १० ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the tenth chapter named <strong>Vibhūti Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: विश्वरूपदर्शनयोग (Chapter 11)';
+    } else if (chapterNum === 9) {
+      if (compImg) {
+        compImg.src = 'assets/images/9th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 9 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय ९ समाप्तम् • CHAPTER 9 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे राजविद्याराजगुह्ययोगो नाम नवमोऽध्यायः ॥ ९ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the ninth chapter named <strong>Rājavidyā Rājaguhya Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: विभूतियोग (Chapter 10)';
+    } else if (chapterNum === 8) {
+      if (compImg) {
+        compImg.src = 'assets/images/8th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 8 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय ८ समाप्तम् • CHAPTER 8 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसंवादे अक्षरब्रह्मयोगो नाम अष्टमोऽध्यायः ॥ ८ ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the eighth chapter named <strong>Akṣara Brahma Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: राजविद्याराजगुह्ययोग (Chapter 9)';
+    } else if (chapterNum === 7) {
+      if (compImg) {
+        compImg.src = 'assets/images/7th-adhyaya-end.jpg';
+        compImg.alt = 'Bhagavan Sri Krishna - Chapter 7 Concluded';
+      }
+      if (compBadge) compBadge.innerHTML = '<span>✦ अध्याय ७ समाप्तम् • CHAPTER 7 CONCLUDED ✦</span>';
+      if (compColophon) {
+        compColophon.innerHTML = 'ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>श्रीकृष्णार्जुनसम्वादे ज्ञानविज्ञानयोगो नाम सप्तमोऽध्यायः ॥';
+      }
+      if (compDesc) {
+        compDesc.innerHTML = '<em>"Om Tat Sat — Thus ends the seventh chapter named <strong>Jñāna Vijñāna Yoga</strong> in the Upanishad of the Srimad Bhagavad Gita, the science of the Supreme Spirit, the scripture of Yoga, and the sacred dialogue between Sri Krishna and Arjuna."</em>';
+      }
+      if (compNextLabel) compNextLabel.textContent = 'Next Chapter: अक्षरब्रह्मयोग (Chapter 8)';
+    } else if (chapterNum === 6) {
       if (compImg) {
         compImg.src = 'assets/images/6th-adhyaya-end.jpg';
         compImg.alt = 'Bhagavan Sri Krishna - Chapter 6 Concluded';
@@ -567,6 +748,16 @@ function initGitaExplorer() {
     if (!chaptersGrid) return;
     chaptersGrid.innerHTML = '';
 
+    if (!chapters || chapters.length === 0) {
+      chaptersGrid.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; background: rgba(14, 25, 48, 0.6); border: 1px dashed rgba(245, 166, 35, 0.3); border-radius: 16px;">
+          <p style="font-size: 1.2rem; color: var(--gold-bright); margin-bottom: 0.5rem;">✦ No chapters found ✦</p>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Try searching with different keywords like "Karma", "Sankhya", "Yoga", or "Arjuna".</p>
+        </div>
+      `;
+      return;
+    }
+
     chapters.forEach(ch => {
       const card = document.createElement('article');
       card.className = `gita-chapter-card ${ch.status === 'available' ? 'chapter-card-available' : 'chapter-card-locked'}`;
@@ -656,9 +847,18 @@ function initGitaExplorer() {
   // --- Rendering Current Verse ---
   function renderCurrentVerse() {
     const activeData = chaptersVersesCache[currentChapter];
-    if (!activeData || !activeData.verses || !activeData.verses[currentVerseIndex]) return;
+    if (!activeData || !activeData.verses || activeData.verses.length === 0) return;
+
+    // Clamp verse index safely within bounds
+    if (currentVerseIndex >= activeData.verses.length) {
+      currentVerseIndex = activeData.verses.length - 1;
+    }
+    if (currentVerseIndex < 0) {
+      currentVerseIndex = 0;
+    }
 
     const verse = activeData.verses[currentVerseIndex];
+    if (!verse) return;
     const totalVerses = activeData.verses.length;
 
     // Update Header Meta
@@ -681,9 +881,25 @@ function initGitaExplorer() {
       verseMeaningText.textContent = verse.meaning;
     }
 
-    // Update Nav Buttons
-    if (prevVerseBtn) prevVerseBtn.disabled = (currentVerseIndex === 0);
+    // Update Top & Bottom Prev Navigation Buttons (Verse 1 is strictly disabled)
+    if (prevVerseBtn) {
+      prevVerseBtn.disabled = (currentVerseIndex === 0);
+      prevVerseBtn.title = (currentVerseIndex === 0) ? 'Beginning of Chapter (First Verse)' : 'Previous Verse (Left Arrow Key)';
+    }
 
+    if (bottomPrevVerseBtn) {
+      if (currentVerseIndex === 0) {
+        bottomPrevVerseBtn.disabled = true;
+        bottomPrevVerseBtn.innerHTML = '<span class="btn-nav-icon">←</span> <span class="btn-nav-label">Previous Verse</span>';
+        bottomPrevVerseBtn.title = 'Beginning of Chapter (First Verse)';
+      } else {
+        bottomPrevVerseBtn.disabled = false;
+        bottomPrevVerseBtn.innerHTML = '<span class="btn-nav-icon">←</span> <span class="btn-nav-label">Previous Verse</span>';
+        bottomPrevVerseBtn.title = `Previous Verse (Verse ${verse.verse_number - 1})`;
+      }
+    }
+
+    // Update Top & Bottom Next Navigation Buttons
     if (nextVerseBtn) {
       if (currentVerseIndex === totalVerses - 1) {
         nextVerseBtn.disabled = false;
@@ -693,6 +909,19 @@ function initGitaExplorer() {
         nextVerseBtn.disabled = false;
         nextVerseBtn.innerHTML = '<span class="btn-text">Next</span> <span>→</span>';
         nextVerseBtn.title = 'Next Verse (Right Arrow Key)';
+      }
+    }
+
+    if (bottomNextVerseBtn) {
+      bottomNextVerseBtn.disabled = false;
+      if (currentVerseIndex === totalVerses - 1) {
+        bottomNextVerseBtn.classList.add('btn-verse-complete');
+        bottomNextVerseBtn.innerHTML = '<span class="btn-nav-label">Complete Chapter</span> <span class="btn-nav-icon">✦</span>';
+        bottomNextVerseBtn.title = `Complete Chapter ${currentChapter} and View Dedication (॥ श्रीकृष्णार्पणमस्तु ॥)`;
+      } else {
+        bottomNextVerseBtn.classList.remove('btn-verse-complete');
+        bottomNextVerseBtn.innerHTML = '<span class="btn-nav-label">Next Verse</span> <span class="btn-nav-icon">→</span>';
+        bottomNextVerseBtn.title = `Next Verse (Verse ${verse.verse_number + 1})`;
       }
     }
 
@@ -762,8 +991,32 @@ function initGitaExplorer() {
         showVerseReaderView(5, 1);
       } else if (currentChapter === 5) {
         showVerseReaderView(6, 1);
+      } else if (currentChapter === 6) {
+        showVerseReaderView(7, 1);
+      } else if (currentChapter === 7) {
+        showVerseReaderView(8, 1);
+      } else if (currentChapter === 8) {
+        showVerseReaderView(9, 1);
+      } else if (currentChapter === 9) {
+        showVerseReaderView(10, 1);
+      } else if (currentChapter === 10) {
+        showVerseReaderView(11, 1);
+      } else if (currentChapter === 11) {
+        showVerseReaderView(12, 1);
+      } else if (currentChapter === 12) {
+        showVerseReaderView(13, 1);
+      } else if (currentChapter === 13) {
+        showVerseReaderView(14, 1);
+      } else if (currentChapter === 14) {
+        showVerseReaderView(15, 1);
+      } else if (currentChapter === 15) {
+        showVerseReaderView(16, 1);
+      } else if (currentChapter === 16) {
+        showVerseReaderView(17, 1);
+      } else if (currentChapter === 17) {
+        showVerseReaderView(18, 1);
       } else {
-        alert('Chapter 7 (ज्ञानविज्ञानयोग - Jñāna Vijñāna Yoga) will be available in the upcoming release!');
+        showVerseReaderView(1, 1);
       }
     });
   }
@@ -778,28 +1031,54 @@ function initGitaExplorer() {
     });
   }
 
-  // Prev / Next Buttons
+  // Navigation Action Handlers with Smooth Scroll Reset
+  function scrollToVerseTop() {
+    const target = document.getElementById('verse-display-card') || document.getElementById('gita-reader-view');
+    if (target) {
+      const yOffset = -24;
+      const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function navigatePrevVerse(shouldScroll = false) {
+    if (currentVerseIndex > 0) {
+      currentVerseIndex--;
+      renderCurrentVerse();
+      if (shouldScroll) scrollToVerseTop();
+    }
+  }
+
+  function navigateNextVerse(shouldScroll = false) {
+    const activeData = chaptersVersesCache[currentChapter];
+    if (!activeData || !activeData.verses) return;
+
+    if (currentVerseIndex < activeData.verses.length - 1) {
+      currentVerseIndex++;
+      renderCurrentVerse();
+      if (shouldScroll) scrollToVerseTop();
+    } else {
+      showCompletionView(currentChapter);
+    }
+  }
+
+  // Prev / Next Button Listeners (Top & Bottom)
   if (prevVerseBtn) {
-    prevVerseBtn.addEventListener('click', () => {
-      if (currentVerseIndex > 0) {
-        currentVerseIndex--;
-        renderCurrentVerse();
-      }
-    });
+    prevVerseBtn.addEventListener('click', () => navigatePrevVerse(false));
   }
 
   if (nextVerseBtn) {
-    nextVerseBtn.addEventListener('click', () => {
-      const activeData = chaptersVersesCache[currentChapter];
-      if (activeData) {
-        if (currentVerseIndex < activeData.verses.length - 1) {
-          currentVerseIndex++;
-          renderCurrentVerse();
-        } else {
-          showCompletionView(currentChapter);
-        }
-      }
-    });
+    nextVerseBtn.addEventListener('click', () => navigateNextVerse(false));
+  }
+
+  if (bottomPrevVerseBtn) {
+    bottomPrevVerseBtn.addEventListener('click', () => navigatePrevVerse(true));
+  }
+
+  if (bottomNextVerseBtn) {
+    bottomNextVerseBtn.addEventListener('click', () => navigateNextVerse(true));
   }
 
   // Transliteration Toggle
@@ -814,46 +1093,15 @@ function initGitaExplorer() {
     });
   }
 
-  // Copy Shloka Button
-  if (copyVerseBtn) {
-    copyVerseBtn.addEventListener('click', () => {
-      const activeData = chaptersVersesCache[currentChapter];
-      if (!activeData || !activeData.verses[currentVerseIndex]) return;
-      const v = activeData.verses[currentVerseIndex];
-      const copyText = `श्रीमद्भगवद्गीता • Bhagavad Gita ${currentChapter}.${v.verse_number}\n\n${v.text_sanskrit}\n\n${v.transliteration}\n\nTranslation:\n"${v.translation}"\n\nMeaning:\n${v.meaning}\n\n— Via Krishna Saga`;
-
-      navigator.clipboard.writeText(copyText).then(() => {
-        const originalText = copyVerseBtn.innerHTML;
-        copyVerseBtn.innerHTML = `<span>✓ Shloka Copied!</span>`;
-        setTimeout(() => {
-          copyVerseBtn.innerHTML = originalText;
-        }, 2000);
-      }).catch(err => {
-        console.warn('Clipboard copy notice:', err);
-      });
-    });
-  }
-
   // Keyboard Shortcuts (Arrow Left / Arrow Right)
   window.addEventListener('keydown', (e) => {
     if (activeView !== 'reader') return;
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
 
-    const activeData = chaptersVersesCache[currentChapter];
-    if (!activeData) return;
-
     if (e.key === 'ArrowLeft') {
-      if (currentVerseIndex > 0) {
-        currentVerseIndex--;
-        renderCurrentVerse();
-      }
+      navigatePrevVerse(true);
     } else if (e.key === 'ArrowRight') {
-      if (currentVerseIndex < activeData.verses.length - 1) {
-        currentVerseIndex++;
-        renderCurrentVerse();
-      } else {
-        showCompletionView(currentChapter);
-      }
+      navigateNextVerse(true);
     }
   });
 
@@ -863,15 +1111,15 @@ function initGitaExplorer() {
     const cleanHash = rawHash.toLowerCase();
 
     // 1. Explicit Root / Home / Landing routes
-    if (!cleanHash || cleanHash === '' || cleanHash === '#' || cleanHash === '#home' || cleanHash === '#landing' || cleanHash === '#hero') {
+    if (!cleanHash || cleanHash === '' || cleanHash === '#' || cleanHash === '#home' || cleanHash === '#landing' || cleanHash === '#hero' || cleanHash === '/') {
       showLandingView();
       return;
     }
 
     // 1.1. Portals / Sanctuaries Anchor
-    if (cleanHash === '#portals' || cleanHash === '#portals-section' || cleanHash === '#sanctuaries-grid') {
+    if (cleanHash === '#portals' || cleanHash === '#sanctuaries-grid' || cleanHash === '#explore-portals-btn' || cleanHash === '#sanctuaries') {
       showLandingView();
-      const targetSection = document.getElementById('portals') || document.getElementById('portals-section') || document.querySelector('.portals-section');
+      const targetSection = document.getElementById('portals') || document.querySelector('.portals-section');
       if (targetSection) {
         setTimeout(() => {
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -880,27 +1128,44 @@ function initGitaExplorer() {
       return;
     }
 
+    // 1.2. Udupi Preview Modal Route
+    if (cleanHash === '#udupi' || cleanHash === '#udupi-krishna' || cleanHash === '#udupi-matha') {
+      showLandingView();
+      if (typeof window.openPortalModal === 'function') {
+        window.openPortalModal('udupi');
+      } else {
+        setTimeout(() => {
+          if (typeof window.openPortalModal === 'function') window.openPortalModal('udupi');
+        }, 150);
+      }
+      return;
+    }
+
     // 2. Virtual Pooja Routes
-    if (cleanHash.startsWith('#pooja')) {
-      const match = cleanHash.match(/#pooja(?:\/([a-z]+))?/);
+    if (cleanHash.startsWith('#pooja') || cleanHash.startsWith('#puja')) {
+      const match = cleanHash.match(/#(?:pooja|puja)(?:\/([a-z]+))?/);
       const phase = match && match[1] ? match[1] : null;
       if (typeof window.showPoojaView === 'function') {
         window.showPoojaView(phase);
+      } else {
+        setTimeout(() => {
+          if (typeof window.showPoojaView === 'function') window.showPoojaView(phase);
+        }, 150);
       }
       return;
     }
 
     // 3. Gita Completion Routes
     if (cleanHash.endsWith('/completed')) {
-      const match = cleanHash.match(/#gita\/chapter-(\d+)\/completed/);
+      const match = cleanHash.match(/#(?:gita|geeta)\/(?:chapter-)?(\d+)\/completed/);
       const ch = match ? parseInt(match[1], 10) : 1;
       showCompletionView(ch);
       return;
     }
 
     // 4. Gita Chapter / Verse Reader Routes
-    if (cleanHash.startsWith('#gita/chapter-')) {
-      const match = cleanHash.match(/#gita\/chapter-(\d+)(?:\/verse-(\d+))?/);
+    if (cleanHash.startsWith('#gita/') || cleanHash.startsWith('#geeta/')) {
+      const match = cleanHash.match(/#(?:gita|geeta)\/(?:chapter-)?(\d+)(?:\/(?:verse-)?(\d+))?/);
       if (match) {
         const ch = parseInt(match[1], 10);
         const v = match[2] ? parseInt(match[2], 10) : 1;
@@ -912,7 +1177,7 @@ function initGitaExplorer() {
     }
 
     // 5. Gita Chapters Overview
-    if (cleanHash === '#gita') {
+    if (cleanHash === '#gita' || cleanHash === '#gita-explorer' || cleanHash === '#geeta' || cleanHash === '#gita-chapters') {
       showGitaChaptersView();
       return;
     }
@@ -1016,6 +1281,10 @@ function initPortalModals() {
       closeModal();
     }
   });
+
+  // Global Exports for Hash Navigation & Deep Links
+  window.openPortalModal = openModal;
+  window.closePortalModal = closeModal;
 }
 
 /* ==========================================================================
@@ -1025,7 +1294,6 @@ function initAttributionModal() {
   const modal = document.getElementById('attribution-modal');
   const closeBtn = document.getElementById('attr-close-btn');
   const actionBtn = document.getElementById('attr-primary-action');
-  const heroAttrBtn = document.getElementById('hero-attr-btn');
   const footerAttrLink = document.getElementById('footer-attr-link');
 
   if (!modal) return;
@@ -1042,7 +1310,6 @@ function initAttributionModal() {
     document.body.style.overflow = '';
   }
 
-  if (heroAttrBtn) heroAttrBtn.addEventListener('click', openAttrModal);
   if (footerAttrLink) footerAttrLink.addEventListener('click', openAttrModal);
   if (closeBtn) closeBtn.addEventListener('click', closeAttrModal);
   if (actionBtn) actionBtn.addEventListener('click', closeAttrModal);
@@ -1097,7 +1364,6 @@ function initVirtualPooja() {
   const toMahapoojaBtn = document.getElementById('pooja-to-mahapooja-btn');
   const toAbhishekaBtn = document.getElementById('pooja-to-abhisheka-btn');
   const completePoojaBtn = document.getElementById('pooja-complete-btn');
-  const finishPoojaBtn = document.getElementById('pooja-finish-btn');
   const cardPuja = document.getElementById('card-puja');
   const footerPujaLink = document.getElementById('footer-puja-link');
   const tickerText = document.getElementById('pooja-ticker-text');
@@ -1205,6 +1471,12 @@ function initVirtualPooja() {
       } catch (e) {}
     });
     tanpuraNodes = [];
+    if (tanpuraGain) {
+      try {
+        tanpuraGain.disconnect();
+      } catch (e) {}
+      tanpuraGain = null;
+    }
   }
 
   function toggleTanpura() {
@@ -1886,7 +2158,7 @@ function initVirtualPooja() {
     }
   }, 7000);
 
-  // Global showPoojaView export
+  // Global showPoojaView & audio controller exports
   window.showPoojaView = function (phase) {
     if (landingView) landingView.style.display = 'none';
     if (gitaView) gitaView.style.display = 'none';
@@ -1901,6 +2173,11 @@ function initVirtualPooja() {
       setPhase('abhisheka');
       openWelcomeModal();
     }
+  };
+
+  window.stopVirtualPoojaAudio = function () {
+    stopAarti();
+    stopTanpura();
   };
 
   // Wire Event Listeners
@@ -1950,7 +2227,6 @@ function initVirtualPooja() {
 
   if (backToHomeBtn) backToHomeBtn.addEventListener('click', () => returnToLanding(false));
   if (completePoojaBtn) completePoojaBtn.addEventListener('click', () => returnToLanding(true));
-  if (finishPoojaBtn) finishPoojaBtn.addEventListener('click', () => returnToLanding(true));
 
   if (cardPuja) {
     cardPuja.addEventListener('click', (e) => {

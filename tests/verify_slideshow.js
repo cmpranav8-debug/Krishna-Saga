@@ -7,7 +7,7 @@ console.log('==============================================\n');
 
 // 1. Verify app.js syntax
 const vm = require('vm');
-const appJsPath = path.join(__dirname, 'js', 'app.js');
+const appJsPath = path.join(__dirname, '..', 'js', 'app.js');
 const appJsContent = fs.readFileSync(appJsPath, 'utf8');
 
 try {
@@ -30,7 +30,7 @@ console.log(`\nChecking ${heroSlides.length} configured hero slides:`);
 let allFilesExist = true;
 
 heroSlides.forEach((slide, i) => {
-  const fullPath = path.join(__dirname, slide.src);
+  const fullPath = path.join(__dirname, '..', slide.src);
   if (!fs.existsSync(fullPath)) {
     console.error(`  ❌ Slide ${i + 1} Missing file: ${slide.src}`);
     allFilesExist = false;
@@ -47,7 +47,7 @@ if (!allFilesExist) {
 console.log(`\n✔ All ${heroSlides.length} slideshow images exist and are accessible.`);
 
 // 3. Verify index.html elements
-const htmlPath = path.join(__dirname, 'index.html');
+const htmlPath = path.join(__dirname, '..', 'index.html');
 const htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
 const requiredIds = [
@@ -87,7 +87,7 @@ removedIds.forEach(id => {
 });
 
 // 5. Verify main.css rules
-const cssPath = path.join(__dirname, 'css', 'main.css');
+const cssPath = path.join(__dirname, '..', 'css', 'main.css');
 const cssContent = fs.readFileSync(cssPath, 'utf8');
 
 const requiredCssRules = [

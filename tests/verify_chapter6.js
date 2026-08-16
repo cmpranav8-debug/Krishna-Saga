@@ -9,7 +9,7 @@ console.log('==============================================\n');
 let failed = false;
 
 // 1. Verify data/verses/chapter-6.json
-const ch6Path = path.join(__dirname, 'data', 'verses', 'chapter-6.json');
+const ch6Path = path.join(__dirname, '..', 'data', 'verses', 'chapter-6.json');
 if (!fs.existsSync(ch6Path)) {
   console.error('❌ Missing file:', ch6Path);
   process.exit(1);
@@ -87,7 +87,7 @@ keyVerses.forEach(num => {
 });
 
 // 2. Verify data/gita-chapters.json
-const chaptersPath = path.join(__dirname, 'data', 'gita-chapters.json');
+const chaptersPath = path.join(__dirname, '..', 'data', 'gita-chapters.json');
 const chaptersContent = fs.readFileSync(chaptersPath, 'utf8');
 const chapters = JSON.parse(chaptersContent);
 const ch6Meta = chapters.find(c => c.chapter_number === 6);
@@ -107,7 +107,7 @@ if (!ch6Meta) {
 }
 
 // 3. Verify assets/images/6th-adhyaya-end.jpg
-const imgPath = path.join(__dirname, 'assets', 'images', '6th-adhyaya-end.jpg');
+const imgPath = path.join(__dirname, '..', 'assets', 'images', '6th-adhyaya-end.jpg');
 console.log('\nVerifying completion image asset:');
 if (fs.existsSync(imgPath)) {
   const stat = fs.statSync(imgPath);
@@ -118,7 +118,7 @@ if (fs.existsSync(imgPath)) {
 }
 
 // 4. Verify js/app.js syntax and Chapter 6 handlers
-const appJsPath = path.join(__dirname, 'js', 'app.js');
+const appJsPath = path.join(__dirname, '..', 'js', 'app.js');
 const appJsContent = fs.readFileSync(appJsPath, 'utf8');
 
 try {

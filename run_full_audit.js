@@ -141,7 +141,7 @@ if (!fs.existsSync(slideshowDir)) {
 // 2. MILESTONE 2 AUDIT: BHAGAVAD GITA SCRIPTURE ENGINE & CHAPTERS
 // ================================================================
 console.log('\n----------------------------------------------------------------');
-console.log('2. MILESTONE 2: BHAGAVAD GITA ENGINE & CHAPTERS 1-6 AUDIT');
+console.log('2. MILESTONE 2: BHAGAVAD GITA ENGINE & ALL 18 CHAPTERS AUDIT');
 console.log('----------------------------------------------------------------');
 
 // A. data/gita-chapters.json
@@ -160,8 +160,8 @@ if (!fs.existsSync(chaptersJsonPath)) {
       reportPass('All 18 chapters configured in metadata.');
     }
 
-    // Verify Chapters 1-6 are available
-    for (let i = 1; i <= 6; i++) {
+    // Verify all Chapters 1-18 are available
+    for (let i = 1; i <= 18; i++) {
       const ch = chaptersMeta.find(c => c.chapter_number === i);
       if (!ch) {
         reportFail(`Chapter ${i} missing from gita-chapters.json`);
@@ -173,33 +173,37 @@ if (!fs.existsSync(chaptersJsonPath)) {
         }
       }
     }
-
-    // Verify Chapters 7-18 are upcoming
-    for (let i = 7; i <= 18; i++) {
-      const ch = chaptersMeta.find(c => c.chapter_number === i);
-      if (ch && ch.status !== 'upcoming') {
-        reportWarn(`Chapter ${i} status is "${ch.status}", expected "upcoming"`);
-      }
-    }
   } catch (e) {
     reportFail(`JSON syntax error in gita-chapters.json: ${e.message}`);
   }
 }
 
-// B. Verse Datasets for Chapters 1 through 6
+// B. Verse Datasets for Chapters 1 through 18
 const expectedVerseCounts = {
   1: 47,
   2: 72,
   3: 43,
   4: 42,
   5: 29,
-  6: 47
+  6: 47,
+  7: 30,
+  8: 28,
+  9: 34,
+  10: 42,
+  11: 55,
+  12: 20,
+  13: 35,
+  14: 27,
+  15: 20,
+  16: 24,
+  17: 28,
+  18: 78
 };
 
 let grandTotalVerses = 0;
 const verseRequiredKeys = ['verse_number', 'text_sanskrit', 'transliteration', 'translation', 'meaning'];
 
-for (let chNum = 1; chNum <= 6; chNum++) {
+for (let chNum = 1; chNum <= 18; chNum++) {
   const expectedCount = expectedVerseCounts[chNum];
   const filePath = path.join(__dirname, 'data', 'verses', `chapter-${chNum}.json`);
   
@@ -211,7 +215,7 @@ for (let chNum = 1; chNum <= 6; chNum++) {
   try {
     const chData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     
-    if (chData.chapter_number !== chNum) {
+    if (chData.chapter_number !== chNum && chData.chapter !== chNum) {
       reportFail(`Chapter ${chNum} JSON has chapter_number: ${chData.chapter_number}`);
     }
     if (chData.verses_count !== expectedCount) {
@@ -257,11 +261,11 @@ for (let chNum = 1; chNum <= 6; chNum++) {
   }
 }
 
-console.log(`\n  ✦ Total Verified Verses across Chapters 1-6: ${grandTotalVerses} / 280 verses`);
-if (grandTotalVerses === 280) {
-  reportPass('Complete 280/280 verses (47 + 72 + 43 + 42 + 29 + 47) accounted for across all 6 active chapters.');
+console.log(`\n  ✦ Total Verified Verses across Chapters 1-18: ${grandTotalVerses} / 701 verses`);
+if (grandTotalVerses === 701) {
+  reportPass('Complete 701/701 verses (47 + 72 + 43 + 42 + 29 + 47 + 30 + 28 + 34 + 42 + 55 + 20 + 35 + 27 + 20 + 24 + 28 + 78) accounted for across all 18 chapters of Srimad Bhagavad Gita.');
 } else {
-  reportFail(`Total verse count mismatch: found ${grandTotalVerses}, expected 280`);
+  reportFail(`Total verse count mismatch: found ${grandTotalVerses}, expected 701`);
 }
 
 // C. Completion Shrine Images
@@ -272,10 +276,22 @@ const completionImages = {
   3: '3rd-adhyaya-end.jpg',
   4: '4th-adhyaya-end.jpg',
   5: '5th-adhyaya-end_.jpg',
-  6: '6th-adhyaya-end.jpg'
+  6: '6th-adhyaya-end.jpg',
+  7: '7th-adhyaya-end.jpg',
+  8: '8th-adhyaya-end.jpg',
+  9: '9th-adhyaya-end.jpg',
+  10: '10th-adhyaya-end.jpg',
+  11: '11th-adhyaya-end.jpg',
+  12: '12th-adhyaya-end.jpg',
+  13: '13th-adhyaya-end.jpg',
+  14: '14th-adhyaya-end.jpg',
+  15: '15th-adhyaya-end.jpg',
+  16: '16th-adhyaya-end.jpg',
+  17: 'Madhav ✨.jpg',
+  18: '18th-adhyaya-end.jpg'
 };
 
-for (let chNum = 1; chNum <= 6; chNum++) {
+for (let chNum = 1; chNum <= 18; chNum++) {
   const imgName = completionImages[chNum];
   const p = path.join(__dirname, 'assets', 'images', imgName);
   if (fs.existsSync(p)) {
@@ -306,14 +322,20 @@ if (!fs.existsSync(appJsPath)) {
     reportFail(`js/app.js syntax error: ${e.message}`);
   }
 
-  // Check showCompletionView handles chapters 1-6
-  for (let ch = 1; ch <= 6; ch++) {
+  // Check showCompletionView handles chapters 1-18
+  for (let ch = 1; ch <= 18; ch++) {
     const imgName = completionImages[ch];
     if (appJsContent.includes(imgName)) {
       reportPass(`js/app.js maps Chapter ${ch} completion to "${imgName}"`);
     } else {
       reportFail(`js/app.js missing image reference for Chapter ${ch}: "${imgName}"`);
     }
+  }
+
+  if (appJsContent.includes('इति श्रीमद्भगवद्गीता समाप्ता')) {
+    reportPass('Grand Finale conclusion "॥ इति श्रीमद्भगवद्गीता समाप्ता ॥" present in js/app.js.');
+  } else {
+    reportFail('Missing "॥ इति श्रीमद्भगवद्गीता समाप्ता ॥" in js/app.js');
   }
 
   // Check for duplicate dedication text in compColophon
@@ -349,13 +371,37 @@ const testUrls = [
   'http://localhost:8080/data/verses/chapter-4.json',
   'http://localhost:8080/data/verses/chapter-5.json',
   'http://localhost:8080/data/verses/chapter-6.json',
+  'http://localhost:8080/data/verses/chapter-7.json',
+  'http://localhost:8080/data/verses/chapter-8.json',
+  'http://localhost:8080/data/verses/chapter-9.json',
+  'http://localhost:8080/data/verses/chapter-10.json',
+  'http://localhost:8080/data/verses/chapter-11.json',
+  'http://localhost:8080/data/verses/chapter-12.json',
+  'http://localhost:8080/data/verses/chapter-13.json',
+  'http://localhost:8080/data/verses/chapter-14.json',
+  'http://localhost:8080/data/verses/chapter-15.json',
+  'http://localhost:8080/data/verses/chapter-16.json',
+  'http://localhost:8080/data/verses/chapter-17.json',
+  'http://localhost:8080/data/verses/chapter-18.json',
   'http://localhost:8080/assets/images/krishna-and-arjuna.jpg',
   'http://localhost:8080/assets/images/slideshow-2.jpg',
   'http://localhost:8080/assets/images/adhyaya-2-end.jpg',
   'http://localhost:8080/assets/images/3rd-adhyaya-end.jpg',
   'http://localhost:8080/assets/images/4th-adhyaya-end.jpg',
   'http://localhost:8080/assets/images/5th-adhyaya-end_.jpg',
-  'http://localhost:8080/assets/images/6th-adhyaya-end.jpg'
+  'http://localhost:8080/assets/images/6th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/7th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/8th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/9th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/10th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/11th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/12th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/13th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/14th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/15th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/16th-adhyaya-end.jpg',
+  'http://localhost:8080/assets/images/Madhav ✨.jpg',
+  'http://localhost:8080/assets/images/18th-adhyaya-end.jpg'
 ];
 
 let pending = testUrls.length;
